@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== SEO 基础 ===== -->
+  <title>AI 前沿 - 人工智能资讯、工具导航与模型榜单</title>
+  <meta name="description" content="AI前沿汇聚全球人工智能最新资讯、主流AI工具导航、大模型排行榜与技术动态，帮助你实时掌握ChatGPT、Claude、Gemini等前沿进展。" />
+  <meta name="keywords" content="人工智能,AI资讯,AI工具,大模型,ChatGPT,Claude,Gemini,DeepSeek,Llama,AI前沿" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/" />
+
+  <!-- ===== Open Graph（微信/微博/社交分享） ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI 前沿 - 人工智能资讯与工具导航" />
+  <meta property="og:description" content="汇聚全球AI最新资讯、主流工具与大模型榜单，实时追踪人工智能前沿动态。" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/" />
+  <meta property="og:site_name" content="AI前沿" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/og-image.png" />
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI 前沿 - 人工智能资讯与工具导航" />
+  <meta name="twitter:description" content="汇聚全球AI最新资讯、主流工具与大模型榜单，实时追踪人工智能前沿动态。" />
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/og-image.png" />
+
+  <!-- ===== 结构化数据 JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AI前沿",
+    "url": "https://YOUR_DOMAIN.com/",
+    "description": "汇聚全球人工智能最新资讯、主流AI工具导航与大模型榜单",
+    "inLanguage": "zh-CN",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://YOUR_DOMAIN.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AI前沿",
+    "url": "https://YOUR_DOMAIN.com/",
+    "logo": "https://YOUR_DOMAIN.com/logo.png",
+    "sameAs": []
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#news">AI资讯</a>
+      <a href="#tools">AI工具</a>
+      <a href="#updates">技术动态</a>
+      <a href="#models">模型榜单</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#news" onclick="closeMobile()">AI资讯</a>
+    <a href="#tools" onclick="closeMobile()">AI工具</a>
+    <a href="#updates" onclick="closeMobile()">技术动态</a>
+    <a href="#models" onclick="closeMobile()">模型榜单</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="hero-badge">🚀 实时追踪 AI 前沿动态</div>
+    <h1 class="hero-title">探索人工智能的<br/><span class="gradient-text">无限未来</span></h1>
+    <p class="hero-sub">汇聚全球 AI 最新资讯、主流工具与技术突破，助你始终站在智能时代前沿</p>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="搜索 AI 资讯、工具、模型…" />
+      <button onclick="doSearch()">搜索</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">200+</span><span class="stat-label">AI工具</span></div>
+      <div class="stat"><span class="stat-num">50+</span><span class="stat-label">每日资讯</span></div>
+      <div class="stat"><span class="stat-num">30+</span><span class="stat-label">主流模型</span></div>
+    </div>
+  </div>
+  <div class="hero-particles" id="particles"></div>
+</section>
+
+<!-- ===== NEWS ===== -->
+<section class="section" id="news" aria-label="AI前沿资讯">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">🔥 AI 前沿资讯</h2>
+      <div class="filter-tabs" id="newsTabs">
+        <button class="tab active" data-filter="all">全部</button>
+        <button class="tab" data-filter="model">大模型</button>
+        <button class="tab" data-filter="product">产品</button>
+        <button class="tab" data-filter="research">研究</button>
+        <button class="tab" data-filter="industry">行业</button>
+      </div>
+    </div>
+    <div class="news-grid" id="newsGrid"></div>
+  </div>
+</section>
+
+<!-- ===== TOOLS ===== -->
+<section class="section section-dark" id="tools" aria-label="常用AI工具导航">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">🛠️ 常用 AI 工具</h2>
+      <div class="filter-tabs" id="toolTabs">
+        <button class="tab active" data-filter="all">全部</button>
+        <button class="tab" data-filter="chat">对话</button>
+        <button class="tab" data-filter="image">图像</button>
+        <button class="tab" data-filter="code">编程</button>
+        <button class="tab" data-filter="video">视频</button>
+        <button class="tab" data-filter="audio">音频</button>
+        <button class="tab" data-filter="productivity">效率</button>
+      </div>
+    </div>
+    <div class="tools-grid" id="toolsGrid"></div>
+  </div>
+</section>
+
+<!-- ===== UPDATES ===== -->
+<section class="section" id="updates" aria-label="AI技术动态时间线">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">📈 技术动态</h2>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ===== MODELS ===== -->
+<section class="section section-dark" id="models" aria-label="主流AI大模型排行榜">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">🏆 主流模型榜单</h2>
+      <p class="section-sub">基于综合能力评测排名（2025年）</p>
+    </div>
+    <div class="models-table-wrap">
+      <table class="models-table" id="modelsTable"></table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+      <p>追踪全球人工智能最新进展</p>
+    </div>
+    <div class="footer-links">
+      <div><h4>导航</h4><a href="#news">AI资讯</a><a href="#tools">AI工具</a><a href="#updates">技术动态</a><a href="#models">模型榜单</a></div>
+      <div><h4>关注我们</h4><a href="#">微博</a><a href="#">知乎</a><a href="#">微信公众号</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 AI前沿  ·  数据持续更新中</p></div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="scrollTo(0,0)" title="回到顶部">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
