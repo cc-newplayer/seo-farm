@@ -1,7 +1,7 @@
-New-Item -ItemType Directory -Force "C:\Users\PC666\cc web test\scripts\logs" | Out-Null
+New-Item -ItemType Directory -Force "C:\Users\admin\Desktop\cc web test exp\scripts\logs" | Out-Null
 
-$action  = New-ScheduledTaskAction -Execute "C:\Users\PC666\cc web test\scripts\run_update.bat"
-$trigger = New-ScheduledTaskTrigger -Daily -At "08:00"
+$action  = New-ScheduledTaskAction -Execute "C:\Users\admin\Desktop\cc web test exp\scripts\run_update.bat"
+$trigger = New-ScheduledTaskTrigger -Daily -At "15:00"
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable
 
 Register-ScheduledTask -TaskName "AIFrontier_DailyUpdate" -Action $action -Trigger $trigger -Settings $settings -Force | Out-Null

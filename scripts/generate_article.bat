@@ -1,3 +1,3 @@
 @echo off
 cd /d "C:\Users\admin\Desktop\cc web test exp\scripts"
-python update_news.py >> logs\update.log 2>&1
+python generate_article.py >> logs\generate_article.log 2>&1

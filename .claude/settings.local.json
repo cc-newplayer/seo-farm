@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.wired.com)",
+      "WebFetch(domain:feeds.arstechnica.com)",
+      "WebFetch(domain:www.36kr.com)",
+      "WebFetch(domain:openai.com)",
+      "WebFetch(domain:deepmind.google)",
+      "Bash(schtasks /create /tn \"AI前沿_每日更新\" /tr \"\"\"C:\\\\Users\\\\admin\\\\Desktop\\\\cc web test\\\\scripts\\\\run_update.bat\"\"\" /sc daily /st 08:00 /f)"
+    ]
+  }
+}

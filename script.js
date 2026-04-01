@@ -7,76 +7,96 @@
 const newsData = [
   {
     id: 1, featured: true,
-    tag: 'model', date: '2026-03-23',
-    title: 'OpenAI发布GPT-5.4 mini和nano，更快更便宜',
-    desc: 'OpenAI推出GPT-5.4的两个精简版本——mini和nano，专为编程、工具调用、多模态推理及高并发API场景优化。这两款模型在保持强大能力的同时，大幅提升了推理速度并降低了成本，适用于大规模生产环境和子智能体工作负载，为开发者提供更灵活的模型选择。',
-    source: 'OpenAI', time: '今天',
-    url: 'https://openai.com/index/introducing-gpt-5-4-mini-and-nano'
+    tag: 'model', date: '2026-03-30',
+    title: '谷歌发布Gemini 3.1 Flash Live：语音AI更自然流畅',
+    desc: '谷歌DeepMind发布最新语音模型Gemini 3.1 Flash Live，大幅提升了语音交互的精准度并降低了延迟，使AI语音对话更加流畅、自然和精确。该模型标志着谷歌在实时语音AI领域的重要突破，有望推动语音助手和实时对话应用迈向新阶段。',
+    source: 'Google DeepMind', time: '今天',
+    url: 'https://deepmind.google/blog/gemini-3-1-flash-live-making-audio-ai-more-natural-and-reliable/'
   },
   {
     id: 2, featured: false,
-    tag: 'model', date: '2026-03-23',
-    title: 'Gemini 3.1 Flash-Lite发布：谷歌最快最省的大模型',
-    desc: 'Google DeepMind发布Gemini 3.1 Flash-Lite，这是Gemini 3系列中速度最快、成本效率最高的模型。该模型专为大规模智能应用场景打造，在保持出色推理能力的同时，极大降低了推理延迟和部署成本，标志着谷歌在高效AI模型领域的持续突破。',
-    source: 'Google DeepMind', time: '今天',
-    url: 'https://deepmind.google/blog/gemini-3-1-flash-lite-built-for-intelligence-at-scale/'
+    tag: 'model', date: '2026-03-30',
+    title: '国产世界模型登顶全球第一，断层领先谷歌英伟达',
+    desc: '国产世界模型在全球评测中拿下第一名，3D准确度接近满分，大幅领先谷歌和英伟达等国际巨头。该团队最新完成Pre-B轮融资，收获10亿元资金支持，显示出资本市场对国产AI基础模型技术的高度认可，也标志着中国在世界模型赛道上取得里程碑式突破。',
+    source: '量子位', time: '今天',
+    url: 'https://www.qbitai.com/2026/03/393296.html'
   },
   {
     id: 3, featured: false,
-    tag: 'research', date: '2026-03-23',
-    title: '谷歌提出AGI认知评估框架，发起Kaggle黑客松',
-    desc: 'Google DeepMind发布全新认知框架，用于系统性衡量通向AGI的研究进展。该框架从多个认知维度定义了AI能力的评估标准，并在Kaggle平台发起黑客松活动，邀请全球开发者共同构建相关评估基准，推动AGI研究走向可量化、可比较的科学化方向。',
-    source: 'Google DeepMind', time: '今天',
-    url: 'https://deepmind.google/blog/measuring-progress-toward-agi-a-cognitive-framework/'
+    tag: 'model', date: '2026-03-30',
+    title: 'OpenAI公开模型行为规范框架，平衡安全与自由',
+    desc: 'OpenAI详细介绍了其Model Spec（模型规范）的设计思路，这是一个公开的模型行为准则框架，旨在平衡AI系统的安全性、用户自由度和问责机制。随着AI能力不断增强，该规范为行业提供了一套可参考的治理标准，涉及模型在敏感话题上的应答边界和责任归属等核心问题。',
+    source: 'OpenAI', time: '1天前',
+    url: 'https://openai.com/index/our-approach-to-the-model-spec'
   },
   {
     id: 4, featured: false,
-    tag: 'industry', date: '2026-03-23',
-    title: 'OpenAI全力打造全自动AI研究员，挑战复杂科研任务',
-    desc: 'OpenAI正集中资源投入一项全新挑战：构建全自动AI研究员系统。该系统基于智能体架构，能够独立处理大型复杂研究问题，从问题定义到实验执行全流程自主完成。这标志着OpenAI战略重心从通用对话模型转向自主科研智能体，可能深刻改变科学研究的工作方式。',
-    source: 'MIT Technology Review', time: '1天前',
-    url: 'https://www.technologyreview.com/2026/03/20/1134438/openai-is-throwing-everything-into-building-a-fully-automated-researcher/'
+    tag: 'product', date: '2026-03-30',
+    title: '谷歌推出Lyria 3 Pro：AI音乐创作支持更长曲目',
+    desc: '谷歌DeepMind发布全新AI音乐生成模型Lyria 3 Pro，支持生成更长的音乐曲目并具备结构感知能力，能更好地把控音乐的段落和编排逻辑。同时，Lyria将接入更多谷歌产品和平台，进一步降低音乐创作门槛，为创作者和普通用户提供更强大的AI辅助工具。',
+    source: 'Google DeepMind', time: '1天前',
+    url: 'https://deepmind.google/blog/lyria-3-pro-create-longer-tracks-in-more/'
   },
   {
     id: 5, featured: false,
-    tag: 'industry', date: '2026-03-23',
-    title: '马斯克要自建芯片帝国！算力产能计划扩张50倍',
-    desc: '马斯克宣布建设Terafab超级芯片工厂，目标是将算力产能扩大5000%，打造集芯片设计与制造于一体的垂直整合体系，直接挑战英伟达和台积电的行业地位。马斯克称Terafab补上了其AI版图的最后一块拼图，展现出对AI基础设施全链条掌控的野心。',
-    source: '量子位', time: '1天前',
-    url: 'https://www.qbitai.com/2026/03/391045.html'
+    tag: 'industry', date: '2026-03-30',
+    title: '华沿机器人港股上市认购超5000倍，具身智能赛道火热',
+    desc: '华沿机器人在港交所秘密递表后成功上市，公开发售部分认购超5000倍，以17港元发行价、90亿港元市值登陆港股。高瓴、广发基金、摩根士丹利等头部机构提供近亿美元基石投资。CEO王光能技术出身，公司风格务实低调，在具身智能估值飙升的当下显得独树一帜。',
+    source: '36氪', time: '1天前',
+    url: 'https://36kr.com/p/3744805881724928?f=rss'
   },
   {
     id: 6, featured: false,
-    tag: 'research', date: '2026-03-23',
-    title: 'OpenAI揭秘如何监控编程智能体的对齐风险',
-    desc: 'OpenAI公开了其监控内部编程智能体对齐问题的方法，核心手段是思维链监控技术。团队通过分析真实部署场景中的智能体行为，检测潜在风险和不对齐信号，并据此强化安全防护措施。这是业界首次系统性披露大规模智能体部署中的安全监控实践，对AI安全研究意义重大。',
-    source: 'OpenAI', time: '2天前',
-    url: 'https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment'
+    tag: 'research', date: '2026-03-30',
+    title: 'DeepMind发布AI操纵风险研究，推动安全新措施',
+    desc: '谷歌DeepMind发表关于AI有害操纵风险的研究，系统分析了AI在金融、健康等关键领域可能产生的操纵性危害，并据此提出了新的安全防护措施。研究指出，随着AI系统说服力和个性化能力增强，防止其被用于欺骗和操纵用户变得愈发重要，需要从技术和制度层面共同应对。',
+    source: 'Google DeepMind', time: '2天前',
+    url: 'https://deepmind.google/blog/protecting-people-from-harmful-manipulation/'
   },
   {
     id: 7, featured: false,
-    tag: 'product', date: '2026-03-23',
-    title: 'OpenAI收购Astral，加速Codex和Python开发生态',
-    desc: 'OpenAI宣布收购开发工具公司Astral，以加速其Codex编程平台的发展，打造下一代Python开发者工具。此次收购将Astral的工程能力整合进OpenAI生态，提升AI辅助编程的效率和体验，进一步巩固OpenAI在AI编程工具市场的领先地位。',
-    source: 'OpenAI', time: '2天前',
-    url: 'https://openai.com/index/openai-to-acquire-astral'
+    tag: 'industry', date: '2026-03-30',
+    title: '旷视联创唐文斌再创业：原力灵机聚焦具身智能',
+    desc: '清华姚班毕业、旷视科技联合创始人唐文斌于2025年3月创办具身智能公司原力灵机。经历AI 1.0完整周期后，唐文斌反思旷视最大的教训是摊子铺得太大，二次创业更注重做减法，集中全力把最有优势的业务做透。这一理念与近期履新阶跃星辰的印奇不谋而合。',
+    source: '36氪', time: '2天前',
+    url: 'https://36kr.com/p/3745064614494211?f=rss'
   },
   {
     id: 8, featured: false,
-    tag: 'product', date: '2026-03-23',
-    title: '阶跃星辰接入微信生态，AI助手即插即用',
-    desc: '阶跃星辰旗下StepClaw"龙虾"智能体率先完成微信生态适配，支持个人聊天场景的全面激活。用户可在微信中直接部署和使用AI助手，无需额外安装应用，实现即插即养即用的便捷体验，标志着国产AI应用在社交生态融合方面迈出重要一步。',
-    source: '量子位', time: '3天前',
-    url: 'https://www.qbitai.com/2026/03/391010.html'
+    tag: 'research', date: '2026-03-30',
+    title: '首次实现人体子宫体外存活，医学里程碑诞生',
+    desc: '科学家首次成功将女性子宫在体外保持存活状态，利用一套模拟人体环境的金属装置，通过塑料管道充当血管，维持器官的血液循环和生理功能。这项突破性研究为器官移植、生殖医学和体外器官研究开辟了全新可能，被视为再生医学领域的重要里程碑。',
+    source: 'MIT Technology Review', time: '2天前',
+    url: 'https://www.technologyreview.com/2026/03/28/1134766/womans-uterus-kept-alive-outside-the-body-first/'
   },
   {
     id: 9, featured: false,
-    tag: 'research', date: '2026-03-23',
-    title: '浙大破解多模态模型过度自信难题，登顶CVPR\'26',
-    desc: '浙江大学团队提出创新方法，解决多模态大模型在输入质量极差时仍给出高置信度预测的"盲目自信"问题。研究通过先校准模型置信度、再动态分配计算资源的两阶段策略，显著提升了模型的可靠性和效率，相关成果被计算机视觉顶会CVPR 2026录用。',
-    source: '量子位', time: '3天前',
-    url: 'https://www.qbitai.com/2026/03/391014.html'
+    tag: 'industry', date: '2026-03-30',
+    title: 'OpenAI联合盖茨基金会，用AI赋能亚洲灾害应急',
+    desc: 'OpenAI与盖茨基金会联合举办工作坊，探索如何将AI技术应用于亚洲地区的灾害应急响应。项目旨在帮助灾害救援团队将AI能力转化为实际行动，提升灾情预判、资源调配和救援决策的效率。这是AI技术在人道主义领域落地的重要实践，展现了大模型在公共安全场景中的应用潜力。',
+    source: 'OpenAI', time: '3天前',
+    url: 'https://openai.com/index/helping-disaster-response-teams-asia'
   }
+];
+
+// ===== ARTICLES DATA =====
+const articlesData = [
+  { id: 19, file: '19_ollama-local-llm-tutorial.html', category: 'tutorial', title: '免费在本地跑 AI 大模型！Ollama 保姆级入门教程（2026 最新版）', desc: 'Ollama 零代码入门教程：3 条命令在本地运行 DeepSeek/Qwen/Llama，数据完全不出机，支持 Windows/Mac/Linux，完全免费。', keywords: ['ollama', '本地大模型', '本地模型', '本地部署', 'local llm', 'open webui'] },
+  { id: 1,  file: '01_dify.html',                         category: 'tutorial', title: '零代码搭建你的第一个 AI 应用——Dify 保姆级入门教程',                                desc: 'Dify 零基础保姆级教程，从注册到发布第一个 AI 应用，免费使用，全程截图手把手教学。',                                   keywords: ['dify'] },
+  { id: 2,  file: '02_coze.html',                         category: 'tutorial', title: '30 分钟做出你的专属 AI 助手——Coze 扣子保姆级入门教程',                             desc: '扣子 Coze 零基础教程：从注册账号到发布第一个 AI Bot，全程截图手把手教学。',                                           keywords: ['coze', '扣子'] },
+  { id: 3,  file: '03_n8n.html',                          category: 'tutorial', title: '让重复的工作自动完成——n8n 自动化工作流保姆级入门教程',                              desc: 'n8n 零基础教程，无需代码实现自动化工作流，从安装到搭建第一个自动化流程。',                                              keywords: ['n8n', '自动化工作流', '工作流自动化'] },
+  { id: 4,  file: '04_mcp.html',                          category: 'deep',     title: 'AI 的"万能插座"——MCP 协议保姆级入门教程',                                        desc: '深度解析 MCP（模型上下文协议）的原理、架构与应用，AI Agent 连接外部工具的标准接口。',                                   keywords: ['mcp', 'model context protocol', '模型上下文协议'] },
+  { id: 5,  file: '05_agent-architecture.html',           category: 'deep',     title: 'AI Agent 凭什么能"自主干活"？从四大模块拆解它的内核',                            desc: '深度拆解 AI Agent 的四大核心模块：感知、记忆、规划与行动，理解其自主执行的底层逻辑。',                                 keywords: ['ai agent', 'agent架构', 'agent 架构', '智能体'] },
+  { id: 6,  file: '06_agent-2026-protocols.html',         category: 'deep',     title: 'AI Agent 正在经历它的「TCP/IP 时刻」',                                           desc: 'MCP、A2A、CUA 三大协议重写 Agent 底层规则，解析 2026 年 Agent 协议层的全面就绪。',                                    keywords: ['a2a', 'cua', 'agent协议', 'tcp/ip'] },
+  { id: 7,  file: '07_agent-platforms-guide.html',        category: 'tutorial', title: '2026年最热门 AI Agent 搭建平台横评 + 保姆级零代码上手指南',                       desc: '5 大 AI Agent 搭建平台零代码横评，手把手教你在 Coze 上搭建第一个 AI 日报助手，全程不写一行代码。',                     keywords: ['agent平台', 'agent搭建', 'agent 平台'] },
+  { id: 8,  file: '08_mas-deep-dive.html',                category: 'deep',     title: 'Multi-Agent 不是把多个 AI 堆在一起——一篇讲清 MAS 的本质与代价',                  desc: 'MAS 多智能体系统深度剖析：三种核心架构、四层神经系统、主流框架横评，以及真实代价。',                                    keywords: ['multi-agent', 'mas', '多智能体', '多 agent'] },
+  { id: 9,  file: '09_gemini-31-guide.html',              category: 'tutorial', title: '手把手教你免费用上 Gemini 3.1 Pro——2026 推理最强 AI',                           desc: '零代码 10 分钟上手 Gemini 3.1 Pro，逻辑推理得分翻倍，含 AI Studio 免费 API 获取方法。',                               keywords: ['gemini'] },
+  { id: 10, file: '10_agent-architecture-deep-dive.html', category: 'deep',     title: '你以为的 AI Agent 架构，和真正跑在生产上的差在哪？',                              desc: '深度拆解 AI Agent 架构：四大核心组件、ReAct 推理框架、多智能体编排模式与主流框架选型。',                               keywords: ['react框架', 'react推理', 'agent架构', '生产环境'] },
+  { id: 11, file: '11_coze-tutorial.html',                category: 'tutorial', title: '零基础也能上手！扣子(Coze) 完整教程：10分钟搭建你的第一个 AI Bot',                desc: '扣子 Coze 零基础使用教程：从注册账号到发布第一个 AI Bot，全程截图手把手带你完成。',                                    keywords: ['coze', '扣子'] },
+  { id: 12, file: '12_single-agent-vs-mas.html',          category: 'deep',     title: '单Agent多角色 vs 多Agent各司其职——深度架构对决',                                desc: '单 Agent 多角色 vs 多智能体系统 MAS 深度对比：架构原理、性能数据、Token 成本与选型框架。',                              keywords: ['单agent', '多智能体', 'mas', 'multi-agent'] },
+  { id: 13, file: '13_dify-tutorial.html',                category: 'tutorial', title: '零代码搭建你的专属AI应用：Dify 保姆级入门教程（2026最新版）',                    desc: 'Dify 零基础保姆级入门教程 2026 最新版，从注册到发布第一个 AI 应用，免费使用，全程截图手把手教学。',                    keywords: ['dify'] },
+  { id: 14, file: '14_agent-security-prompt-injection.html', category: 'deep',  title: '你的 AI Agent 正在被「注毒」——Prompt 注入如何成为企业 AI 部署的头号威胁',        desc: '深度拆解 Prompt 注入四大攻击向量、真实 CVE 案例，以及为什么传统安全手段对此束手无策。',                               keywords: ['prompt注入', 'prompt injection', 'ai安全', '安全漏洞', 'mcp漏洞', '提示注入', '安全赏金'] },
+  { id: 18, file: '18_deerflow2-popular-science.html',       category: 'popular', title: '字节悄悄造了个"超级员工"，它一天能干完你一周的活',                                desc: '字节跳动开源 DeerFlow 2.0，发布 24 小时登顶 GitHub 热榜——它会自己拆任务、派子 Agent 并行执行，写报告、建网页、做 PPT 一次交付。',  keywords: ['deerflow', '字节跳动', 'deer-flow', '超级agent', 'superagent'] },
 ];
 
 const toolsData = [
@@ -173,11 +193,21 @@ const modelsData = [
 // ===== RENDER NEWS =====
 let activeNewsFilter = 'all';
 
+function findRelatedArticle(news) {
+  const text = (news.title + ' ' + news.desc).toLowerCase();
+  return articlesData.find(a => a.keywords.some(k => text.includes(k.toLowerCase())));
+}
+
 function renderNews(filter) {
   const grid = document.getElementById('newsGrid');
   const filtered = filter === 'all' ? newsData : newsData.filter(n => n.tag === filter);
-  grid.innerHTML = filtered.map(n => `
-    <article class="news-card ${n.featured && filter === 'all' ? 'featured' : ''}" onclick="openNews('${n.url || '#'}')">
+  grid.innerHTML = filtered.map(n => {
+    const related = findRelatedArticle(n);
+    const relatedBtn = related
+      ? `<a class="news-related-btn" href="articles/${related.file}" target="_blank" onclick="event.stopPropagation()">📚 深度阅读</a>`
+      : '';
+    return `
+    <article class="news-card ${n.featured && filter === 'all' ? 'featured' : ''}" onclick="openArticle(${n.id})">
       <div class="news-meta">
         <span class="news-tag tag-${n.tag}">${tagLabel(n.tag)}</span>
         <span>${n.time}</span>
@@ -188,16 +218,53 @@ function renderNews(filter) {
         <div class="news-source"><span class="source-dot"></span>${n.source}</div>
         <span>${n.date}</span>
       </div>
-    </article>
-  `).join('');
+      ${relatedBtn}
+    </article>`;
+  }).join('');
 }
 
 function tagLabel(tag) {
   return { model: '大模型', product: '产品', research: '研究', industry: '行业' }[tag] || tag;
 }
 
-function openNews(url) {
-  if (url && url !== '#') window.open(url, '_blank');
+function openArticle(id) {
+  const n = newsData.find(x => x.id === id);
+  if (!n) return;
+  const heroHTML = n.heroImg
+    ? `<img class="article-hero-img" src="${n.heroImg}" alt="${n.title}" loading="lazy">`
+    : `<div class="article-hero-placeholder"><span>${n.source}</span></div>`;
+  document.getElementById('articleBody').innerHTML = `
+    ${heroHTML}
+    <div class="article-meta">
+      <span class="news-tag tag-${n.tag}">${tagLabel(n.tag)}</span>
+      <span class="article-source-name">${n.source}</span>
+      <span class="article-date">${n.date}</span>
+    </div>
+    <h2 class="article-title">${n.title}</h2>
+    <a class="article-orig-link" href="${n.url}" target="_blank" rel="noopener">查看原文 →</a>
+    <div class="article-content">${n.article}</div>
+  `;
+  document.getElementById('articleModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+// ===== RENDER ARTICLES =====
+function renderArticles(filter) {
+  const grid = document.getElementById('articlesGrid');
+  if (!grid) return;
+  const filtered = filter === 'all' ? articlesData : articlesData.filter(a => a.category === filter);
+  const tagName = { tutorial: '教程', deep: '深度科普', popular: '大众科普' };
+  grid.innerHTML = filtered.map(a => `
+    <a class="article-card" href="articles/${a.file}" target="_blank">
+      <span class="article-card-tag tag-${a.category}">${tagName[a.category] || a.category}</span>
+      <div class="article-card-title">${a.title}</div>
+      <p class="article-card-desc">${a.desc}</p>
+      <div class="article-card-footer">
+        <span>Aitetech 原创</span>
+        <span>→ 阅读全文</span>
+      </div>
+    </a>
+  `).join('');
 }
 
 // ===== RENDER TOOLS =====
@@ -312,10 +379,9 @@ function doSearch() {
   const toolResult = toolsData.filter(t =>
     t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)
   );
-  // Show results
   document.getElementById('newsGrid').innerHTML = newsResult.length
     ? newsResult.map(n => `
-        <article class="news-card">
+        <article class="news-card" onclick="openArticle(${n.id})">
           <div class="news-meta"><span class="news-tag tag-${n.tag}">${tagLabel(n.tag)}</span><span>${n.time}</span></div>
           <h3 class="news-title">${n.title}</h3>
           <p class="news-desc">${n.desc}</p>
@@ -359,6 +425,13 @@ function createParticles() {
   }
 }
 
+// ===== ARTICLE MODAL =====
+function closeArticle() {
+  document.getElementById('articleModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle(); });
+
 // ===== MOBILE MENU =====
 document.getElementById('hamburger').addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('open');
@@ -378,6 +451,44 @@ renderNews('all');
 renderTools('all');
 renderTimeline();
 renderModels();
+renderArticles('all');
 setupTabs('newsTabs', renderNews);
 setupTabs('toolTabs', renderTools);
+setupTabs('articleTabs', renderArticles);
 createParticles();
+
+// ===== SIDEBAR =====
+(function () {
+  const body = document.body;
+  const toggleBtn = document.getElementById('sidebarToggle');
+
+  // Restore collapsed state
+  if (localStorage.getItem('sidebarCollapsed') === 'true') {
+    body.classList.add('sidebar-collapsed');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isCollapsed = body.classList.toggle('sidebar-collapsed');
+    localStorage.setItem('sidebarCollapsed', isCollapsed);
+  });
+
+  // Active section tracking via IntersectionObserver
+  const sidebarItems = document.querySelectorAll('.sidebar-item');
+  const sectionIds = ['hero', 'news', 'tools', 'updates', 'models'];
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        sidebarItems.forEach(item => {
+          item.classList.toggle('active', item.dataset.section === id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+  sectionIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+})();

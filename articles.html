@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 科普文章 - AI前沿</title>
+  <meta name="description" content="Aitetech 原创 AI 科普文章：保姆级教程、深度技术解析，帮你真正搞懂 AI Agent。" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .articles-page-header {
+      padding: 100px 0 48px;
+      text-align: center;
+    }
+    .articles-page-header h1 {
+      font-size: 2rem; font-weight: 700; color: var(--text);
+      margin-bottom: 12px;
+    }
+    .articles-page-header p {
+      color: var(--text-muted); font-size: 1rem;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--text-muted); font-size: 0.875rem;
+      text-decoration: none; transition: color 0.2s;
+      margin-bottom: 32px;
+    }
+    .back-link:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="切换导航">
+    <span class="toggle-icon">&#10094;</span>
+  </button>
+  <nav class="sidebar-nav">
+    <a href="index.html#hero" class="sidebar-item" data-tooltip="首页">
+      <span class="sidebar-icon">⚡</span>
+      <span class="sidebar-label">首页</span>
+    </a>
+    <a href="index.html#news" class="sidebar-item" data-tooltip="AI资讯">
+      <span class="sidebar-icon">🔥</span>
+      <span class="sidebar-label">AI资讯</span>
+    </a>
+    <a href="articles.html" class="sidebar-item active" data-tooltip="AI科普">
+      <span class="sidebar-icon">📚</span>
+      <span class="sidebar-label">AI科普</span>
+    </a>
+    <a href="index.html#tools" class="sidebar-item" data-tooltip="AI工具">
+      <span class="sidebar-icon">🛠️</span>
+      <span class="sidebar-label">AI工具</span>
+    </a>
+    <a href="index.html#updates" class="sidebar-item" data-tooltip="技术动态">
+      <span class="sidebar-icon">📈</span>
+      <span class="sidebar-label">技术动态</span>
+    </a>
+    <a href="index.html#models" class="sidebar-item" data-tooltip="模型榜单">
+      <span class="sidebar-icon">🏆</span>
+      <span class="sidebar-label">模型榜单</span>
+    </a>
+  </nav>
+</aside>
+
+<div class="main-wrap" id="mainWrap">
+
+<!-- ===== NAV ===== -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+    </a>
+    <nav class="nav-links">
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-toggle">AI资讯 <span class="dropdown-arrow">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="index.html#news">最新资讯</a>
+          <a href="articles.html">AI科普文章</a>
+        </div>
+      </div>
+      <a href="index.html#tools">AI工具</a>
+      <a href="index.html#updates">技术动态</a>
+      <a href="index.html#models">模型榜单</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#news" onclick="closeMobile()">最新资讯</a>
+    <a href="articles.html" onclick="closeMobile()">AI科普文章</a>
+    <a href="index.html#tools" onclick="closeMobile()">AI工具</a>
+    <a href="index.html#updates" onclick="closeMobile()">技术动态</a>
+    <a href="index.html#models" onclick="closeMobile()">模型榜单</a>
+  </div>
+</header>
+
+<!-- ===== CONTENT ===== -->
+<section class="section" style="padding-top: 80px;">
+  <div class="container">
+    <a href="index.html" class="back-link">← 返回首页</a>
+    <div class="section-header">
+      <h2 class="section-title">📚 AI 科普文章</h2>
+      <div class="filter-tabs" id="articleTabs">
+        <button class="tab active" data-filter="all">全部</button>
+        <button class="tab" data-filter="tutorial">教程</button>
+        <button class="tab" data-filter="deep">深度科普</button>
+        <button class="tab" data-filter="popular">大众科普</button>
+      </div>
+    </div>
+    <div class="articles-grid" id="articlesGrid"></div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+    </div>
+    <p class="footer-copy">© 2026 AI前沿 · Aitetech 原创内容</p>
+  </div>
+</footer>
+
+</div><!-- /.main-wrap -->
+
+<script>
+const articlesData = [
+  { id: 19, file: '19_ollama-local-llm-tutorial.html', category: 'tutorial', title: '免费在本地跑 AI 大模型！Ollama 保姆级入门教程（2026 最新版）', desc: 'Ollama 零代码入门教程：3 条命令在本地运行 DeepSeek/Qwen/Llama，数据完全不出机，支持 Windows/Mac/Linux，完全免费。' },
+  { id: 18, file: '18_deerflow2-popular-science.html',       category: 'popular', title: '字节悄悄造了个"超级员工"，它一天能干完你一周的活', desc: '字节跳动开源 DeerFlow 2.0，发布 24 小时登顶 GitHub 热榜——它会自己拆任务、派子 Agent 并行执行，写报告、建网页、做 PPT 一次交付。' },
+  { id: 17, file: '17_ai-agent-workplace-revolution.html', category: 'popular', title: '你的同事可能已经在用AI替身上班了，而你还不知道', desc: 'AI Agent正在改变普通人的工作方式，了解它如何让你的同事准时下班而你还在加班。从具体场景到实用建议，一篇文章让你跟上这个趋势。' },
+  { id: 16, file: '16_rag-explained.html', category: 'popular', title: 'AI 为什么会自信地说错话？让它变聪明的秘诀是……', desc: 'AI 为什么有时会一本正经地说错话？本文用"开卷 vs 闭卷考试"一个类比讲清楚 RAG 是什么、能帮你做什么、会影响哪些人。' },
+  { id: 15,  file: '15_google-turboquant-kv-cache-compression-explained.html',  category: 'deep', title: '谷歌一篇论文把内存股价干崩了——KV Cache压缩到底怎么做到的？',  desc: '谷歌DeepMind发布TurboQuant算法，将大模型KV Cache内存占用压缩6倍且几乎不损失质量，本文深度拆解其量化原理、架构设计与对AI芯片行业的冲击。' },
+  { id: 1,  file: '01_dify.html',                            category: 'tutorial', title: '零代码搭建你的第一个 AI 应用——Dify 保姆级入门教程',                          desc: 'Dify 零基础保姆级教程，从注册到发布第一个 AI 应用，免费使用，全程截图手把手教学。' },
+  { id: 2,  file: '02_coze.html',                            category: 'tutorial', title: '30 分钟做出你的专属 AI 助手——Coze 扣子保姆级入门教程',                       desc: '扣子 Coze 零基础教程：从注册账号到发布第一个 AI Bot，全程截图手把手教学。' },
+  { id: 3,  file: '03_n8n.html',                             category: 'tutorial', title: '让重复的工作自动完成——n8n 自动化工作流保姆级入门教程',                        desc: 'n8n 零基础教程，无需代码实现自动化工作流，从安装到搭建第一个自动化流程。' },
+  { id: 4,  file: '04_mcp.html',                             category: 'deep',     title: 'AI 的"万能插座"——MCP 协议保姆级入门教程',                                  desc: '深度解析 MCP（模型上下文协议）的原理、架构与应用，AI Agent 连接外部工具的标准接口。' },
+  { id: 5,  file: '05_agent-architecture.html',              category: 'deep',     title: 'AI Agent 凭什么能"自主干活"？从四大模块拆解它的内核',                      desc: '深度拆解 AI Agent 的四大核心模块：感知、记忆、规划与行动，理解其自主执行的底层逻辑。' },
+  { id: 6,  file: '06_agent-2026-protocols.html',            category: 'deep',     title: 'AI Agent 正在经历它的「TCP/IP 时刻」',                                       desc: 'MCP、A2A、CUA 三大协议重写 Agent 底层规则，解析 2026 年 Agent 协议层的全面就绪。' },
+  { id: 7,  file: '07_agent-platforms-guide.html',           category: 'tutorial', title: '2026年最热门 AI Agent 搭建平台横评 + 保姆级零代码上手指南',                  desc: '5 大 AI Agent 搭建平台零代码横评，手把手教你在 Coze 上搭建第一个 AI 日报助手，全程不写一行代码。' },
+  { id: 8,  file: '08_mas-deep-dive.html',                   category: 'deep',     title: 'Multi-Agent 不是把多个 AI 堆在一起——一篇讲清 MAS 的本质与代价',             desc: 'MAS 多智能体系统深度剖析：三种核心架构、四层神经系统、主流框架横评，以及真实代价。' },
+  { id: 9,  file: '09_gemini-31-guide.html',                 category: 'tutorial', title: '手把手教你免费用上 Gemini 3.1 Pro——2026 推理最强 AI',                       desc: '零代码 10 分钟上手 Gemini 3.1 Pro，逻辑推理得分翻倍，含 AI Studio 免费 API 获取方法。' },
+  { id: 10, file: '10_agent-architecture-deep-dive.html',    category: 'deep',     title: '你以为的 AI Agent 架构，和真正跑在生产上的差在哪？',                         desc: '深度拆解 AI Agent 架构：四大核心组件、ReAct 推理框架、多智能体编排模式与主流框架选型。' },
+  { id: 11, file: '11_coze-tutorial.html',                   category: 'tutorial', title: '零基础也能上手！扣子(Coze) 完整教程：10分钟搭建你的第一个 AI Bot',           desc: '扣子 Coze 零基础使用教程：从注册账号到发布第一个 AI Bot，全程截图手把手带你完成。' },
+  { id: 12, file: '12_single-agent-vs-mas.html',             category: 'deep',     title: '单Agent多角色 vs 多Agent各司其职——深度架构对决',                            desc: '单 Agent 多角色 vs 多智能体系统 MAS 深度对比：架构原理、性能数据、Token 成本与选型框架。' },
+  { id: 13, file: '13_dify-tutorial.html',                   category: 'tutorial', title: '零代码搭建你的专属AI应用：Dify 保姆级入门教程（2026最新版）',                desc: 'Dify 零基础保姆级入门教程 2026 最新版，从注册到发布第一个 AI 应用，免费使用，全程截图手把手教学。' },
+  { id: 14, file: '14_agent-security-prompt-injection.html', category: 'deep',     title: '你的 AI Agent 正在被「注毒」——Prompt 注入如何成为企业 AI 部署的头号威胁',   desc: '深度拆解 Prompt 注入四大攻击向量、真实 CVE 案例，以及为什么传统安全手段对此束手无策。' },
+];
+
+function renderArticles(filter) {
+  const grid = document.getElementById('articlesGrid');
+  const filtered = filter === 'all' ? articlesData : articlesData.filter(a => a.category === filter);
+  const tagName = { tutorial: '教程', deep: '深度科普', popular: '大众科普' };
+  grid.innerHTML = filtered.map(a => `
+    <a class="article-card" href="articles/${a.file}" target="_blank">
+      <span class="article-card-tag tag-${a.category}">${tagName[a.category]}</span>
+      <div class="article-card-title">${a.title}</div>
+      <p class="article-card-desc">${a.desc}</p>
+      <div class="article-card-footer">
+        <span>Aitetech 原创</span>
+        <span>阅读全文 →</span>
+      </div>
+    </a>
+  `).join('');
+}
+
+// 侧边栏折叠
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
+sidebarToggle.addEventListener('click', () => document.body.classList.toggle('sidebar-collapsed'));
+
+// tab 切换
+document.getElementById('articleTabs').addEventListener('click', e => {
+  const btn = e.target.closest('.tab');
+  if (!btn) return;
+  document.querySelectorAll('#articleTabs .tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderArticles(btn.dataset.filter);
+});
+
+// 下拉菜单
+document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+  e.stopPropagation();
+  this.closest('.nav-dropdown').classList.toggle('open');
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
+});
+
+// 汉堡菜单
+function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+
+renderArticles('all');
+</script>
+</body>
+</html>

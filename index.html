@@ -59,6 +59,41 @@
 </head>
 <body>
 
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="切换导航">
+    <span class="toggle-icon">&#10094;</span>
+  </button>
+  <nav class="sidebar-nav">
+    <a href="#hero" class="sidebar-item active" data-section="hero" data-tooltip="首页">
+      <span class="sidebar-icon">⚡</span>
+      <span class="sidebar-label">首页</span>
+    </a>
+    <a href="#news" class="sidebar-item" data-section="news" data-tooltip="AI资讯">
+      <span class="sidebar-icon">🔥</span>
+      <span class="sidebar-label">AI资讯</span>
+    </a>
+    <a href="articles.html" class="sidebar-item" data-section="articles" data-tooltip="AI科普">
+      <span class="sidebar-icon">📚</span>
+      <span class="sidebar-label">AI科普</span>
+    </a>
+    <a href="#tools" class="sidebar-item" data-section="tools" data-tooltip="AI工具">
+      <span class="sidebar-icon">🛠️</span>
+      <span class="sidebar-label">AI工具</span>
+    </a>
+    <a href="#updates" class="sidebar-item" data-section="updates" data-tooltip="技术动态">
+      <span class="sidebar-icon">📈</span>
+      <span class="sidebar-label">技术动态</span>
+    </a>
+    <a href="#models" class="sidebar-item" data-section="models" data-tooltip="模型榜单">
+      <span class="sidebar-icon">🏆</span>
+      <span class="sidebar-label">模型榜单</span>
+    </a>
+  </nav>
+</aside>
+
+<div class="main-wrap" id="mainWrap">
+
 <!-- ===== NAV ===== -->
 <header class="navbar">
   <div class="container nav-inner">
@@ -67,7 +102,13 @@
       <span class="logo-text">AI<span class="accent">前沿</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#news">AI资讯</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-toggle">AI资讯 <span class="dropdown-arrow">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="#news">最新资讯</a>
+          <a href="articles.html">AI科普文章</a>
+        </div>
+      </div>
       <a href="#tools">AI工具</a>
       <a href="#updates">技术动态</a>
       <a href="#models">模型榜单</a>
@@ -75,7 +116,8 @@
     <button class="hamburger" id="hamburger" aria-label="menu">&#9776;</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#news" onclick="closeMobile()">AI资讯</a>
+    <a href="#news" onclick="closeMobile()">最新资讯</a>
+    <a href="#articles" onclick="closeMobile()">AI科普文章</a>
     <a href="#tools" onclick="closeMobile()">AI工具</a>
     <a href="#updates" onclick="closeMobile()">技术动态</a>
     <a href="#models" onclick="closeMobile()">模型榜单</a>
@@ -83,7 +125,7 @@
 </header>
 
 <!-- ===== HERO ===== -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="container hero-content">
     <div class="hero-badge">🚀 实时追踪 AI 前沿动态</div>
@@ -179,6 +221,26 @@
 
 <button class="back-top" id="backTop" onclick="scrollTo(0,0)" title="回到顶部">↑</button>
 
+<!-- ===== ARTICLE MODAL ===== -->
+<div class="article-modal" id="articleModal" onclick="if(event.target===this)closeArticle()">
+  <div class="article-panel">
+    <button class="article-close" onclick="closeArticle()" aria-label="关闭">✕</button>
+    <div class="article-body" id="articleBody"></div>
+  </div>
+</div>
+
+</div><!-- /.main-wrap -->
+
 <script src="script.js"></script>
+<script>
+  // 下拉菜单点击切换
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.closest('.nav-dropdown').classList.toggle('open');
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
+  });
+</script>
 </body>
 </html>
