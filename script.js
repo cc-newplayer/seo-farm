@@ -81,6 +81,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 20, file: '20_langgraph-tutorial.html', category: 'tutorial', title: '零基础也能上手！LangGraph 保姆级入门教程（2026最新版）', desc: '手把手教你用 LangGraph 搭建第一个 AI Agent 工作流，零代码基础也能跑通，含记忆、工具调用完整示例。', keywords: ['langgraph', 'langgraph教程', 'langgraph入门', 'agent工作流', 'langchain'] },
   { id: 19, file: '19_ollama-local-llm-tutorial.html', category: 'tutorial', title: '免费在本地跑 AI 大模型！Ollama 保姆级入门教程（2026 最新版）', desc: 'Ollama 零代码入门教程：3 条命令在本地运行 DeepSeek/Qwen/Llama，数据完全不出机，支持 Windows/Mac/Linux，完全免费。', keywords: ['ollama', '本地大模型', '本地模型', '本地部署', 'local llm', 'open webui'] },
   { id: 1,  file: '01_dify.html',                         category: 'tutorial', title: '零代码搭建你的第一个 AI 应用——Dify 保姆级入门教程',                                desc: 'Dify 零基础保姆级教程，从注册到发布第一个 AI 应用，免费使用，全程截图手把手教学。',                                   keywords: ['dify'] },
   { id: 2,  file: '02_coze.html',                         category: 'tutorial', title: '30 分钟做出你的专属 AI 助手——Coze 扣子保姆级入门教程',                             desc: '扣子 Coze 零基础教程：从注册账号到发布第一个 AI Bot，全程截图手把手教学。',                                           keywords: ['coze', '扣子'] },
