@@ -81,6 +81,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 23, file: '23_kling-ai-video-tutorial.html', category: 'tutorial', title: '零基础也能上手！可灵AI视频生成保姆级入门教程（2026最新版）', desc: '手把手教你用可灵AI生成高质量视频，从注册到出片全程截图，零代码免费上手。', keywords: ['可灵ai', '可灵ai教程', '可灵ai怎么用', 'kling ai', 'ai视频生成', '文生视频', '图生视频'] },
   { id: 22, file: '22_n8n-enterprise-workflow.html', category: 'tutorial', title: '用 n8n 搭建企业级自动化工作流：从 Webhook 到错误处理全攻略（2026版）', desc: '手把手教你用 n8n 搭建生产级工作流，覆盖 Webhook 实时触发、子工作流复用、错误自动告警三大核心能力。', keywords: ['n8n', 'n8n教程', 'n8n企业', 'webhook', '工作流自动化', '错误处理', '子工作流'] },
   { id: 21, file: '21_ai-token-explained.html', category: 'popular', title: '你每次问 AI，到底花了多少钱？', desc: 'token 是 AI 世界的计费单位，也决定了 AI 能记住多少内容。一篇讲清楚 token 是什么、怎么算钱、怎么省钱的大众科普。', keywords: ['token', 'ai token', 'token计费', 'context window', '大模型计费', 'token是什么'] },
   { id: 20, file: '20_langgraph-tutorial.html', category: 'tutorial', title: '零基础也能上手！LangGraph 保姆级入门教程（2026最新版）', desc: '手把手教你用 LangGraph 搭建第一个 AI Agent 工作流，零代码基础也能跑通，含记忆、工具调用完整示例。', keywords: ['langgraph', 'langgraph教程', 'langgraph入门', 'agent工作流', 'langchain'] },
