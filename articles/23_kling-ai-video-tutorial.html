@@ -139,7 +139,9 @@
     <p><strong>技巧3：先用标准模式测试，满意再用高质量模式</strong><br>高质量模式消耗灵感值是标准模式的2倍，先确认方向再切换。</p>
 
     <h2>免费够用吗？套餐对比</h2>
-    <canvas id="pricingChart" style="max-width:600px;margin:16px auto;display:block;"></canvas>
+    <div class="chart-container" style="max-width:600px;margin:16px auto;">
+      <canvas id="pricingChart"></canvas>
+    </div>
     <script>
     new Chart(document.getElementById('pricingChart'), {
       type: 'bar',
