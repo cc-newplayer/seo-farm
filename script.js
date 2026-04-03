@@ -81,6 +81,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 29, file: '29_gpt54-tutorial.html', category: 'tutorial', title: 'GPT-5.4 保姆级入门教程：手把手教你免费用上 OpenAI 最强模型', desc: 'GPT-5.4 是 OpenAI 2026年3月发布的最强模型，支持电脑操控、100万token上下文。本文手把手教你5步用上它，附免费额度攻略。', keywords: ['gpt-5.4', 'gpt5.4', 'gpt-5.4教程', 'openai最新模型', 'computer use', '电脑操控ai', 'chatgpt5.4', '免费gpt'] },
   { id: 28, file: '28_transformers-js-v4-explained.html', category: 'popular', title: '浏览器里跑 AI 大模型？Transformers.js v4 让这件事变成了现实', desc: 'Transformers.js v4 让 AI 模型直接在浏览器里运行，不需要服务器、不花一分钱 API 费、数据完全不出你的电脑。', keywords: ['transformers.js', 'transformers.js v4', '浏览器跑ai', 'webgpu', '本地ai', '前端ai', 'huggingface', '离线ai'] },
   { id: 27, file: '27_nemoclaw-tutorial.html', category: 'tutorial', title: 'NemoClaw 保姆级入门教程：英伟达开源 AI Agent 平台，零代码部署你的第一个企业智能体', desc: '英伟达 GTC 2026 发布的开源 AI Agent 平台，手把手教你 5 步部署第一个 AI 智能体，完全免费。', keywords: ['nemoclaw', 'nemoclaw教程', 'nvidia ai agent', 'openclaw', '英伟达ai', 'ai agent平台', '企业ai', 'gtc 2026'] },
   { id: 26, file: '26_claude-mythos-leak-explained.html', category: 'deep', title: 'Claude Mythos 泄露事件全拆解：比 Opus 4.6 强多少，为什么让政府紧张', desc: 'Anthropic 意外泄露未发布模型 Claude Mythos，3000 份内部文件曝光，官方称其网络攻击能力"前所未有"。深度拆解泄露内容与安全争议。', keywords: ['claude mythos', 'claude mythos泄露', 'anthropic泄露', 'claude新模型', 'ai安全', 'anthropic', 'claude opus', 'ai网络安全'] },
