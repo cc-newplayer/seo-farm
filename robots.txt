@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cc-newplayer.github.io/seo-farm/sitemap.xml
