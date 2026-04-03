@@ -34,8 +34,6 @@
 
     <h2>一、整体架构：四层角色分工</h2>
 
-    <div class="screenshot-placeholder"><span class="icon">🖼️</span>DeerFlow 2.0 多智能体协作架构图</div>
-
     <p>DeerFlow 2.0 的多智能体系统由四个核心角色组成：</p>
 
     <table>
@@ -62,8 +60,6 @@
     <p>把两者合并，意味着每次路由判断都要携带完整的任务状态，Token 消耗会显著上升。拆开之后，Coordinator 的每次调用成本可以压缩到 Planner 的 1/10 以下。</p>
 
     <h2>二、Planner 的推理机制：不是简单的 Chain-of-Thought</h2>
-
-    <div class="screenshot-placeholder"><span class="icon">🖼️</span>DeerFlow ReAct 推理循环与工具调用链路图</div>
 
     <p>DeerFlow 2.0 的 Planner 使用的是改造过的 <strong>ReAct（Reasoning + Acting）框架</strong>，但加入了一个标准 ReAct 没有的机制：<strong>计划修订循环（Plan Revision Loop）</strong>。</p>
 
