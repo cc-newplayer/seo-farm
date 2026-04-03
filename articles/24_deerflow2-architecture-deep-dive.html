@@ -74,6 +74,20 @@ graph TD
 
     <h2>二、Planner 的推理机制：不是简单的 Chain-of-Thought</h2>
 
+    <div class="mermaid">
+graph LR
+    subgraph standard["标准 ReAct"]
+        T1["Thought"] --> A1["Action"] --> O1["Observation"] --> T1
+    end
+    subgraph deerflow["DeerFlow 2.0 改造版"]
+        T2["Thought"] --> A2["Action"] --> O2["Observation"] --> T2
+        O2 --> PR{"计划需要\n修订？"}
+        PR -->|"是"| Revise["Plan Revision\n修订计划"]
+        Revise --> T2
+        PR -->|"否"| Next["继续执行"]
+    end
+    </div>
+
     <p>DeerFlow 2.0 的 Planner 使用的是改造过的 <strong>ReAct（Reasoning + Acting）框架</strong>，但加入了一个标准 ReAct 没有的机制：<strong>计划修订循环（Plan Revision Loop）</strong>。</p>
 
     <p>标准 ReAct 的循环是：</p>
