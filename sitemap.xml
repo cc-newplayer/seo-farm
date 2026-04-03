@@ -155,4 +155,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://cc-newplayer.github.io/seo-farm/articles/30_llama4-tutorial.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cc-newplayer.github.io/seo-farm/articles/31_openai-codex-2026-deep-dive.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
