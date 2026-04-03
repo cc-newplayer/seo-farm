@@ -36,14 +36,13 @@
 
     <div style="max-width:560px;margin:16px auto;">
     <div class="mermaid">
-graph TD
-    User["用户输入"] --> Coordinator["Coordinator\n（无状态·路由）"]
-    Coordinator -->|"复杂任务"| Planner["Planner\n（有状态·任务拆解）"]
+graph LR
+    User["用户输入"] --> Coordinator["Coordinator\n无状态·路由"]
+    Coordinator -->|"复杂任务"| Planner["Planner\n有状态·拆解"]
     Coordinator -->|"简单问答"| DirectReply["直接回复"]
-    Planner --> ResearchTeam["Research Team"]
-    ResearchTeam --> Researcher["Researcher\n搜索 / 摘要"]
-    ResearchTeam --> Coder["Coder\n代码执行 / 数据分析"]
-    Researcher --> Reporter["Reporter\n（无状态·汇总报告）"]
+    Planner --> Researcher["Researcher\n搜索/摘要"]
+    Planner --> Coder["Coder\n代码/数据"]
+    Researcher --> Reporter["Reporter\n汇总报告"]
     Coder --> Reporter
     Reporter --> Output["最终输出"]
     </div>
@@ -80,14 +79,13 @@ graph TD
     <div class="mermaid">
 graph LR
     subgraph standard["标准 ReAct"]
-        T1["Thought"] --> A1["Action"] --> O1["Observation"] --> T1
+        T1["Thought"] --> A1["Action"] --> O1["Obs"] --> T1
     end
-    subgraph deerflow["DeerFlow 2.0 改造版"]
-        T2["Thought"] --> A2["Action"] --> O2["Observation"] --> T2
-        O2 --> PR{"计划需要\n修订？"}
-        PR -->|"是"| Revise["Plan Revision\n修订计划"]
-        Revise --> T2
-        PR -->|"否"| Next["继续执行"]
+    subgraph deerflow["DeerFlow 2.0"]
+        T2["Thought"] --> A2["Action"] --> O2["Obs"] --> T2
+        O2 --> PR{"需修订？"}
+        PR -->|"是"| Revise["修订计划"] --> T2
+        PR -->|"否"| Next["继续"]
     end
     </div>
     </div>
