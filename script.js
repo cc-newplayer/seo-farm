@@ -81,6 +81,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 25, file: '25_gemma4-open-source-explained.html', category: 'popular', title: '谷歌昨天悄悄扔了一颗炸弹：Gemma 4 用 1/20 的参数，干掉了大它 20 倍的对手', desc: '谷歌 Gemma 4 刚发布，Apache 2.0 完全开源，31B 参数打到全球第 3，还能在手机上跑。一篇讲清楚它是什么、跟你有什么关系。', keywords: ['gemma 4', 'gemma4', '谷歌开源模型', 'apache 2.0', '本地部署ai', '开源大模型', 'google gemma', '边缘计算ai'] },
   { id: 24, file: '24_deerflow2-architecture-deep-dive.html', category: 'deep', title: 'DeerFlow 2.0 的架构到底有多复杂？字节这套多智能体系统全拆解', desc: '深度拆解 DeerFlow 2.0 多智能体架构：Planner/Researcher/Coder 分工机制、Human-in-the-Loop 设计、RAG 与工具链集成原理。', keywords: ['deerflow', 'deerflow 2.0', 'deerflow架构', '字节多智能体', '多智能体系统', 'langgraph', 'human-in-the-loop'] },
   { id: 23, file: '23_kling-ai-video-tutorial.html', category: 'tutorial', title: '零基础也能上手！可灵AI视频生成保姆级入门教程（2026最新版）', desc: '手把手教你用可灵AI生成高质量视频，从注册到出片全程截图，零代码免费上手。', keywords: ['可灵ai', '可灵ai教程', '可灵ai怎么用', 'kling ai', 'ai视频生成', '文生视频', '图生视频'] },
   { id: 22, file: '22_n8n-enterprise-workflow.html', category: 'tutorial', title: '用 n8n 搭建企业级自动化工作流：从 Webhook 到错误处理全攻略（2026版）', desc: '手把手教你用 n8n 搭建生产级工作流，覆盖 Webhook 实时触发、子工作流复用、错误自动告警三大核心能力。', keywords: ['n8n', 'n8n教程', 'n8n企业', 'webhook', '工作流自动化', '错误处理', '子工作流'] },
