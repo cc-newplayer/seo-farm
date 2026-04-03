@@ -34,6 +34,7 @@
 
     <h2>一、整体架构：四层角色分工</h2>
 
+    <div style="max-width:560px;margin:16px auto;">
     <div class="mermaid">
 graph TD
     User["用户输入"] --> Coordinator["Coordinator\n（无状态·路由）"]
@@ -45,6 +46,7 @@ graph TD
     Researcher --> Reporter["Reporter\n（无状态·汇总报告）"]
     Coder --> Reporter
     Reporter --> Output["最终输出"]
+    </div>
     </div>
 
     <p>DeerFlow 2.0 的多智能体系统由四个核心角色组成：</p>
@@ -74,6 +76,7 @@ graph TD
 
     <h2>二、Planner 的推理机制：不是简单的 Chain-of-Thought</h2>
 
+    <div style="max-width:560px;margin:16px auto;">
     <div class="mermaid">
 graph LR
     subgraph standard["标准 ReAct"]
@@ -86,6 +89,7 @@ graph LR
         Revise --> T2
         PR -->|"否"| Next["继续执行"]
     end
+    </div>
     </div>
 
     <p>DeerFlow 2.0 的 Planner 使用的是改造过的 <strong>ReAct（Reasoning + Acting）框架</strong>，但加入了一个标准 ReAct 没有的机制：<strong>计划修订循环（Plan Revision Loop）</strong>。</p>
