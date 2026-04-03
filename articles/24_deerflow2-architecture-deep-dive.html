@@ -34,6 +34,19 @@
 
     <h2>一、整体架构：四层角色分工</h2>
 
+    <div class="mermaid">
+graph TD
+    User["用户输入"] --> Coordinator["Coordinator\n（无状态·路由）"]
+    Coordinator -->|"复杂任务"| Planner["Planner\n（有状态·任务拆解）"]
+    Coordinator -->|"简单问答"| DirectReply["直接回复"]
+    Planner --> ResearchTeam["Research Team"]
+    ResearchTeam --> Researcher["Researcher\n搜索 / 摘要"]
+    ResearchTeam --> Coder["Coder\n代码执行 / 数据分析"]
+    Researcher --> Reporter["Reporter\n（无状态·汇总报告）"]
+    Coder --> Reporter
+    Reporter --> Output["最终输出"]
+    </div>
+
     <p>DeerFlow 2.0 的多智能体系统由四个核心角色组成：</p>
 
     <table>
