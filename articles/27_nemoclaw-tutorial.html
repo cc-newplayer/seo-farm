@@ -32,6 +32,9 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="NemoClaw 保姆级入门教程：英伟达开源 AI Agent 平台，零代码部署你的第一个企业智能体" />
   <meta name="twitter:description" content="NemoClaw 是英伟达在 GTC 2026 发布的开源 AI Agent 平台，基于 OpenClaw 构建，支持企业级安全隔离。本文手把手教你 5 步部署第一个 AI 智能体，完全免费。" />
+  <meta property="og:image" content="https://cc-newplayer.github.io/seo-farm/articles/images/27_img1_nemoclaw-cover.jpg" />
+  <meta name="twitter:image" content="https://cc-newplayer.github.io/seo-farm/articles/images/27_img1_nemoclaw-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
 <div class="page-wrapper">
@@ -47,6 +50,7 @@
   </header>
 
   <div class="article-body">
+    <img src="images/27_img1_nemoclaw-cover.jpg" alt="NemoClaw 英伟达开源 AI Agent 平台部署教程" style="width:100%;border-radius:12px;margin-bottom:24px;">
 
     <h2>NemoClaw 是什么：英伟达为什么要做这个</h2>
     <p>2026 年 3 月 15 日，英伟达 CEO 黄仁勋在 GTC 大会上发布了 NemoClaw。他在台上说了一句话，被很多人截图转发：</p>
@@ -79,7 +83,10 @@ graph LR
     <h2>Step 1：注册 NemoClaw 账号</h2>
     <p>打开 <code>nemoclaw.run</code>，点击右上角"Get Started"，用邮箱注册。</p>
     <p>注册完成后，你会进入一个控制台界面，左侧是 Agent 列表，右侧是配置区域。</p>
-    <blockquote>此时你应该看到：一个空的 Agent 列表，顶部有"Create Agent"按钮。</blockquote>
+    <div class="callout callout-info">
+      <span class="callout-icon">ℹ️</span>
+      <div class="callout-body">此时你应该看到：一个空的 Agent 列表，顶部有"Create Agent"按钮。</div>
+    </div>
 
     <h2>Step 2：创建你的第一个 Agent</h2>
     <p>点击"Create Agent"，填写以下信息：</p>
@@ -89,7 +96,10 @@ graph LR
       <li><strong>Template</strong>：选"General Assistant"（通用助手模板）</li>
     </ul>
     <p>点击"Create"，等待约 10 秒，Agent 创建完成。</p>
-    <blockquote>此时你应该看到：Agent 卡片出现在列表里，状态显示"Ready"。</blockquote>
+    <div class="callout callout-info">
+      <span class="callout-icon">ℹ️</span>
+      <div class="callout-body">此时你应该看到：Agent 卡片出现在列表里，状态显示"Ready"。</div>
+    </div>
 
     <h2>Step 3：给 Agent 配置工具</h2>
     <p>点击刚创建的 Agent，进入详情页，找到"Tools"标签。</p>
@@ -100,13 +110,19 @@ graph LR
       <li><strong>File Access</strong>：让 Agent 能读写文件（按需开启）</li>
     </ul>
     <p>先只开启"Web Search"，其他保持关闭。</p>
-    <blockquote>💡 小技巧：工具越少，Agent 的行为越可预测。入门阶段建议只开一两个工具，熟悉之后再逐步扩展。</blockquote>
+    <div class="callout callout-tip">
+      <span class="callout-icon">💡</span>
+      <div class="callout-body"><strong>小技巧</strong>工具越少，Agent 的行为越可预测。入门阶段建议只开一两个工具，熟悉之后再逐步扩展。</div>
+    </div>
 
     <h2>Step 4：测试你的 Agent</h2>
     <p>点击"Chat"标签，进入对话界面。输入一个需要搜索的问题，比如：</p>
     <blockquote>"今天 AI 领域有什么重要新闻？帮我整理成 3 条要点。"</blockquote>
     <p>Agent 会自动调用 Web Search 工具，搜索最新信息，然后整理成你要求的格式返回。</p>
-    <blockquote>此时你应该看到：Agent 先显示"Searching..."，然后返回一个结构化的 3 条要点列表。如果只返回了文字没有搜索，检查 Web Search 工具是否已开启。</blockquote>
+    <div class="callout callout-info">
+      <span class="callout-icon">ℹ️</span>
+      <div class="callout-body">此时你应该看到：Agent 先显示"Searching..."，然后返回一个结构化的 3 条要点列表。如果只返回了文字没有搜索，检查 Web Search 工具是否已开启。</div>
+    </div>
 
     <h2>Step 5：设置安全策略（可选但推荐）</h2>
     <p>这是 NemoClaw 区别于普通 AI 工具的核心功能。点击"Security"标签，你会看到一个 YAML 编辑器。</p>
@@ -117,7 +133,10 @@ graph LR
     - "*.wikipedia.org"
   block_all_others: true</code></pre>
     <p>保存后，Agent 的网络访问就被限制在这两个域名范围内了。</p>
-    <blockquote>⚠️ 注意：修改安全策略后需要重启 Agent（点击"Restart"按钮）才能生效。</blockquote>
+    <div class="callout callout-warning">
+      <span class="callout-icon">⚠️</span>
+      <div class="callout-body"><strong>注意</strong>修改安全策略后需要重启 Agent（点击"Restart"按钮）才能生效。</div>
+    </div>
 
     <h2>本地部署版：3 条命令搞定</h2>
     <p>如果你需要数据不出本地，可以用 Docker 部署：</p>
@@ -130,7 +149,10 @@ docker run -d -p 8080:8080 --name nemoclaw nvcr.io/nvidia/nemoclaw:latest
 # 3. 打开控制台
 # 浏览器访问 http://localhost:8080</code></pre>
     <p>本地版和云端版功能完全一致，区别是模型推理在你自己的机器上跑，数据不会上传到英伟达服务器。</p>
-    <blockquote>⚠️ 注意：本地版需要至少 8GB 内存，推荐 16GB 以上。如果有 NVIDIA GPU，推理速度会快很多。</blockquote>
+    <div class="callout callout-warning">
+      <span class="callout-icon">⚠️</span>
+      <div class="callout-body"><strong>注意</strong>本地版需要至少 8GB 内存，推荐 16GB 以上。如果有 NVIDIA GPU，推理速度会快很多。</div>
+    </div>
 
     <h2>常见问题 FAQ</h2>
     <p><strong>Q：NemoClaw 免费吗？</strong><br>
