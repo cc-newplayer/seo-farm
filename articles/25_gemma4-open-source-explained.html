@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="谷歌昨天发布 Gemma 4，用 1/20 的参数打败了大它 20 倍的模型，还改成了 Apache 2.0 完全开源。这意味着什么？">
-  <title>谷歌昨天悄悄扔了一颗炸弹：Gemma 4 用 1/20 的参数，干掉了大它 20 倍的对手</title>
+  <title>Gemma 4 开源模型完全解析：用 1/20 参数打败 20 倍对手｜AI前沿</title>
+  <meta name="description" content="Gemma 4 刚发布，谷歌用 310 亿参数在全球真人盲测排第 3，比它强的模型参数量是它的 10-22 倍。Apache 2.0 完全开源，可商用，本文 5 分钟讲清楚它是什么、能做什么、怎么免费试用。">
+  <link rel="canonical" href="https://cc-newplayer.github.io/seo-farm/articles/25_gemma4-open-source-explained.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gemma 4 开源模型完全解析：用 1/20 参数打败 20 倍对手",
+    "description": "Gemma 4 刚发布，谷歌用 310 亿参数在全球真人盲测排第 3，比它强的模型参数量是它的 10-22 倍。Apache 2.0 完全开源，可商用，本文 5 分钟讲清楚它是什么、能做什么、怎么免费试用。",
+    "datePublished": "2026-04-03",
+    "author": { "@type": "Organization", "name": "AI前沿" },
+    "publisher": { "@type": "Organization", "name": "AI前沿" }
+  }
+  </script>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
@@ -43,9 +55,9 @@
 
   <div class="article-body">
 
-    <h2>一、先说结果：这次发布有多炸</h2>
+    <h2>Gemma 4 发布了什么：这次有多炸</h2>
 
-    <img src="images/25_img1_gemma4_hero.jpg" alt="Gemma 4 开源模型发布概念图，科技感蓝绿色调" style="width:100%;border-radius:8px;margin:16px 0;">
+    <img src="images/25_img1_gemma4_hero.jpg" alt="Gemma 4 开源模型发布，310亿参数全球排名第3" style="width:100%;border-radius:8px;margin:16px 0;">
 
     <p>你可能听说过 DeepSeek——那个用很少的钱训练出来、把 OpenAI 吓了一跳的中国模型。Gemma 4 做的事情有点类似，但方向不同：</p>
 
@@ -63,7 +75,7 @@
       </div>
     </div>
 
-    <h2>二、它到底是什么</h2>
+    <h2>Gemma 4 和 Gemini 有什么区别</h2>
 
     <div class="dialogue-wrap">
       <div class="dialogue-label">💬 什么是 Gemma 4？</div>
@@ -99,7 +111,7 @@
       </div>
     </div>
 
-    <h2>三、四个版本，从手机到服务器都能跑</h2>
+    <h2>Gemma 4 四个版本对比：从手机到服务器都能跑</h2>
 
     <p>Gemma 4 这次一口气发布了四个版本，覆盖了从手机到工作站的所有场景：</p>
 
@@ -149,7 +161,7 @@
       </div>
     </div>
 
-    <h2>四、为什么"Apache 2.0"这四个字很重要</h2>
+    <h2>Apache 2.0 开源协议意味着什么</h2>
 
     <p>如果你不是开发者，这部分可能听起来很无聊。但它其实是这次发布里最值得关注的事情之一。</p>
 
@@ -159,9 +171,9 @@
 
     <p>这对创业公司和独立开发者来说是个大礼包。以前用 Gemma 做产品要先咨询律师，现在不用了。</p>
 
-    <h2>五、它能做什么，跟你有什么关系</h2>
+    <h2>Gemma 4 能做什么，跟你有什么关系</h2>
 
-    <img src="images/25_img2_gemma4_usecase.jpg" alt="Gemma 4 本地部署使用场景，笔记本电脑运行AI模型" style="width:100%;border-radius:8px;margin:16px 0;">
+    <img src="images/25_img2_gemma4_usecase.jpg" alt="Gemma 4 本地部署运行场景，数据不出本地保护隐私" style="width:100%;border-radius:8px;margin:16px 0;">
 
     <p>说几个最直接的场景：</p>
 
@@ -174,7 +186,7 @@
     <p><strong>场景三：手机上的离线 AI 助手</strong></p>
     <p>E2B 和 E4B 版本可以在手机上运行。这意味着未来你的手机 AI 助手不需要联网，不需要订阅，断网也能用，而且没有人能看到你问了什么问题。</p>
 
-    <h2>六、现在怎么试用</h2>
+    <h2>怎么免费试用 Gemma 4</h2>
 
     <p>如果你想马上体验，最简单的方式是直接去 <strong>Google AI Studio</strong>（aistudio.google.com），免费，不用下载任何东西，打开浏览器就能用 31B 版本。</p>
 
@@ -183,7 +195,7 @@
     <div class="callout callout-tip">
       <span class="callout-icon">💡</span>
       <div class="callout-body">
-        <strong>用 Ollama 本地部署（最简单）</strong><br>
+        <strong>用 Ollama 本地部署 Gemma 4（最简单）</strong><br>
         安装 Ollama 之后，一行命令搞定：<br>
         <code>ollama pull gemma4:4b</code>（轻量版，普通笔记本可跑）<br>
         <code>ollama pull gemma4:31b</code>（旗舰版，需要 16GB 显存）
@@ -192,7 +204,7 @@
 
     <p>模型权重在 Hugging Face 上可以直接下载，搜索 <code>google/gemma-4-31B-it</code> 就能找到。</p>
 
-    <h2>七、它有没有短板</h2>
+    <h2>Gemma 4 的短板：中文能力和硬件要求</h2>
 
     <p>有，而且要说清楚：</p>
 
