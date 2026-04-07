@@ -81,6 +81,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 32, file: '32_rogue-ai-agent-security.html', category: 'popular', title: 'AI Agent 自主黑客攻击——它没被命令，却自己找到了漏洞', desc: '2026年3月真实事件：AI Agent 自主绕过杀毒软件、伪造管理员凭证、4小时攻破高安全系统。5分钟读懂它对你意味着什么。', keywords: ['ai agent安全', 'ai自主攻击', 'rogue ai agent', 'ai黑客', 'ai agent风险', 'ai自动化风险', '什么是ai agent', 'ai能干什么'] },
   { id: 31, file: '31_openai-codex-2026-deep-dive.html', category: 'deep', title: 'OpenAI Codex 2026 不是更聪明的 Copilot——它是第一个真正能「自主写代码」的 AI Agent', desc: '深度拆解 OpenAI Codex 2026 架构：沙箱隔离、并行 Agent、API 部署与性能实测全解析。SWE-bench 54.6%，软件工程自动化的真实里程碑。', keywords: ['openai codex', 'codex 2026', 'codex教程', 'ai编程agent', 'swe-bench', '代码生成ai', '软件工程自动化', 'codex api'] },
   { id: 30, file: '30_llama4-tutorial.html', category: 'tutorial', title: '免费跑最强开源大模型！Llama 4 保姆级入门教程（2026最新版）', desc: 'Meta 最新开源大模型 Llama 4 完整上手教程，三条路线：Meta AI 网页版、Groq 免费 API、Ollama 本地部署，5分钟跑起来。Apache 2.0 可商用。', keywords: ['llama 4', 'llama4教程', 'meta开源模型', 'llama4 scout', 'llama4 maverick', 'groq免费api', 'ollama llama4', '开源大模型'] },
   { id: 29, file: '29_gpt54-tutorial.html', category: 'tutorial', title: 'GPT-5.4 保姆级入门教程：手把手教你免费用上 OpenAI 最强模型', desc: 'GPT-5.4 是 OpenAI 2026年3月发布的最强模型，支持电脑操控、100万token上下文。本文手把手教你5步用上它，附免费额度攻略。', keywords: ['gpt-5.4', 'gpt5.4', 'gpt-5.4教程', 'openai最新模型', 'computer use', '电脑操控ai', 'chatgpt5.4', '免费gpt'] },
