@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>使用教程 - AI前沿</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="切换导航">
+    <span class="toggle-icon">&#10094;</span>
+  </button>
+  <nav class="sidebar-nav">
+    <a href="index.html" class="sidebar-item" data-tooltip="首页">
+      <span class="sidebar-icon">⚡</span>
+      <span class="sidebar-label">首页</span>
+    </a>
+    <a href="news.html" class="sidebar-item" data-tooltip="AI资讯">
+      <span class="sidebar-icon">🔥</span>
+      <span class="sidebar-label">AI资讯</span>
+    </a>
+    <a href="articles.html" class="sidebar-item" data-tooltip="AI科普">
+      <span class="sidebar-icon">📚</span>
+      <span class="sidebar-label">AI科普</span>
+    </a>
+  </nav>
+</aside>
+
+<div class="main-wrap" id="mainWrap">
+
+<!-- ===== NAV ===== -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+    </a>
+    <nav class="nav-links">
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-toggle">AI资讯 <span class="dropdown-arrow">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="news.html">最新资讯</a>
+          <a href="articles.html">AI科普文章</a>
+        </div>
+      </div>
+      <a href="index.html#tools">AI工具</a>
+      <a href="index.html#updates">技术动态</a>
+      <a href="index.html#models">模型榜单</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="news.html" onclick="closeMobile()">最新资讯</a>
+    <a href="articles.html" onclick="closeMobile()">AI科普文章</a>
+    <a href="index.html#tools" onclick="closeMobile()">AI工具</a>
+    <a href="index.html#updates" onclick="closeMobile()">技术动态</a>
+    <a href="index.html#models" onclick="closeMobile()">模型榜单</a>
+  </div>
+</header>
+
+<!-- ===== CONTENT ===== -->
+<section class="section" style="padding-top: 80px;">
+  <div class="container">
+    <a href="index.html#tools" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);font-size:0.875rem;text-decoration:none;margin-bottom:32px;">← 返回 AI 工具</a>
+    <div class="section-header">
+      <h2 class="section-title" id="pageTitle">使用教程</h2>
+    </div>
+    <div id="noResult" style="display:none;color:var(--text-muted);padding:40px 0;">暂无相关教程，敬请期待。</div>
+    <div class="articles-grid" id="articlesGrid"></div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+    </div>
+    <p class="footer-copy">© 2026 AI前沿 · Aitetech 原创内容</p>
+  </div>
+</footer>
+
+</div><!-- /.main-wrap -->
+
+<script src="script.js"></script>
+<script>
+(function () {
+  // 从 URL 参数读取 tool id
+  const params = new URLSearchParams(location.search);
+  const toolId = parseInt(params.get('tool'));
+  const tool = toolsData.find(t => t.id === toolId);
+
+  // 更新页面标题
+  if (tool) {
+    document.title = tool.name + ' 使用教程 - AI前沿';
+    document.getElementById('pageTitle').textContent = tool.name + ' 使用教程';
+  }
+
+  // 过滤出匹配的教程文章（仅 tutorial 类）
+  let matched = [];
+  if (tool && tool.matchKeys) {
+    matched = articlesData.filter(a =>
+      a.category === 'tutorial' && a.keywords && tool.matchKeys.some(mk =>
+        a.keywords.some(k => k.toLowerCase().includes(mk.toLowerCase()))
+      )
+    );
+  }
+
+  function renderGrid() {
+    const grid = document.getElementById('articlesGrid');
+    if (matched.length === 0) {
+      grid.innerHTML = '';
+      document.getElementById('noResult').style.display = 'block';
+      return;
+    }
+    document.getElementById('noResult').style.display = 'none';
+    grid.innerHTML = matched.map(a => `
+      <a class="article-card" href="articles/${a.file}" target="_blank">
+        <span class="article-card-tag tag-${a.category}">教程</span>
+        <div class="article-card-title">${a.title}</div>
+        <p class="article-card-desc">${a.desc}</p>
+        <div class="article-card-footer">
+          <span>Aitetech 原创</span>
+          <span>阅读全文 →</span>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  renderGrid();
+
+  // 侧边栏
+  if (localStorage.getItem('sidebarCollapsed') === 'true') {
+    document.body.classList.add('sidebar-collapsed');
+  }
+  document.getElementById('sidebarToggle').addEventListener('click', () => {
+    const c = document.body.classList.toggle('sidebar-collapsed');
+    localStorage.setItem('sidebarCollapsed', c);
+  });
+
+  // 下拉菜单
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.closest('.nav-dropdown').classList.toggle('open');
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
+  });
+
+  // 汉堡菜单
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+  window.closeMobile = closeMobile;
+})();
+</script>
+</body>
+</html>

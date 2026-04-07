@@ -115,24 +115,25 @@ const articlesData = [
 ];
 
 const toolsData = [
-  { id: 1, name: 'ChatGPT', icon: '🤖', category: 'chat', color: '#10a37f', desc: 'OpenAI 旗舰对话助手，支持 GPT-4o 多模态理解与 DALL-E 图像生成。', badge: 'freemium', stars: 5, url: 'https://chat.openai.com' },
-  { id: 2, name: 'Claude', icon: '✨', category: 'chat', color: '#cc9b7a', desc: 'Anthropic 出品，擅长长文档分析、编程助手与复杂推理任务。', badge: 'freemium', stars: 5, url: 'https://claude.ai' },
-  { id: 3, name: 'Gemini', icon: '💎', category: 'chat', color: '#4285f4', desc: 'Google 多模态大模型，深度整合 Google 搜索与 Workspace 办公套件。', badge: 'freemium', stars: 4, url: 'https://gemini.google.com' },
-  { id: 4, name: 'DeepSeek', icon: '🔍', category: 'chat', color: '#6366f1', desc: '国产高性能大模型，推理能力出众，API 价格极具竞争力，支持深度思考模式。', badge: 'freemium', stars: 5, url: 'https://chat.deepseek.com' },
-  { id: 5, name: 'Midjourney', icon: '🎨', category: 'image', color: '#9b59b6', desc: '顶级 AI 绘画工具，生成风格多样的高质量艺术图像，支持精细参数控制。', badge: 'paid', stars: 5, url: 'https://midjourney.com' },
-  { id: 6, name: 'Stable Diffusion', icon: '🖼️', category: 'image', color: '#e74c3c', desc: '开源图像生成模型，支持本地部署，拥有庞大社区与丰富 LoRA 模型生态。', badge: 'free', stars: 4, url: 'https://stability.ai' },
-  { id: 7, name: 'DALL-E 3', icon: '🎭', category: 'image', color: '#f39c12', desc: 'OpenAI 图像生成工具，理解自然语言指令精准，与 ChatGPT 无缝集成。', badge: 'paid', stars: 4, url: 'https://openai.com/dall-e-3' },
-  { id: 8, name: 'Flux', icon: '⚡', category: 'image', color: '#1abc9c', desc: '新一代开源图像生成模型，写实风格表现卓越，细节还原度极高。', badge: 'freemium', stars: 5, url: 'https://blackforestlabs.ai' },
-  { id: 9, name: 'GitHub Copilot', icon: '👨‍💻', category: 'code', color: '#24292e', desc: '微软 AI 编程助手，实时代码补全与生成，支持 VS Code 等主流 IDE。', badge: 'paid', stars: 5, url: 'https://github.com/features/copilot' },
-  { id: 10, name: 'Cursor', icon: '🖱️', category: 'code', color: '#667eea', desc: 'AI 原生代码编辑器，深度集成 Claude/GPT，支持全代码库理解与重构。', badge: 'freemium', stars: 5, url: 'https://cursor.sh' },
-  { id: 11, name: 'Windsurf', icon: '🏄', category: 'code', color: '#4ecdc4', desc: 'Codeium 出品的 AI IDE，Cascade 工作流支持多步骤自主代码修改。', badge: 'freemium', stars: 4, url: 'https://codeium.com/windsurf' },
-  { id: 12, name: 'Sora', icon: '🎬', category: 'video', color: '#e74c3c', desc: 'OpenAI 视频生成模型，支持长达数分钟的高清连贯视频创作。', badge: 'paid', stars: 5, url: 'https://sora.com' },
-  { id: 13, name: 'Runway', icon: '🎥', category: 'video', color: '#9b59b6', desc: '专业 AI 视频创作平台，提供视频生成、编辑与特效工具，广受影视从业者青睐。', badge: 'freemium', stars: 4, url: 'https://runwayml.com' },
-  { id: 14, name: 'Kling', icon: '🎞️', category: 'video', color: '#e67e22', desc: '快手推出的 AI 视频生成工具，效果出众，已有大量优质案例。', badge: 'freemium', stars: 4, url: 'https://klingai.com' },
-  { id: 15, name: 'ElevenLabs', icon: '🎵', category: 'audio', color: '#3498db', desc: '顶级 AI 语音合成平台，声音克隆与多语言配音，支持实时语音转换。', badge: 'freemium', stars: 5, url: 'https://elevenlabs.io' },
-  { id: 16, name: 'Suno', icon: '🎶', category: 'audio', color: '#e91e63', desc: 'AI 音乐创作工具，输入歌词或描述即可生成完整歌曲，支持多种曲风。', badge: 'freemium', stars: 5, url: 'https://suno.ai' },
-  { id: 17, name: 'Notion AI', icon: '📝', category: 'productivity', color: '#000000', desc: '集成在 Notion 中的 AI 助手，支持文档撰写、摘要生成与数据分析。', badge: 'paid', stars: 4, url: 'https://notion.so' },
-  { id: 18, name: 'Perplexity', icon: '🔭', category: 'productivity', color: '#20b2aa', desc: 'AI 搜索引擎，实时联网检索，提供带来源引用的精准问答体验。', badge: 'freemium', stars: 5, url: 'https://perplexity.ai' },
+  // ── 有教程的工具（优先展示）──
+  { id: 3,  name: 'Gemini',     icon: '💎', category: 'chat',         color: '#4285f4', desc: 'Google 多模态大模型，深度整合 Google 搜索与 Workspace 办公套件。',                    badge: 'freemium', stars: 4, url: 'https://gemini.google.com',              matchKeys: ['gemini'] },
+  { id: 1,  name: 'ChatGPT',   icon: '🤖', category: 'chat',         color: '#10a37f', desc: 'OpenAI 旗舰对话助手，支持 GPT-4o 多模态理解与 DALL-E 图像生成。',                    badge: 'freemium', stars: 5, url: 'https://chat.openai.com',               matchKeys: ['chatgpt', 'gpt-5', 'gpt5'] },
+  { id: 19, name: 'Dify',      icon: '🧩', category: 'productivity', color: '#7c3aed', desc: '开源 LLM 应用开发平台，零代码搭建 AI 应用，支持 RAG、Agent 工作流。',                badge: 'freemium', stars: 5, url: 'https://dify.ai',                         matchKeys: ['dify'] },
+  { id: 20, name: 'Coze',      icon: '🤝', category: 'productivity', color: '#1677ff', desc: '字节跳动推出的 AI Bot 搭建平台，零代码创建专属 AI 助手并一键发布到多平台。',          badge: 'freemium', stars: 5, url: 'https://www.coze.cn',                    matchKeys: ['coze', '扣子'] },
+  { id: 21, name: 'n8n',       icon: '🔗', category: 'productivity', color: '#ea4b71', desc: '开源自动化工作流工具，可视化连接数百个应用，支持自托管，数据不出境。',                badge: 'free',     stars: 5, url: 'https://n8n.io',                         matchKeys: ['n8n'] },
+  { id: 22, name: 'Ollama',    icon: '🦙', category: 'code',         color: '#2d6a4f', desc: '本地大模型运行工具，3 条命令跑起 DeepSeek/Llama/Qwen，数据完全不出机。',             badge: 'free',     stars: 5, url: 'https://ollama.com',                     matchKeys: ['ollama'] },
+  { id: 23, name: 'LangGraph', icon: '🕸️', category: 'code',         color: '#e76f51', desc: 'LangChain 出品的 Agent 工作流框架，支持有状态多步骤 AI 流程编排。',                  badge: 'free',     stars: 4, url: 'https://langchain-ai.github.io/langgraph', matchKeys: ['langgraph'] },
+  { id: 14, name: 'Kling',     icon: '🎞️', category: 'video',        color: '#e67e22', desc: '快手推出的 AI 视频生成工具，效果出众，已有大量优质案例。',                            badge: 'freemium', stars: 4, url: 'https://klingai.com',                     matchKeys: ['kling', '可灵'] },
+  // ── 其他工具 ──
+  { id: 4,  name: 'DeepSeek',        icon: '🔍', category: 'chat',         color: '#6366f1', desc: '国产高性能大模型，推理能力出众，API 价格极具竞争力，支持深度思考模式。',  badge: 'freemium', stars: 5, url: 'https://chat.deepseek.com',               matchKeys: ['deepseek'] },
+  { id: 2,  name: 'Claude',          icon: '✨', category: 'chat',         color: '#cc9b7a', desc: 'Anthropic 出品，擅长长文档分析、编程助手与复杂推理任务。',                  badge: 'freemium', stars: 5, url: 'https://claude.ai',                       matchKeys: ['claude'] },
+  { id: 5,  name: 'Midjourney',      icon: '🎨', category: 'image',        color: '#9b59b6', desc: '顶级 AI 绘画工具，生成风格多样的高质量艺术图像，支持精细参数控制。',      badge: 'paid',     stars: 5, url: 'https://midjourney.com',                  matchKeys: ['midjourney'] },
+  { id: 8,  name: 'Flux',            icon: '⚡', category: 'image',        color: '#1abc9c', desc: '新一代开源图像生成模型，写实风格表现卓越，细节还原度极高。',                badge: 'freemium', stars: 5, url: 'https://blackforestlabs.ai',              matchKeys: ['flux'] },
+  { id: 10, name: 'Cursor',          icon: '🖱️', category: 'code',         color: '#667eea', desc: 'AI 原生代码编辑器，深度集成 Claude/GPT，支持全代码库理解与重构。',          badge: 'freemium', stars: 5, url: 'https://cursor.sh',                      matchKeys: ['cursor'] },
+  { id: 12, name: 'Sora',            icon: '🎬', category: 'video',        color: '#e74c3c', desc: 'OpenAI 视频生成模型，支持长达数分钟的高清连贯视频创作。',                    badge: 'paid',     stars: 5, url: 'https://sora.com',                        matchKeys: ['sora'] },
+  { id: 15, name: 'ElevenLabs',      icon: '🎵', category: 'audio',        color: '#3498db', desc: '顶级 AI 语音合成平台，声音克隆与多语言配音，支持实时语音转换。',            badge: 'freemium', stars: 5, url: 'https://elevenlabs.io',                  matchKeys: ['elevenlabs'] },
+  { id: 16, name: 'Suno',            icon: '🎶', category: 'audio',        color: '#e91e63', desc: 'AI 音乐创作工具，输入歌词或描述即可生成完整歌曲，支持多种曲风。',            badge: 'freemium', stars: 5, url: 'https://suno.ai',                        matchKeys: ['suno'] },
+  { id: 18, name: 'Perplexity',      icon: '🔭', category: 'productivity', color: '#20b2aa', desc: 'AI 搜索引擎，实时联网检索，提供带来源引用的精准问答体验。',                  badge: 'freemium', stars: 5, url: 'https://perplexity.ai',                  matchKeys: ['perplexity'] },
 ];
 
 const timelineData = [
@@ -287,23 +288,43 @@ let activeToolFilter = 'all';
 
 function renderTools(filter) {
   const grid = document.getElementById('toolsGrid');
-  const filtered = filter === 'all' ? toolsData : toolsData.filter(t => t.category === filter);
-  grid.innerHTML = filtered.map(t => `
+  let filtered = filter === 'all' ? toolsData : toolsData.filter(t => t.category === filter);
+
+  // 有教程的排前面
+  filtered = [...filtered].sort((a, b) => {
+    const hasTutorial = t => t.matchKeys && articlesData
+      ? articlesData.some(ar => ar.category === 'tutorial' && ar.keywords &&
+          t.matchKeys.some(mk => ar.keywords.some(k => k.toLowerCase().includes(mk.toLowerCase()))))
+      : false;
+    return hasTutorial(b) - hasTutorial(a);
+  });
+
+  grid.innerHTML = filtered.map(t => {
+    const tutorials = (t.matchKeys && articlesData)
+      ? articlesData.filter(a => a.category === 'tutorial' && a.keywords && t.matchKeys.some(mk =>
+          a.keywords.some(k => k.toLowerCase().includes(mk.toLowerCase()))
+        ))
+      : [];
+    const tutorialBtn = tutorials.length > 0
+      ? `<a class="tool-tutorial-btn" href="tool-tutorials.html?tool=${t.id}" onclick="event.stopPropagation()"># ${t.name} 使用教程</a>`
+      : '';
+    return `
     <div class="tool-card" onclick="window.open('${t.url}','_blank')">
       <div class="tool-header">
         <div class="tool-icon" style="background:${t.color}22">${t.icon}</div>
-        <div>
+        <div style="flex:1">
           <div class="tool-name">${t.name}</div>
           <div class="tool-category">${categoryLabel(t.category)}</div>
         </div>
+        ${tutorialBtn}
       </div>
       <p class="tool-desc">${t.desc}</p>
       <div class="tool-footer">
         <span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span>
         <span class="tool-stars">${'★'.repeat(t.stars)}${'☆'.repeat(5 - t.stars)}</span>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 function categoryLabel(c) {
@@ -387,33 +408,22 @@ function setupTabs(containerId, renderFn) {
 function doSearch() {
   const q = document.getElementById('searchInput').value.trim().toLowerCase();
   if (!q) return;
-  // Filter news
-  const newsResult = newsData.filter(n =>
-    n.title.toLowerCase().includes(q) || n.desc.toLowerCase().includes(q)
-  );
   const toolResult = toolsData.filter(t =>
     t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)
   );
-  document.getElementById('newsGrid').innerHTML = newsResult.length
-    ? newsResult.map(n => `
-        <article class="news-card" onclick="openArticle(${n.id})">
-          <div class="news-meta"><span class="news-tag tag-${n.tag}">${tagLabel(n.tag)}</span><span>${n.time}</span></div>
-          <h3 class="news-title">${n.title}</h3>
-          <p class="news-desc">${n.desc}</p>
-          <div class="news-footer"><div class="news-source"><span class="source-dot"></span>${n.source}</div><span>${n.date}</span></div>
-        </article>
-      `).join('')
-    : '<p style="color:var(--text-muted);padding:20px">未找到相关资讯</p>';
-  document.getElementById('toolsGrid').innerHTML = toolResult.length
-    ? toolResult.map(t => `
-        <div class="tool-card" onclick="window.open('${t.url}','_blank')">
-          <div class="tool-header"><div class="tool-icon" style="background:${t.color}22">${t.icon}</div><div><div class="tool-name">${t.name}</div><div class="tool-category">${categoryLabel(t.category)}</div></div></div>
-          <p class="tool-desc">${t.desc}</p>
-          <div class="tool-footer"><span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span><span class="tool-stars">${'★'.repeat(t.stars)}${'☆'.repeat(5-t.stars)}</span></div>
-        </div>
-      `).join('')
-    : '<p style="color:var(--text-muted);padding:20px">未找到相关工具</p>';
-  document.querySelector('#news').scrollIntoView({ behavior: 'smooth' });
+  const toolsGrid = document.getElementById('toolsGrid');
+  if (toolsGrid) {
+    toolsGrid.innerHTML = toolResult.length
+      ? toolResult.map(t => `
+          <div class="tool-card" onclick="window.open('${t.url}','_blank')">
+            <div class="tool-header"><div class="tool-icon" style="background:${t.color}22">${t.icon}</div><div><div class="tool-name">${t.name}</div><div class="tool-category">${categoryLabel(t.category)}</div></div></div>
+            <p class="tool-desc">${t.desc}</p>
+            <div class="tool-footer"><span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span><span class="tool-stars">${'★'.repeat(t.stars)}${'☆'.repeat(5-t.stars)}</span></div>
+          </div>
+        `).join('')
+      : '<p style="color:var(--text-muted);padding:20px">未找到相关工具</p>';
+    document.querySelector('#tools').scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 // Search on Enter
@@ -462,14 +472,12 @@ window.addEventListener('scroll', () => {
 });
 
 // ===== INIT =====
-renderNews('all');
-renderTools('all');
-renderTimeline();
-renderModels();
-renderArticles('all');
-setupTabs('newsTabs', renderNews);
-setupTabs('toolTabs', renderTools);
-setupTabs('articleTabs', renderArticles);
+if (document.getElementById('toolsGrid')) renderTools('all');
+if (document.getElementById('timeline')) renderTimeline();
+if (document.getElementById('modelsTable')) renderModels();
+if (document.getElementById('articlesGrid')) renderArticles('all');
+if (document.getElementById('toolTabs')) setupTabs('toolTabs', renderTools);
+if (document.getElementById('articleTabs')) setupTabs('articleTabs', renderArticles);
 createParticles();
 
 // ===== SIDEBAR =====
@@ -489,7 +497,7 @@ createParticles();
 
   // Active section tracking via IntersectionObserver
   const sidebarItems = document.querySelectorAll('.sidebar-item');
-  const sectionIds = ['hero', 'news', 'tools', 'updates', 'models'];
+  const sectionIds = ['hero', 'tools', 'updates', 'models'];
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
