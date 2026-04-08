@@ -6,6 +6,24 @@
 
 const newsData = [
   {
+    id: 21, featured: true,
+    tag: 'industry', date: '2026-04-08',
+    title: 'Anthropic 营收首次超越 OpenAI，IPO 最早今年 10 月',
+    desc: '据媒体报道，Anthropic 年化营收已首次超越 OpenAI，并正在评估最早于 2026 年 10 月启动 IPO，潜在估值达 3800 亿美元，融资规模超过 600 亿美元。这一消息与 Anthropic 此前披露的 300 亿美元年化营收数据相互印证，显示 Claude 系列模型在企业市场的渗透速度已超出外界预期。分析人士指出，若 IPO 成行，将成为 AI 行业迄今最大规模的公开上市事件，对整个行业的估值体系产生深远影响。',
+    source: 'TradingKey',
+    time: '今天',
+    url: 'https://www.tradingkey.com/analysis/stocks/us-stocks/261756528-anthropic-openai-ipo-tradingkey'
+  },
+  {
+    id: 20, featured: false,
+    tag: 'industry', date: '2026-04-08',
+    title: '谷歌 CEO Pichai：AI 浪潮为初创公司带来前所未有的投资机会',
+    desc: '谷歌 CEO 桑达尔·皮查伊在 4 月 7 日接受 CNBC 采访时表示，当前 AI 技术的快速演进正在为初创公司创造前所未有的投资机会，谷歌将持续加大对 AI 生态的战略投资。皮查伊特别提到，谷歌早期对 Anthropic 的 3 亿美元投资已带来巨额回报，验证了其 AI 投资策略的前瞻性。他同时强调，AI 基础设施的竞争将在未来数年内持续加剧，算力和能源将成为决定竞争格局的核心变量。',
+    source: 'CNBC',
+    time: '今天',
+    url: 'https://www.cnbc.com/2026/04/07/google-ceo-pichai-says-ai-shift-opens-opportunities-invest-startups.html'
+  },
+  {
     id: 10, featured: true,
     tag: 'industry', date: '2026-04-07',
     title: 'Anthropic 年化营收突破 300 亿美元，与谷歌、博通签署史上最大算力协议',
@@ -305,6 +323,14 @@ function findRelatedArticle(news) {
   return articlesData.find(a => a.keywords.some(k => text.includes(k.toLowerCase())));
 }
 
+function relativeTime(dateStr) {
+  const diff = Math.floor((new Date() - new Date(dateStr)) / 86400000);
+  if (diff <= 0) return '今天';
+  if (diff === 1) return '1天前';
+  if (diff < 7) return `${diff}天前`;
+  return '1周前';
+}
+
 function renderNews(filter) {
   const grid = document.getElementById('newsGrid');
   const filtered = filter === 'all' ? newsData : newsData.filter(n => n.tag === filter);
@@ -317,7 +343,7 @@ function renderNews(filter) {
     <article class="news-card ${n.featured && filter === 'all' ? 'featured' : ''}" onclick="openArticle(${n.id})">
       <div class="news-meta">
         <span class="news-tag tag-${n.tag}">${tagLabel(n.tag)}</span>
-        <span>${n.time}</span>
+        <span>${relativeTime(n.date)}</span>
       </div>
       <h3 class="news-title">${n.title}</h3>
       <p class="news-desc">${n.desc}</p>
