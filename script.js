@@ -311,7 +311,7 @@ function renderNews(filter) {
   grid.innerHTML = filtered.map(n => {
     const related = findRelatedArticle(n);
     const relatedBtn = related
-      ? `<a class="news-related-btn" href="articles/${related.file}" target="_blank" onclick="event.stopPropagation()">📚 深度阅读</a>`
+      ? `<a class="news-related-btn" href="articles/${related.file}" target="_blank" onclick="event.stopPropagation()">相关阅读：${related.title.length > 20 ? related.title.slice(0, 20) + '…' : related.title}</a>`
       : '';
     return `
     <article class="news-card ${n.featured && filter === 'all' ? 'featured' : ''}" onclick="openArticle(${n.id})">
