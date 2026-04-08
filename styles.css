@@ -678,6 +678,107 @@ body.sidebar-collapsed .sidebar-item:hover::after { opacity: 1; }
 }
 .article-content strong { color: var(--text); font-weight: 600; }
 
+/* ===== ANIMATIONS ===== */
+
+/* 尊重用户减少动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Keyframes ── */
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(108,99,255,0.55); }
+  60%       { box-shadow: 0 0 0 8px rgba(108,99,255,0); }
+}
+@keyframes pulseDotGreen {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,212,170,0.55); }
+  60%       { box-shadow: 0 0 0 8px rgba(0,212,170,0); }
+}
+@keyframes pulseDotRed {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,107,0.55); }
+  60%       { box-shadow: 0 0 0 8px rgba(255,107,107,0); }
+}
+@keyframes glowBreath {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── 滚动触发淡入 ── */
+.anim-item {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1),
+              transform 0.55s cubic-bezier(0.22,1,0.36,1);
+}
+.anim-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Hero 入场序列 ── */
+.hero-badge  { animation: heroIn 0.65s cubic-bezier(0.22,1,0.36,1) 0.05s both; }
+.hero-title  { animation: heroIn 0.65s cubic-bezier(0.22,1,0.36,1) 0.18s both; }
+.hero-sub    { animation: heroIn 0.65s cubic-bezier(0.22,1,0.36,1) 0.30s both; }
+.search-bar  { animation: heroIn 0.65s cubic-bezier(0.22,1,0.36,1) 0.42s both; }
+.hero-stats  { animation: heroIn 0.65s cubic-bezier(0.22,1,0.36,1) 0.54s both; }
+
+/* ── 渐变文字流光（覆盖原有静态渐变）── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 40%, var(--accent) 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+/* ── Hero 背景光晕呼吸 ── */
+.hero-bg { animation: glowBreath 7s ease-in-out infinite; }
+
+/* ── 时间线圆点脉冲 ── */
+.timeline-dot        { animation: pulseDot      2.8s ease-in-out infinite; }
+.timeline-dot.green  { animation: pulseDotGreen 2.8s ease-in-out infinite; }
+.timeline-dot.red    { animation: pulseDotRed   2.8s ease-in-out infinite; }
+
+/* ── 导航栏滚动后加深 ── */
+.navbar.scrolled {
+  background: rgba(10,12,20,0.97);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05), 0 4px 24px rgba(0,0,0,0.5);
+}
+
+/* ── 卡片 hover 光晕增强 ── */
+.news-card:hover,
+.tool-card:hover,
+.article-card:hover,
+.timeline-card:hover {
+  box-shadow: 0 0 0 1px rgba(108,99,255,0.25),
+              0 8px 32px rgba(108,99,255,0.14);
+}
+
+/* ── Tab 切换内容淡入 ── */
+.grid-fade { animation: fadeIn 0.22s ease; }
+
+/* ── 分数条入场 ── */
+.score-bar {
+  transition: width 1.3s cubic-bezier(0.22,1,0.36,1) !important;
+}
+
 /* ===== RESPONSIVE =====*/
 @media (max-width: 768px) {
   .sidebar { display: none; }

@@ -189,6 +189,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 36, file: '36_gemini-cli-tutorial.html', category: 'tutorial', title: '免费用上谷歌 AI 编程助手！Gemini CLI 保姆级入门教程（2026最新版）', desc: 'Gemini CLI 是谷歌开源的终端 AI Agent，每天免费 1000 次请求，平替 Claude Code。手把手教你 5 步安装上手，零基础也能搞定。', keywords: ['gemini cli', 'gemini cli教程', 'gemini cli安装', '谷歌ai编程助手', '免费ai编程', 'gemini cli怎么用', '终端ai', 'gemini cli平替claude code'] },
   { id: 35, file: '35_qwen3-popular-science.html', category: 'popular', title: '阿里悄悄发了一个"全球最强开源大模型"，它跟你有什么关系', desc: 'Qwen3 刚发布，阿里说它打败了 GPT-4o，还完全免费开源。但"最强"这两个字对你意味着什么？一篇讲清楚它是什么、能做什么、跟你有什么关系的大众科普。', keywords: ['qwen3', '通义千问3', '阿里开源模型', '开源大模型', 'qwen3怎么用', '通义千问', 'apache 2.0', '本地部署大模型'] },
   { id: 34, file: '34_ai-agent-cost-breakdown.html', category: 'deep', title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', desc: '从 token 费用到基础设施，从开发成本到隐藏支出，用真实数据拆解 AI Agent 完整成本结构，并给出可落地的选型判断框架。', keywords: ['ai agent成本', 'ai agent部署费用', 'token费用', 'llm api定价', 'ai agent开发成本', '性能实测', 'api部署', '选型框架'] },
   { id: 33, file: '33_ai-agent-real-jobs-replaced.html', category: 'popular', title: '真实公司已经在用 AI Agent 替代这些岗位了', desc: 'Klarna 用 AI 替代了 700 名客服，Atlassian 裁员 1600 人转投 AI——这不是预测，是 2026 年正在发生的事。5分钟看懂 AI Agent 落地案例与你的关系。', keywords: ['ai agent落地案例', 'ai替代工作', 'klarna ai', 'atlassian裁员', 'ai会抢我工作吗', 'ai自动化是什么', 'ai能干什么', '职场ai影响'] },
