@@ -7,83 +7,93 @@
 const newsData = [
   {
     id: 10, featured: true,
-    tag: 'model', date: '2026-04-07',
-    title: 'Anthropic 发布 Claude 4 Opus：推理与代码能力全面跃升',
-    desc: 'Anthropic 正式发布旗舰模型 Claude 4 Opus，在数学推理、代码生成和长文档理解三项核心基准上均刷新纪录。新模型引入扩展思维链（Extended Thinking）机制，支持在复杂任务中进行多步骤自我校验，SWE-bench 得分达到 72.5%，较上一代提升超过 18 个百分点。Anthropic 同步开放 API，并宣布 Claude 4 Opus 将接入 Amazon Bedrock 和 Google Cloud Vertex AI，标志着顶级推理模型正式进入企业级部署阶段。',
-    source: 'Anthropic', time: '1天前',
-    url: 'https://www.anthropic.com/news/claude-4'
+    tag: 'industry', date: '2026-04-07',
+    title: 'Anthropic 年化营收突破 300 亿美元，与谷歌、博通签署史上最大算力协议',
+    desc: 'Anthropic 于 4 月 6 日宣布，其年化营收已超过 300 亿美元，较 2025 年底的 90 亿美元增长超过三倍。同日，公司与谷歌和博通签署扩展合作协议，将获得约 3.5 吉瓦的下一代谷歌 TPU 算力，预计 2027 年起交付。这是 Anthropic 迄今最大的基础设施承诺，也是 AI 公司营收增速最快的案例之一，标志着 Claude 系列模型在企业市场的大规模渗透。',
+    source: 'Anthropic',
+    time: '今天',
+    url: 'https://www.anthropic.com/news/google-broadcom-partnership-compute'
   },
   {
     id: 11, featured: false,
-    tag: 'product', date: '2026-04-06',
-    title: 'OpenAI 推出 Operator 企业版：AI Agent 自动化办公正式落地',
-    desc: 'OpenAI 宣布 Operator 企业版正式上线，支持企业在私有网络环境中部署 AI Agent，自动完成邮件处理、日历管理、数据录入等重复性办公任务。企业版新增审计日志、权限分级和 SSO 集成，满足合规要求。OpenAI 披露，Operator 在内测阶段已帮助参与企业平均节省每周 6.3 小时的人工操作时间，客服、财务和 HR 场景是落地最快的三个方向，标志着 AI Agent 从演示走向规模化商业部署。',
-    source: 'OpenAI', time: '2天前',
-    url: 'https://openai.com/index/operator'
+    tag: 'industry', date: '2026-04-07',
+    title: 'OpenAI、Anthropic、谷歌联手反制中国 AI 模型抄袭，通过 Frontier Model Forum 共享情报',
+    desc: 'OpenAI、Anthropic 和谷歌于 4 月 6-7 日宣布，三家公司将通过 Frontier Model Forum 共享情报，联合打击中国 AI 公司通过"对抗性蒸馏"技术窃取其模型能力的行为。此前 Anthropic 已在 2026 年 2 月识别出 DeepSeek、Moonshot AI 和 MiniMax 三家中国实验室创建约 2.4 万个虚假账户、大规模提取模型输出的行为。三大竞争对手罕见联手，凸显了模型知识产权保护已成为行业核心议题。',
+    source: 'Bloomberg',
+    time: '今天',
+    url: 'https://www.gadgets360.com/ai/news/anthropic-google-openai-frontier-model-forum-fighting-ai-model-distillation-attempts-china-report-11322546'
   },
   {
     id: 12, featured: false,
-    tag: 'research', date: '2026-04-05',
-    title: 'Meta 发布 FAIR 最新研究：AI 规划能力接近人类水平',
-    desc: 'Meta 基础 AI 研究院（FAIR）发布最新论文，提出新型规划基准 PlanBench-2026，并展示其最新模型在该基准上的得分首次超越人类平均水平。研究团队指出，当前 AI 规划能力的瓶颈已从"能否制定计划"转移到"能否在动态环境中实时调整计划"，并开源了完整评测框架。这一进展被认为是 AI Agent 走向真实世界复杂任务的关键里程碑，引发学界对 AGI 时间线的新一轮讨论。',
-    source: 'Meta AI', time: '3天前',
-    url: 'https://ai.meta.com/research/publications/'
+    tag: 'model', date: '2026-04-06',
+    title: 'OpenAI 戏剧不断：IPO 前景存疑，内部动荡持续',
+    desc: '据 Fortune 报道，OpenAI 近期内部动荡频发，多名高管离职、董事会矛盾公开化，令外界对其 IPO 计划产生疑虑。与此同时，谷歌 DeepMind 发布最新开源权重 Gemma 模型，Anthropic 则公开表示 AI 系统具有某种形式的"情绪"，引发广泛讨论。分析人士指出，OpenAI 的公司治理问题若不解决，将对其估值和上市时间表产生实质影响。',
+    source: 'Fortune',
+    time: '2天前',
+    url: 'https://fortune.com/2026/04/07/openai-drama-sam-altman-ipo-anthropic-cybersecurity-risks-eye-on-ai/'
   },
   {
     id: 13, featured: false,
-    tag: 'industry', date: '2026-04-05',
-    title: '中国发布《生成式AI服务管理办法》修订版，强化数据溯源要求',
-    desc: '国家互联网信息办公室发布《生成式人工智能服务管理暂行办法》修订版，新增训练数据溯源备案、合成内容强制标注和跨境数据传输审批三项核心要求。修订版将于2026年7月1日起正式施行，给予企业90天整改窗口期。业内人士指出，数据溯源要求将显著提高合规成本，但也为国内AI企业构建数据护城河提供了制度保障，预计将加速行业洗牌。',
-    source: '网信办', time: '3天前',
-    url: 'https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm'
+    tag: 'model', date: '2026-04-05',
+    title: '英伟达 CEO 黄仁勋宣称 AGI 已经到来，引发业界争议',
+    desc: '英伟达 CEO 黄仁勋在 2026 年 3 月的一次采访中表示，人工通用智能（AGI）实际上已经到来，AI 系统在多项任务上已达到或超越人类水平。这一表态立即引发 AI 研究界的广泛争议——支持者认为这是对当前模型能力的客观描述，批评者则指出 AGI 的定义本身仍存在根本分歧。谷歌 DeepMind CEO Demis Hassabis 和 Anthropic CEO Dario Amodei 此前在达沃斯论坛上也表示，接近人类智能水平的 AI 系统可能在数年内到来。',
+    source: 'Blockchain Council',
+    time: '3天前',
+    url: 'https://www.blockchain-council.org/news/nvidia-declares-agi-arrived-what-it-means/'
   },
   {
     id: 14, featured: false,
     tag: 'model', date: '2026-04-04',
-    title: '阿里发布 Qwen3 系列：72B 旗舰模型开源，性能比肩 GPT-5',
-    desc: '阿里云正式发布 Qwen3 系列大模型，包含 0.6B 至 72B 共六个参数规格，全系采用 Apache 2.0 协议开源。旗舰版 Qwen3-72B 在 MMLU、HumanEval 和 MATH 三项主流基准上均超越 GPT-4o，在中文理解和代码生成任务上与 GPT-5 持平。Qwen3 同步支持 128K 上下文窗口，并引入混合专家（MoE）架构以降低推理成本。此次开源被视为中国大模型在国际竞争中的重要里程碑。',
-    source: '阿里云', time: '4天前',
-    url: 'https://qwenlm.github.io/blog/qwen3/'
+    title: 'Qwen3 系列发布：阿里开源旗舰模型，Apache 2.0 可商用',
+    desc: '阿里巴巴 Qwen 团队于 4 月 29 日正式发布 Qwen3 系列，涵盖多个参数规格，全系采用 Apache 2.0 协议开源，支持免费商用。Qwen3 引入混合专家（MoE）架构，在推理效率和中文理解上表现突出，开发者社区反响热烈。此前阿里还发布了 Qwen 3.6 Plus 预览版（3 月底上线 OpenRouter 免费试用），支持 100 万 token 超长上下文，进一步巩固了 Qwen 系列在开源大模型赛道的领先地位。',
+    source: '阿里云',
+    time: '4天前',
+    url: 'https://apidog.com/blog/best-qwen-models/'
   },
   {
     id: 15, featured: false,
-    tag: 'product', date: '2026-04-04',
-    title: 'Google NotebookLM 新增 AI 播客功能，支持中文内容生成',
-    desc: 'Google 宣布 NotebookLM 正式支持中文播客生成功能，用户上传文档后可一键生成双人对话式音频摘要，语音自然度和内容准确性均大幅提升。新版本还支持用户自定义播客风格（学术、轻松、辩论等）和时长（5-30分钟），并新增多文档交叉引用能力。NotebookLM 中文版的推出标志着 Google 在中文 AI 内容工具市场的正式发力，与国内豆包、Kimi 等产品形成直接竞争。',
-    source: 'Google', time: '4天前',
-    url: 'https://notebooklm.google.com/'
+    tag: 'model', date: '2026-04-03',
+    title: 'Gemini 3 正式 GA，谷歌 AI 模型家族全面更新',
+    desc: '谷歌已将 Gemini 3 Flash 设为多个产品的默认模型，标志着 Gemini 3 系列正式进入全面可用（GA）阶段。与此同时，Gemini 2.5 Pro 和 Flash 仍作为生产级选项保留，Gemini 2.0 Flash 则于 2026 年 2 月起逐步退役。谷歌 AI Studio 现已提供 Gemini 3.x 全系列访问，开发者可通过免费额度试用最新模型。此次更新标志着谷歌在模型迭代速度上进一步提速，三代模型并行的格局也对开发者的选型决策提出了新挑战。',
+    source: 'Google',
+    time: '5天前',
+    url: 'https://datastudios.org/post/google-ai-studio-all-models-available-gemini-3-general-availability-gemini-2-5-production-tiers-a'
   },
   {
     id: 16, featured: false,
-    tag: 'research', date: '2026-04-03',
-    title: 'DeepMind AlphaFold 3 扩展版发布：覆盖全部生物分子类型',
-    desc: 'Google DeepMind 发布 AlphaFold 3 扩展版，将预测能力从蛋白质结构扩展至 DNA、RNA、小分子配体及其复合物，实现对几乎所有生物分子类型的统一建模。研究团队同步开放免费学术访问接口，并与全球 50 余家制药公司建立数据共享协议。Nature 同期发表配套论文，指出该模型在药物靶点发现和基因编辑设计两个场景中已展现出超越传统实验方法的效率，有望将新药研发周期缩短 30% 以上。',
-    source: 'Google DeepMind', time: '5天前',
-    url: 'https://deepmind.google/technologies/alphafold/'
+    tag: 'industry', date: '2026-04-02',
+    title: 'McKinsey：10% 企业职能已在使用 AI Agent，采用曲线类似早期云计算',
+    desc: '麦肯锡 2026 年 3 月发布的报告显示，目前约 10% 的企业职能已在实际使用 AI Agent，整体采用曲线与早期云计算的渗透路径高度相似。报告指出，2026 年是 AI Agent 从试点走向规模化部署的关键转折年，企业软件、零售和开发者工具是落地最快的三个领域。AI Agent 市场公司数量已从 2025 年初的约 300 家激增至 2026 年初的逾 2000 家，但 Gartner 估计其中真正具备产品能力的仅约 130 家。',
+    source: 'McKinsey',
+    time: '6天前',
+    url: 'https://a-listware.com/blog/ai-agents-enterprise-news'
   },
   {
     id: 17, featured: false,
-    tag: 'industry', date: '2026-04-02',
-    title: '微软 Copilot Studio 月活突破 500 万，企业 AI Agent 市场加速',
-    desc: '微软在 Build 2026 预热活动中披露，Copilot Studio 月活跃用户已突破 500 万，企业客户数量同比增长 340%。微软同步宣布 Copilot Studio 将深度集成 Azure AI Foundry，支持企业一站式完成模型微调、Agent 编排和生产部署。分析师指出，微软凭借 Office 365 生态的天然优势，正在企业 AI Agent 市场建立难以撼动的护城河，Salesforce、ServiceNow 等传统 SaaS 巨头面临被颠覆的压力。',
-    source: 'Microsoft', time: '6天前',
-    url: 'https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio'
+    tag: 'model', date: '2026-04-01',
+    title: 'Qwen 3.5 发布：397B 参数 MoE 架构，原生多模态支持',
+    desc: '阿里于 2026 年 2 月 16 日发布 Qwen 3.5，旗舰版采用 397B 参数稀疏混合专家（MoE）架构，在几乎所有主流基准上超越 Qwen3，并新增原生多模态支持和更快的推理速度。其中 35B-A3B 版本以极低的激活参数量超越了 Qwen3-235B 旗舰，展示了 MoE 架构的效率优势。Qwen 3.5 系列同步开源，进一步扩大了阿里在开源大模型领域的技术积累。',
+    source: '阿里云',
+    time: '1周前',
+    url: 'https://lushbinary.com/blog/qwen-3-5-developer-guide-benchmarks-architecture-integration-2026/'
   },
   {
     id: 18, featured: false,
-    tag: 'model', date: '2026-04-01',
-    title: 'Mistral 发布 Mistral Large 3：欧洲最强开源模型再度刷榜',
-    desc: 'Mistral AI 发布 Mistral Large 3，参数量 123B，在 LMSYS Chatbot Arena 排行榜上位列开源模型第一，总榜排名超越 GPT-4o。模型采用滑动窗口注意力机制，支持 256K 上下文，推理速度较上一代提升 2.4 倍。Mistral 同步宣布与欧盟委员会签署战略合作协议，将为欧洲公共机构提供主权 AI 部署方案。此次发布进一步巩固了 Mistral 作为欧洲 AI 旗手的地位，也为开源模型阵营在顶级性能竞争中注入新动力。',
-    source: 'Mistral AI', time: '1周前',
-    url: 'https://mistral.ai/news/mistral-large/'
+    tag: 'industry', date: '2026-04-01',
+    title: 'Anthropic 企业 Agent 插件上线，PwC 率先部署覆盖财务与工程场景',
+    desc: 'Anthropic 于 2026 年 2 月 24 日发布十款面向企业的 Claude Agent 插件，覆盖财务、工程和设计工作流。普华永道（PwC）随即宣布合作，将这些插件部署至其内部业务流程。这是 Claude 从通用对话模型向垂直场景 Agent 转型的重要信号，也是大型咨询公司将 AI Agent 纳入核心业务流程的标志性案例，预计将带动更多企业服务机构跟进。',
+    source: 'Anthropic',
+    time: '1周前',
+    url: 'https://www.lastingdynamics.com/blog/ai-agents-enterprise-applications-2026/'
   },
   {
     id: 19, featured: false,
-    tag: 'research', date: '2026-04-01',
-    title: 'MIT 研究：大模型"幻觉"根源在于训练数据分布偏移',
-    desc: 'MIT 计算机科学与人工智能实验室（CSAIL）发表最新研究，通过对 12 个主流大模型的系统性分析，首次从统计学角度证明幻觉现象的主要根源是训练数据与真实世界分布之间的系统性偏移，而非模型架构缺陷。研究团队提出"分布校准微调"（DCF）方法，在不增加参数量的前提下将幻觉率降低 41%。该研究为解决大模型可靠性问题提供了新的理论框架，论文已被 ICML 2026 接收。',
-    source: 'MIT CSAIL', time: '1周前',
-    url: 'https://www.csail.mit.edu/research/artificial-intelligence'
+    tag: 'model', date: '2026-03-31',
+    title: 'Qwen 3.6 Plus 预览版上线 OpenRouter：100 万 token 上下文免费试用',
+    desc: 'Qwen 3.6 Plus 于 2026 年 3 月 30-31 日悄然上线 OpenRouter 免费预览，支持 100 万 token 超长上下文窗口，内置持续思维链推理，推理速度相比前代大幅提升。这是阿里 Qwen 系列迄今上下文最长的模型，在长文档处理、多轮对话和复杂代码任务上表现突出。免费预览期间用户可通过 OpenRouter 直接调用，无需 API 密钥，吸引了大量开发者测试。',
+    source: 'OpenRouter',
+    time: '1周前',
+    url: 'https://www.buildfastwithai.com/blogs/qwen-3-6-plus-preview-review'
   },
   {
     id: 1, featured: true,
