@@ -247,28 +247,76 @@ const toolsData = [
 
 const timelineData = [
   {
-    date: '2025年3月',
+    date: '2026年4月',
+    company: 'Google',
+    dotColor: 'green',
+    title: 'Gemma 4 发布：31B 参数击败 400B 级对手，Apache 2.0 完全开源',
+    desc: 'Google DeepMind 于 4 月 2 日发布 Gemma 4，基于 Gemini 3 同款技术，原生支持音频与视觉，Apache 2.0 协议商业免费，可在手机端本地运行。',
+    tags: ['开源', '多模态', 'Gemma']
+  },
+  {
+    date: '2026年4月',
+    company: 'Alibaba',
+    dotColor: 'green',
+    title: 'Qwen3.6-Plus 发布：百万 token 上下文，主打 Agent 编程场景',
+    desc: 'Qwen3.6-Plus 于 4 月 2 日正式发布，支持 1M token 上下文，在 Agent 编码与多模态推理上大幅领先前代，是阿里 Qwen3 系列旗舰。',
+    tags: ['开源', 'Agent', 'Qwen']
+  },
+  {
+    date: '2026年2月',
     company: 'Anthropic',
     dotColor: 'purple',
-    title: 'Claude 4 系列发布，引入扩展思考与多步 Agent 能力',
-    desc: 'Claude 4 Opus 在推理、编程、数学三大维度全面领先，支持最长 200K token 上下文，并推出 Claude Code CLI 工具，深受开发者好评。',
+    title: 'Claude 4.6 系列发布：Opus 4.6 与 Sonnet 4.6 全面升级 Agent 能力',
+    desc: 'Opus 4.6（2月5日）与 Sonnet 4.6（2月17日）相继发布，在编程、长上下文推理和 Computer Use 上创新高，成为开发者首选 Agent 底座。',
+    tags: ['大模型', 'Agent', 'Anthropic']
+  },
+  {
+    date: '2025年11月',
+    company: 'Google',
+    dotColor: 'purple',
+    title: 'Gemini 3 正式发布：多模态推理全面超越 GPT-5',
+    desc: 'Google 于 11 月 18 日发布 Gemini 3，在数学、科学和代码评测上全面领先，Gemini 3 Pro 成为当时综合能力最强的商业模型之一。',
+    tags: ['大模型', '多模态', 'Gemini']
+  },
+  {
+    date: '2025年8月',
+    company: 'OpenAI',
+    dotColor: 'purple',
+    title: 'GPT-5 发布：统一架构终结"选模型"时代',
+    desc: 'OpenAI 于 8 月 7 日发布 GPT-5，首次将快速对话与深度推理合并为单一模型，256K 上下文，向所有订阅层级开放，结束了用户在 GPT-4o 与 o 系列之间反复切换的局面。',
+    tags: ['大模型', '推理', 'OpenAI']
+  },
+  {
+    date: '2025年5月',
+    company: 'Anthropic',
+    dotColor: 'purple',
+    title: 'Claude 4 发布：200K 上下文 + 多小时扩展思考，Agent 能力跃升',
+    desc: 'Anthropic 于 5 月 22 日发布 Claude Opus 4 与 Sonnet 4，支持 200K token 上下文与多小时"扩展思考"模式，同步推出 Claude Code CLI，深受开发者好评。',
     tags: ['大模型', 'Agent', '编程助手']
   },
   {
-    date: '2025年3月',
+    date: '2025年4月',
     company: 'Meta',
     dotColor: 'green',
-    title: 'Llama 4 开源：MoE 架构实现效率与性能双重突破',
-    desc: 'Llama 4 Scout（109B）与 Maverick（400B）开源，商业可用，支持 10M token 上下文，是迄今开源最强模型之一。',
+    title: 'Llama 4 开源：MoE 架构 + 10M token 上下文，开源模型新标杆',
+    desc: 'Meta 于 4 月 5 日发布 Llama 4 Scout（109B）与 Maverick（400B），MoE 架构大幅降低推理成本，10M token 超长上下文刷新开源记录，商业可用。',
     tags: ['开源', 'MoE', 'Llama']
   },
   {
-    date: '2025年2月',
+    date: '2025年3月',
     company: 'Google',
     dotColor: 'purple',
-    title: 'Gemini 2.0 Flash 正式推出，实时多模态能力向所有用户开放',
-    desc: 'Flash 版本在速度与成本上大幅优化，Project Astra 支持实时摄像头理解，Gemini Live 向免费用户开放。',
-    tags: ['多模态', '实时交互', 'Gemini']
+    title: 'Gemini 2.5 Pro 发布：思维链推理登顶 LMArena 榜首',
+    desc: 'Google 于 3 月 25 日发布 Gemini 2.5 Pro，内置思维链推理，在数学和科学基准上大幅领先，发布当天即登顶 LMArena 排行榜，并于数日内向免费用户开放。',
+    tags: ['推理', '思维链', 'Gemini']
+  },
+  {
+    date: '2025年2月',
+    company: 'Anthropic',
+    dotColor: 'purple',
+    title: 'Claude 3.7 Sonnet：全球首个"混合推理"模型',
+    desc: 'Anthropic 于 2 月 25 日发布 Claude 3.7 Sonnet，首创混合推理模式——可在即时回复与深度思考之间动态切换，编程能力大幅提升，同步推出 Claude Code 早期版本。',
+    tags: ['推理', '混合推理', 'Anthropic']
   },
   {
     date: '2025年1月',
@@ -334,13 +382,13 @@ function relativeTime(dateStr) {
 function renderNews(filter) {
   const grid = document.getElementById('newsGrid');
   const filtered = filter === 'all' ? newsData : newsData.filter(n => n.tag === filter);
-  grid.innerHTML = filtered.map(n => {
+  grid.innerHTML = filtered.map((n, i) => {
     const related = findRelatedArticle(n);
     const relatedBtn = related
       ? `<a class="news-related-btn" href="articles/${related.file}" target="_blank" onclick="event.stopPropagation()">相关阅读：${related.title.length > 20 ? related.title.slice(0, 20) + '…' : related.title}</a>`
       : '';
     return `
-    <article class="news-card ${n.featured && filter === 'all' ? 'featured' : ''}" onclick="openArticle(${n.id})">
+    <article class="news-card ${i === 0 && filter === 'all' ? 'featured' : ''}" onclick="openArticle(${n.id})">
       <div class="news-meta">
         <span class="news-tag tag-${n.tag}">${tagLabel(n.tag)}</span>
         <span>${relativeTime(n.date)}</span>
