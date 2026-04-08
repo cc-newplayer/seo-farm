@@ -439,7 +439,8 @@ function relativeTime(dateStr) {
 
 function renderNews(filter) {
   const grid = document.getElementById('newsGrid');
-  const filtered = filter === 'all' ? newsData : newsData.filter(n => n.tag === filter);
+  const filtered = (filter === 'all' ? newsData : newsData.filter(n => n.tag === filter))
+    .slice().sort((a, b) => new Date(b.date) - new Date(a.date));
   grid.innerHTML = filtered.map((n, i) => {
     const related = findRelatedArticle(n);
     const relatedBtn = related
