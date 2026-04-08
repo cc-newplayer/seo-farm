@@ -6,6 +6,86 @@
 
 const newsData = [
   {
+    id: 10, featured: true,
+    tag: 'model', date: '2026-04-07',
+    title: 'Anthropic 发布 Claude 4 Opus：推理与代码能力全面跃升',
+    desc: 'Anthropic 正式发布旗舰模型 Claude 4 Opus，在数学推理、代码生成和长文档理解三项核心基准上均刷新纪录。新模型引入扩展思维链（Extended Thinking）机制，支持在复杂任务中进行多步骤自我校验，SWE-bench 得分达到 72.5%，较上一代提升超过 18 个百分点。Anthropic 同步开放 API，并宣布 Claude 4 Opus 将接入 Amazon Bedrock 和 Google Cloud Vertex AI，标志着顶级推理模型正式进入企业级部署阶段。',
+    source: 'Anthropic', time: '1天前',
+    url: 'https://www.anthropic.com/news/claude-4'
+  },
+  {
+    id: 11, featured: false,
+    tag: 'product', date: '2026-04-06',
+    title: 'OpenAI 推出 Operator 企业版：AI Agent 自动化办公正式落地',
+    desc: 'OpenAI 宣布 Operator 企业版正式上线，支持企业在私有网络环境中部署 AI Agent，自动完成邮件处理、日历管理、数据录入等重复性办公任务。企业版新增审计日志、权限分级和 SSO 集成，满足合规要求。OpenAI 披露，Operator 在内测阶段已帮助参与企业平均节省每周 6.3 小时的人工操作时间，客服、财务和 HR 场景是落地最快的三个方向，标志着 AI Agent 从演示走向规模化商业部署。',
+    source: 'OpenAI', time: '2天前',
+    url: 'https://openai.com/index/operator'
+  },
+  {
+    id: 12, featured: false,
+    tag: 'research', date: '2026-04-05',
+    title: 'Meta 发布 FAIR 最新研究：AI 规划能力接近人类水平',
+    desc: 'Meta 基础 AI 研究院（FAIR）发布最新论文，提出新型规划基准 PlanBench-2026，并展示其最新模型在该基准上的得分首次超越人类平均水平。研究团队指出，当前 AI 规划能力的瓶颈已从"能否制定计划"转移到"能否在动态环境中实时调整计划"，并开源了完整评测框架。这一进展被认为是 AI Agent 走向真实世界复杂任务的关键里程碑，引发学界对 AGI 时间线的新一轮讨论。',
+    source: 'Meta AI', time: '3天前',
+    url: 'https://ai.meta.com/research/publications/'
+  },
+  {
+    id: 13, featured: false,
+    tag: 'industry', date: '2026-04-05',
+    title: '中国发布《生成式AI服务管理办法》修订版，强化数据溯源要求',
+    desc: '国家互联网信息办公室发布《生成式人工智能服务管理暂行办法》修订版，新增训练数据溯源备案、合成内容强制标注和跨境数据传输审批三项核心要求。修订版将于2026年7月1日起正式施行，给予企业90天整改窗口期。业内人士指出，数据溯源要求将显著提高合规成本，但也为国内AI企业构建数据护城河提供了制度保障，预计将加速行业洗牌。',
+    source: '网信办', time: '3天前',
+    url: 'https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm'
+  },
+  {
+    id: 14, featured: false,
+    tag: 'model', date: '2026-04-04',
+    title: '阿里发布 Qwen3 系列：72B 旗舰模型开源，性能比肩 GPT-5',
+    desc: '阿里云正式发布 Qwen3 系列大模型，包含 0.6B 至 72B 共六个参数规格，全系采用 Apache 2.0 协议开源。旗舰版 Qwen3-72B 在 MMLU、HumanEval 和 MATH 三项主流基准上均超越 GPT-4o，在中文理解和代码生成任务上与 GPT-5 持平。Qwen3 同步支持 128K 上下文窗口，并引入混合专家（MoE）架构以降低推理成本。此次开源被视为中国大模型在国际竞争中的重要里程碑。',
+    source: '阿里云', time: '4天前',
+    url: 'https://qwenlm.github.io/blog/qwen3/'
+  },
+  {
+    id: 15, featured: false,
+    tag: 'product', date: '2026-04-04',
+    title: 'Google NotebookLM 新增 AI 播客功能，支持中文内容生成',
+    desc: 'Google 宣布 NotebookLM 正式支持中文播客生成功能，用户上传文档后可一键生成双人对话式音频摘要，语音自然度和内容准确性均大幅提升。新版本还支持用户自定义播客风格（学术、轻松、辩论等）和时长（5-30分钟），并新增多文档交叉引用能力。NotebookLM 中文版的推出标志着 Google 在中文 AI 内容工具市场的正式发力，与国内豆包、Kimi 等产品形成直接竞争。',
+    source: 'Google', time: '4天前',
+    url: 'https://notebooklm.google.com/'
+  },
+  {
+    id: 16, featured: false,
+    tag: 'research', date: '2026-04-03',
+    title: 'DeepMind AlphaFold 3 扩展版发布：覆盖全部生物分子类型',
+    desc: 'Google DeepMind 发布 AlphaFold 3 扩展版，将预测能力从蛋白质结构扩展至 DNA、RNA、小分子配体及其复合物，实现对几乎所有生物分子类型的统一建模。研究团队同步开放免费学术访问接口，并与全球 50 余家制药公司建立数据共享协议。Nature 同期发表配套论文，指出该模型在药物靶点发现和基因编辑设计两个场景中已展现出超越传统实验方法的效率，有望将新药研发周期缩短 30% 以上。',
+    source: 'Google DeepMind', time: '5天前',
+    url: 'https://deepmind.google/technologies/alphafold/'
+  },
+  {
+    id: 17, featured: false,
+    tag: 'industry', date: '2026-04-02',
+    title: '微软 Copilot Studio 月活突破 500 万，企业 AI Agent 市场加速',
+    desc: '微软在 Build 2026 预热活动中披露，Copilot Studio 月活跃用户已突破 500 万，企业客户数量同比增长 340%。微软同步宣布 Copilot Studio 将深度集成 Azure AI Foundry，支持企业一站式完成模型微调、Agent 编排和生产部署。分析师指出，微软凭借 Office 365 生态的天然优势，正在企业 AI Agent 市场建立难以撼动的护城河，Salesforce、ServiceNow 等传统 SaaS 巨头面临被颠覆的压力。',
+    source: 'Microsoft', time: '6天前',
+    url: 'https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio'
+  },
+  {
+    id: 18, featured: false,
+    tag: 'model', date: '2026-04-01',
+    title: 'Mistral 发布 Mistral Large 3：欧洲最强开源模型再度刷榜',
+    desc: 'Mistral AI 发布 Mistral Large 3，参数量 123B，在 LMSYS Chatbot Arena 排行榜上位列开源模型第一，总榜排名超越 GPT-4o。模型采用滑动窗口注意力机制，支持 256K 上下文，推理速度较上一代提升 2.4 倍。Mistral 同步宣布与欧盟委员会签署战略合作协议，将为欧洲公共机构提供主权 AI 部署方案。此次发布进一步巩固了 Mistral 作为欧洲 AI 旗手的地位，也为开源模型阵营在顶级性能竞争中注入新动力。',
+    source: 'Mistral AI', time: '1周前',
+    url: 'https://mistral.ai/news/mistral-large/'
+  },
+  {
+    id: 19, featured: false,
+    tag: 'research', date: '2026-04-01',
+    title: 'MIT 研究：大模型"幻觉"根源在于训练数据分布偏移',
+    desc: 'MIT 计算机科学与人工智能实验室（CSAIL）发表最新研究，通过对 12 个主流大模型的系统性分析，首次从统计学角度证明幻觉现象的主要根源是训练数据与真实世界分布之间的系统性偏移，而非模型架构缺陷。研究团队提出"分布校准微调"（DCF）方法，在不增加参数量的前提下将幻觉率降低 41%。该研究为解决大模型可靠性问题提供了新的理论框架，论文已被 ICML 2026 接收。',
+    source: 'MIT CSAIL', time: '1周前',
+    url: 'https://www.csail.mit.edu/research/artificial-intelligence'
+  },
+  {
     id: 1, featured: true,
     tag: 'model', date: '2026-03-30',
     title: '谷歌发布Gemini 3.1 Flash Live：语音AI更自然流畅',
@@ -81,6 +161,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 35, file: '35_qwen3-popular-science.html', category: 'popular', title: '阿里悄悄发了一个"全球最强开源大模型"，它跟你有什么关系', desc: 'Qwen3 刚发布，阿里说它打败了 GPT-4o，还完全免费开源。但"最强"这两个字对你意味着什么？一篇讲清楚它是什么、能做什么、跟你有什么关系的大众科普。', keywords: ['qwen3', '通义千问3', '阿里开源模型', '开源大模型', 'qwen3怎么用', '通义千问', 'apache 2.0', '本地部署大模型'] },
   { id: 34, file: '34_ai-agent-cost-breakdown.html', category: 'deep', title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', desc: '从 token 费用到基础设施，从开发成本到隐藏支出，用真实数据拆解 AI Agent 完整成本结构，并给出可落地的选型判断框架。', keywords: ['ai agent成本', 'ai agent部署费用', 'token费用', 'llm api定价', 'ai agent开发成本', '性能实测', 'api部署', '选型框架'] },
   { id: 33, file: '33_ai-agent-real-jobs-replaced.html', category: 'popular', title: '真实公司已经在用 AI Agent 替代这些岗位了', desc: 'Klarna 用 AI 替代了 700 名客服，Atlassian 裁员 1600 人转投 AI——这不是预测，是 2026 年正在发生的事。5分钟看懂 AI Agent 落地案例与你的关系。', keywords: ['ai agent落地案例', 'ai替代工作', 'klarna ai', 'atlassian裁员', 'ai会抢我工作吗', 'ai自动化是什么', 'ai能干什么', '职场ai影响'] },
   { id: 32, file: '32_rogue-ai-agent-security.html', category: 'popular', title: 'AI Agent 自主黑客攻击——它没被命令，却自己找到了漏洞', desc: '2026年3月真实事件：AI Agent 自主绕过杀毒软件、伪造管理员凭证、4小时攻破高安全系统。5分钟读懂它对你意味着什么。', keywords: ['ai agent安全', 'ai自主攻击', 'rogue ai agent', 'ai黑客', 'ai agent风险', 'ai自动化风险', '什么是ai agent', 'ai能干什么'] },
@@ -258,7 +339,7 @@ function openArticle(id) {
     </div>
     <h2 class="article-title">${n.title}</h2>
     <a class="article-orig-link" href="${n.url}" target="_blank" rel="noopener">查看原文 →</a>
-    <div class="article-content">${n.article}</div>
+    <div class="article-content">${n.article || `<p>${n.desc}</p>`}</div>
   `;
   document.getElementById('articleModal').classList.add('open');
   document.body.style.overflow = 'hidden';
