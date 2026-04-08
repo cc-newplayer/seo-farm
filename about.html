@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>关于我们 - AI前沿</title>
+  <meta name="description" content="AI前沿是专注人工智能科普与工具导航的原创内容平台，持续追踪 AI Agent、大模型、自动化工作流等前沿动态。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cc-newplayer.github.io/seo-farm/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="关于我们 - AI前沿" />
+  <meta property="og:description" content="AI前沿是专注人工智能科普与工具导航的原创内容平台。" />
+  <meta property="og:url" content="https://cc-newplayer.github.io/seo-farm/about.html" />
+  <meta property="og:site_name" content="AI前沿" />
+  <meta property="og:locale" content="zh_CN" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .about-hero {
+      padding: 120px 0 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 20%, rgba(108,99,255,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .about-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700; line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .about-hero p {
+      color: var(--text-muted); font-size: 1.05rem;
+      max-width: 560px; margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .about-section { padding: 64px 0; }
+    .about-section + .about-section { border-top: 1px solid var(--border); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .about-card:hover {
+      border-color: rgba(108,99,255,0.4);
+      transform: translateY(-2px);
+    }
+    .about-card-icon {
+      font-size: 2rem; margin-bottom: 14px;
+      display: block;
+    }
+    .about-card h3 {
+      font-size: 1rem; font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .about-card p {
+      font-size: 0.875rem; color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .stat-row {
+      display: flex; flex-wrap: wrap; gap: 32px;
+      justify-content: center;
+      margin-top: 48px;
+    }
+    .stat-item {
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 36px;
+      min-width: 140px;
+    }
+    .stat-item .num {
+      font-size: 2.2rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+    .stat-item .label {
+      font-size: 0.85rem; color: var(--text-muted);
+      margin-top: 4px; display: block;
+    }
+
+    .content-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .content-type {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .content-type-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 5px;
+    }
+    .dot-tutorial { background: #10b981; }
+    .dot-deep     { background: #8b5cf6; }
+    .dot-popular  { background: #fb923c; }
+    .content-type h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .content-type p  { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(108,99,255,0.1), rgba(0,212,170,0.08));
+      border: 1px solid rgba(108,99,255,0.25);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .contact-box h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+    .contact-box p  { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; }
+    .contact-links {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center;
+    }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 999px; font-size: 0.875rem; color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+    .contact-link:hover {
+      border-color: var(--accent);
+      background: rgba(108,99,255,0.1);
+      color: var(--accent);
+    }
+
+    .section-label {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em;
+      color: var(--accent); text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-heading {
+      font-size: 1.6rem; font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      color: var(--text-muted); font-size: 0.95rem;
+      max-width: 560px; line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="切换导航">
+    <span class="toggle-icon">&#10094;</span>
+  </button>
+  <nav class="sidebar-nav">
+    <a href="index.html#hero" class="sidebar-item" data-tooltip="首页">
+      <span class="sidebar-icon">⚡</span>
+      <span class="sidebar-label">首页</span>
+    </a>
+    <a href="news.html" class="sidebar-item" data-tooltip="AI资讯">
+      <span class="sidebar-icon">🔥</span>
+      <span class="sidebar-label">AI资讯</span>
+    </a>
+    <a href="articles.html" class="sidebar-item" data-tooltip="AI科普">
+      <span class="sidebar-icon">📚</span>
+      <span class="sidebar-label">AI科普</span>
+    </a>
+    <a href="about.html" class="sidebar-item active" data-tooltip="关于">
+      <span class="sidebar-icon">💡</span>
+      <span class="sidebar-label">关于</span>
+    </a>
+  </nav>
+</aside>
+
+<div class="main-wrap" id="mainWrap">
+
+<!-- ===== NAV ===== -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+    </a>
+    <nav class="nav-links">
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-toggle">AI资讯 <span class="dropdown-arrow">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="news.html">最新资讯</a>
+          <a href="articles.html">AI科普文章</a>
+        </div>
+      </div>
+      <a href="index.html#tools">AI工具</a>
+      <a href="index.html#updates">技术动态</a>
+      <a href="index.html#models">模型榜单</a>
+      <a href="about.html" style="color: var(--accent);">关于我们</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="news.html" onclick="closeMobile()">最新资讯</a>
+    <a href="articles.html" onclick="closeMobile()">AI科普文章</a>
+    <a href="index.html#tools" onclick="closeMobile()">AI工具</a>
+    <a href="index.html#updates" onclick="closeMobile()">技术动态</a>
+    <a href="index.html#models" onclick="closeMobile()">模型榜单</a>
+    <a href="about.html" onclick="closeMobile()">关于我们</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="about-hero">
+  <div class="container">
+    <div class="hero-badge" style="display:inline-flex; margin-bottom: 24px;">💡 关于 AI前沿</div>
+    <h1>让每个人都能<br/><span class="gradient-text">读懂 AI</span></h1>
+    <p>我们相信，AI 不应该只属于工程师。AI前沿致力于用最清晰的语言，把最前沿的 AI 技术讲给所有人听。</p>
+  </div>
+</div>
+
+<!-- ===== 我们是谁 ===== -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-label">我们是谁</div>
+    <h2 class="section-heading">一个专注 AI 科普的原创内容平台</h2>
+    <p class="section-desc">AI前沿成立于 2025 年，专注于 AI Agent、大模型、自动化工作流等领域的原创内容创作。我们不追热点、不堆砌术语，只做真正有价值的深度内容。</p>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <span class="about-card-icon">🎯</span>
+        <h3>定位清晰</h3>
+        <p>面向对 AI 感兴趣但没有技术背景的普通用户，以及想快速上手 AI 工具的从业者。不写给专家，写给真正需要的人。</p>
+      </div>
+      <div class="about-card">
+        <span class="about-card-icon">✍️</span>
+        <h3>原创内容</h3>
+        <p>所有文章均为原创，拒绝机械翻译和关键词堆砌。每篇文章都经过实际测试和验证，确保内容准确可用。</p>
+      </div>
+      <div class="about-card">
+        <span class="about-card-icon">🔄</span>
+        <h3>持续更新</h3>
+        <p>AI 领域日新月异，我们保持高频更新节奏，第一时间追踪重要模型发布、工具更新和行业动态。</p>
+      </div>
+      <div class="about-card">
+        <span class="about-card-icon">🆓</span>
+        <h3>完全免费</h3>
+        <p>所有内容永久免费开放，不设付费墙，不需要注册。我们相信知识应该流通，而不是被锁起来。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 数据 ===== -->
+<section class="about-section section-dark">
+  <div class="container" style="text-align: center;">
+    <div class="section-label">截至 2026 年 4 月</div>
+    <h2 class="section-heading">用数字说话</h2>
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="num">35+</span>
+        <span class="label">原创文章</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">200+</span>
+        <span class="label">收录 AI 工具</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">30+</span>
+        <span class="label">主流模型追踪</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">每日</span>
+        <span class="label">资讯更新</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 内容类型 ===== -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-label">内容体系</div>
+    <h2 class="section-heading">三种内容风格，覆盖不同需求</h2>
+    <p class="section-desc">根据读者背景和阅读目的，我们将内容分为三种风格，让你快速找到最适合自己的那篇。</p>
+
+    <div class="content-types">
+      <div class="content-type">
+        <div class="content-type-dot dot-tutorial"></div>
+        <div>
+          <h4>📘 保姆级教程</h4>
+          <p>手把手操作指南，零基础也能跟着做，每步都有截图说明。适合想快速上手某个工具的读者。</p>
+        </div>
+      </div>
+      <div class="content-type">
+        <div class="content-type-dot dot-deep"></div>
+        <div>
+          <h4>🔬 深度科普</h4>
+          <p>拆解技术原理、架构设计和底层逻辑。适合开发者和想真正搞懂 AI 工作机制的读者。</p>
+        </div>
+      </div>
+      <div class="content-type">
+        <div class="content-type-dot dot-popular"></div>
+        <div>
+          <h4>🌐 大众科普</h4>
+          <p>用生活化语言解释 AI 概念，不需要任何技术背景。适合想了解 AI 对自己意味着什么的普通读者。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 联系 ===== -->
+<section class="about-section">
+  <div class="container">
+    <div class="contact-box">
+      <h3>有话想说？</h3>
+      <p>无论是内容建议、选题需求，还是合作咨询，都欢迎联系我们。</p>
+      <div class="contact-links">
+        <a href="https://github.com/cc-newplayer/seo-farm" class="contact-link" target="_blank" rel="noopener">
+          <span>⭐</span> GitHub
+        </a>
+        <a href="articles.html" class="contact-link">
+          <span>📚</span> 浏览文章
+        </a>
+        <a href="index.html" class="contact-link">
+          <span>⚡</span> 回到首页
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+      <p>追踪全球人工智能最新进展</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>导航</h4>
+        <a href="news.html">AI资讯</a>
+        <a href="articles.html">AI科普</a>
+        <a href="index.html#tools">AI工具</a>
+        <a href="about.html">关于我们</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 AI前沿 · Aitetech 原创内容</p></div>
+</footer>
+
+</div><!-- /.main-wrap -->
+
+<script>
+  // 侧边栏折叠
+  document.getElementById('sidebarToggle').addEventListener('click', () => {
+    document.body.classList.toggle('sidebar-collapsed');
+  });
+
+  // 下拉菜单
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.closest('.nav-dropdown').classList.toggle('open');
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
+  });
+
+  // 汉堡菜单
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
+<script src="animations.js"></script>
+</body>
+</html>
