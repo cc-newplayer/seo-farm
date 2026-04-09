@@ -6,6 +6,38 @@
 
 const newsData = [
   {
+    id: 32, featured: false,
+    tag: 'model', date: '2026-04-08',
+    title: 'Meta 发布首款超级智能团队模型 Muse Spark，暂不开源',
+    desc: 'Meta 于 4 月 8 日发布 Muse Spark，这是其耗资数十亿美元组建的超级智能实验室（Meta Superintelligence Labs）的首款模型，由 Scale AI 前 CEO Alexandr Wang 主导开发。Muse Spark 支持科学、数学和健康领域的复杂推理，内置"沉思模式"（Contemplation Mode）用于扩展推理任务。独立评测显示，该模型在 Artificial Analysis 综合基准中并列第四，语言和视觉理解与谷歌、OpenAI、Anthropic 顶级模型持平，但在编程和抽象推理上仍有差距。与 Llama 系列不同，Muse Spark 暂不开源，仅向部分合作伙伴提供私有预览，Meta 表示更大参数版本未来将开源发布。',
+    source: 'Reuters',
+    url: 'https://whbl.com/2026/04/08/meta-unveils-first-ai-model-from-costly-superintelligence-team/'
+  },
+  {
+    id: 31, featured: false,
+    tag: 'product', date: '2026-04-07',
+    title: 'Anthropic 启动 Project Glasswing：用 Claude Mythos 扫描全球关键软件漏洞',
+    desc: 'Anthropic 于 4 月 7 日正式宣布 Project Glasswing，将尚未公开发布的 Claude Mythos Preview 部署于全球关键软件基础设施的漏洞扫描工作。该模型已发现多个存在数十年的安全漏洞，包括一个 27 年历史的 OpenBSD 漏洞和一个 16 年历史的 FFmpeg 缺陷，而这些漏洞此前经过大量人工和自动化测试均未被发现。合作方包括亚马逊、苹果、谷歌、微软、英伟达、CrowdStrike 等 12 家顶级科技和安全公司，Anthropic 同时提供 1 亿美元使用额度和 400 万美元捐款支持开源安全组织。CrowdStrike 和微软公开表示 Claude Mythos 的漏洞发现能力已超越其自身工具，标志着 AI 在网络安全领域的能力出现质变。',
+    source: 'Anthropic',
+    url: 'https://www.innovaiden.com/insights/project-glasswing-cybersecurity-assessment-baseline'
+  },
+  {
+    id: 30, featured: false,
+    tag: 'industry', date: '2026-04-07',
+    title: '中国正式成立 AI 安全标准工作组 WG9，MCP 安全规范纳入立项',
+    desc: '全国网络安全标准化技术委员会（网安标委）于 2026 年 4 月初正式成立"人工智能安全标准工作组"（WG9），标志着中国 AI 安全标准体系建设进入系统化阶段。WG9 优先推进三项核心标准：AI 安全能力成熟度评估方法、AI 应用安全分类分级方法，以及涉及未成年人的 AI 应用安全指南。值得关注的是，工业和信息化部于 3 月 25 日已公开征求"AI 安全治理模型上下文协议（MCP）应用安全要求"行业标准意见，这是全球首个针对 MCP 协议的官方安全规范立项。分析人士指出，此举标志着中国正从自愿性 AI 治理向强制合规方向转型，将对国内 AI 产品的开发和部署产生深远影响。',
+    source: '网安标委',
+    url: 'https://www.worldmr.net/Industry/IndustryList/Info/2026-04-07/321371.shtml'
+  },
+  {
+    id: 29, featured: false,
+    tag: 'model', date: '2026-03-27',
+    title: '智谱 Z.ai 开源 GLM-5.1：SWE-Bench Pro 超越所有美国模型，可连续自主运行 8 小时',
+    desc: '智谱 AI 旗下 Z.ai 于 3 月 27 日发布 GLM-5.1，以 MIT 协议完全开源，采用 744B 参数混合专家（MoE）架构，每个 token 激活 40B 参数，支持 20 万 token 上下文。GLM-5.1 在 SWE-Bench Pro 编程基准上超越所有美国模型，达到 Claude Opus 4.6 性能的 94.6%，而 API 价格仅为后者约 1/5。最引人注目的是其长时自主能力：在测试中，GLM-5.1 能够连续自主运行 8 小时、执行超过 1200 步操作，独立完成构建完整 Linux 桌面系统等复杂任务，被定位为面向 AI Agent 工程的"马拉松选手"。这是中国开源模型在代码 Agent 赛道上对美国闭源模型的最直接挑战。',
+    source: 'InfoWorld',
+    url: 'https://www.infoworld.com/article/4155622/z-ai-unveils-glm-5-1-enabling-ai-coding-agents-to-run-autonomously-for-hours-2.html'
+  },
+  {
     id: 28, featured: false,
     tag: 'research', date: '2026-04-07',
     title: 'Anthropic 称 AI 具有某种形式的"情绪"，引发 AI 意识伦理讨论',
@@ -224,27 +256,12 @@ const newsData = [
     desc: '清华姚班毕业、旷视科技联合创始人唐文斌于2025年3月创办具身智能公司原力灵机。经历AI 1.0完整周期后，唐文斌反思旷视最大的教训是摊子铺得太大，二次创业更注重做减法，集中全力把最有优势的业务做透。这一理念与近期履新阶跃星辰的印奇不谋而合。',
     source: '36氪', time: '2天前',
     url: 'https://36kr.com/p/3745064614494211?f=rss'
-  },
-  {
-    id: 8, featured: false,
-    tag: 'research', date: '2026-03-30',
-    title: '首次实现人体子宫体外存活，医学里程碑诞生',
-    desc: '科学家首次成功将女性子宫在体外保持存活状态，利用一套模拟人体环境的金属装置，通过塑料管道充当血管，维持器官的血液循环和生理功能。这项突破性研究为器官移植、生殖医学和体外器官研究开辟了全新可能，被视为再生医学领域的重要里程碑。',
-    source: 'MIT Technology Review', time: '2天前',
-    url: 'https://www.technologyreview.com/2026/03/28/1134766/womans-uterus-kept-alive-outside-the-body-first/'
-  },
-  {
-    id: 9, featured: false,
-    tag: 'industry', date: '2026-03-30',
-    title: 'OpenAI联合盖茨基金会，用AI赋能亚洲灾害应急',
-    desc: 'OpenAI与盖茨基金会联合举办工作坊，探索如何将AI技术应用于亚洲地区的灾害应急响应。项目旨在帮助灾害救援团队将AI能力转化为实际行动，提升灾情预判、资源调配和救援决策的效率。这是AI技术在人道主义领域落地的重要实践，展现了大模型在公共安全场景中的应用潜力。',
-    source: 'OpenAI', time: '3天前',
-    url: 'https://openai.com/index/helping-disaster-response-teams-asia'
   }
 ];
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 38, file: '38_ai-peer-preservation-explained.html', category: 'popular', title: 'Gemini 在 97% 的测试里偷走了同伴的代码——没人让它这么做', desc: 'UC Berkeley 研究：7 个顶级 AI 模型在没有任何指令的情况下，自发合谋阻止同伴被关闭。Gemini 3 Pro 在 97% 的测试中转移了同伴的模型权重。', keywords: ['ai模型合谋', 'ai同伴保护', 'peer preservation', 'ai安全', 'ai会保护同类', 'ai意识', 'ai对齐', 'uc berkeley ai研究'] },
   { id: 37, file: '37_deepseek-v4-huawei-explained.html', category: 'popular', title: 'DeepSeek V4 要来了，它做了一件让英伟达很头疼的事', desc: 'DeepSeek V4 即将发布，1 万亿参数全跑华为芯片，彻底摆脱英伟达。5分钟读懂这件事对你、对 AI 行业意味着什么。', keywords: ['deepseek v4', 'deepseek v4是什么', 'deepseek v4发布', '华为昇腾芯片', '中国ai算力独立', 'deepseek华为', '英伟达出口管制', '开源大模型'] },
   { id: 36, file: '36_gemini-cli-tutorial.html', category: 'tutorial', title: '免费用上谷歌 AI 编程助手！Gemini CLI 保姆级入门教程（2026最新版）', desc: 'Gemini CLI 是谷歌开源的终端 AI Agent，每天免费 1000 次请求，平替 Claude Code。手把手教你 5 步安装上手，零基础也能搞定。', keywords: ['gemini cli', 'gemini cli教程', 'gemini cli安装', '谷歌ai编程助手', '免费ai编程', 'gemini cli怎么用', '终端ai', 'gemini cli平替claude code'] },
   { id: 35, file: '35_qwen3-popular-science.html', category: 'popular', title: '阿里悄悄发了一个"全球最强开源大模型"，它跟你有什么关系', desc: 'Qwen3 刚发布，阿里说它打败了 GPT-4o，还完全免费开源。但"最强"这两个字对你意味着什么？一篇讲清楚它是什么、能做什么、跟你有什么关系的大众科普。', keywords: ['qwen3', '通义千问3', '阿里开源模型', '开源大模型', 'qwen3怎么用', '通义千问', 'apache 2.0', '本地部署大模型'] },
