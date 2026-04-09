@@ -6,7 +6,6 @@
   <meta name="description" content="谷歌DeepMind发布TurboQuant算法，将大模型KV Cache内存占用压缩6倍且几乎不损失质量，本文深度拆解其量化原理、架构设计与对AI芯片行业的冲击。">
   <title>谷歌一篇论文把内存股价干崩了——KV Cache压缩到底怎么做到的？</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <style>
     /* ── 对话组件 ─────────────────────────────────────── */
     .dialogue-wrap {
@@ -506,7 +505,11 @@ graph LR
     <li>🔗 <strong>工程实践</strong>：vLLM KV Cache 管理机制深度解析——PagedAttention 如何与量化协同</li>
     <li>📊 <strong>行业分析</strong>：算法效率提升对 HBM 需求的长期影响——摩根士丹利2025年AI基础设施报告</li>
     <li>🔬 <strong>对比研究</strong>：KIVI vs TurboQuant——K 和 V 谁更该被激进压缩的争论</li>
+      <li><a href="05_agent-architecture.html">AI Agent 凭什么能"自主干活"？从四大模块拆解它的内核</a> — KV Cache 优化对 Agent 长期记忆的影响</li>
+    <li><a href="25_gemma4-open-source-explained.html">谷歌昨天悄悄扔了一颗炸弹：Gemma 4</a> — 谷歌的另一项模型效率突破</li>
+    <li><a href="34_ai-agent-cost-breakdown.html">部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架</a> — KV Cache 压缩如何影响实际部署成本</li>
   </ul>
+
 </div>
 
 <footer class="article-footer">
@@ -520,6 +523,7 @@ graph LR
 </footer>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
 mermaid.initialize({ startOnLoad: true, theme: 'default',
   flowchart: { curve: 'basis', useMaxWidth: true, htmlLabels: true } });

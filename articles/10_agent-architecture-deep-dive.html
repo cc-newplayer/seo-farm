@@ -6,7 +6,6 @@
   <meta name="description" content="深度拆解AI Agent架构：四大核心组件、ReAct推理框架、多智能体编排模式与主流框架选型指南">
   <title>你以为的 AI Agent 架构，和真正跑在生产上的差在哪？</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <style>
     .article-img {
@@ -435,8 +434,12 @@ flowchart TD
         <li><strong>想动手搭建</strong>：从 CrewAI 入手是最低门槛的选择，官方文档有完整的角色定义示例</li>
         <li><strong>想了解推理框架</strong>：ReAct 原论文（arXiv:2210.03629）只有 10 页，值得直接读原文</li>
         <li><strong>想理解成本结构</strong>：Google Research《Towards a science of scaling agent systems》提供了目前最严谨的多智能体性能数据</li>
+              <li><a href="05_agent-architecture.html">AI Agent 凭什么能"自主干活"？从四大模块拆解它的内核</a> — 架构基础，建议先读</li>
+        <li><a href="08_mas-deep-dive.html">Multi-Agent 不是把多个 AI 堆在一起</a> — 生产级多 Agent 系统的深度拆解</li>
+        <li><a href="20_langgraph-tutorial.html">零基础也能上手！LangGraph 保姆级入门教程</a> — 文中提到的图式 Agent 编排框架实战</li>
       </ul>
-    </div>
+
+</div>
 
   </div><!-- end article-body -->
 
@@ -453,6 +456,7 @@ flowchart TD
 
 </div><!-- end page-wrapper -->
 
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
 mermaid.initialize({
   startOnLoad: true,

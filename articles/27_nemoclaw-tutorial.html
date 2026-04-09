@@ -18,7 +18,6 @@
   }
   </script>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
   <!-- ===== Open Graph ===== -->
   <meta property="og:type" content="article" />
@@ -178,5 +177,7 @@ docker run -d -p 8080:8080 --name nemoclaw nvcr.io/nvidia/nemoclaw:latest
   </footer>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, theme: 'default', flowchart: { curve: 'basis', useMaxWidth: true, htmlLabels: true } });</script>
 </body>
 </html>
