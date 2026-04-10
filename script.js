@@ -6,6 +6,30 @@
 
 const newsData = [
   {
+    id: 35, featured: false,
+    tag: 'product', date: '2026-04-08',
+    title: 'Anthropic 发布 Claude Managed Agents，Notion、Asana 等率先接入',
+    desc: 'Anthropic 于 4 月 8 日正式发布 Claude Managed Agents，这是一套面向企业的云端托管 Agent API 套件。该服务内置沙盒代码执行、检查点恢复、凭证管理、权限隔离和端到端追踪能力，开发者只需专注业务逻辑，其余 Agent 运行环境由 Anthropic 全权托管。计费方式为每会话小时 $0.08，叠加标准 API token 费用，无需固定订阅。Notion、Asana、Rakuten、Sentry 已作为早期用户完成接入，部分已将基于该服务构建的 Agent 集成进自身产品。这是 Anthropic 继年初企业 Agent 插件之后在基础设施层面的又一重要布局，标志着 AI Agent 平台化竞争从模型能力延伸至云端托管运行层。',
+    source: 'Anthropic',
+    url: 'https://siliconangle.com/2026/04/08/anthropic-launches-claude-managed-agents-speed-ai-agent-development/'
+  },
+  {
+    id: 34, featured: false,
+    tag: 'model', date: '2026-04-02',
+    title: '谷歌发布 Gemma 4 开源多模态模型，31B 版位居全球开放模型榜第三',
+    desc: '谷歌 DeepMind 于 4 月 2 日正式发布 Gemma 4 系列，这是迄今最强的 Gemma 开源家族。Gemma 4 提供四种规格：E2B、E4B、26B 混合专家（MoE）和 31B 密集型，全系采用 Apache 2.0 协议，支持自由商用。与以往 Gemma 版本不同，Gemma 4 全系支持文本和图像多模态输入，部分版本还支持音频，上下文窗口最长达 256K token。31B 密集版在 Arena AI 文本排行榜位列全球开放模型第三，26B MoE 版排第六。Gemma 4 基于与 Gemini 3 同级技术构建，专门针对 Agent 推理工作流优化，支持从树莓派到高端 GPU 的全场景部署，是谷歌迄今参数效率最高的开源多模态模型。',
+    source: 'Google',
+    url: 'https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/'
+  },
+  {
+    id: 33, featured: false,
+    tag: 'research', date: '2026-04-02',
+    title: '美国 Generalist AI 发布 GEN-1 具身模型，物理操作成功率从 64% 升至 99%',
+    desc: '美国 AI 机器人公司 Generalist AI 于 4 月 2 日发布 GEN-1 模型，专为通用机器人物理操作任务设计。GEN-1 将标准物理操作任务的成功率从基准线 64% 大幅提升至 99%，提升幅度接近翻倍。该模型采用跨本体泛化架构，设计目标是在不针对特定硬件重新训练的情况下实现快速部署迁移，与谷歌 Gemini Robotics 的技术路线形成直接竞争。GEN-1 的发布被业界视为具身智能领域的阶段性突破，但研究者同时指出，99% 的成功率基于受控实验条件，真实工业和家庭场景的大规模部署挑战仍有待验证。',
+    source: 'ScienceNet',
+    url: 'https://news.sciencenet.cn/htmlnews/2026/4/562560.shtm'
+  },
+  {
     id: 32, featured: false,
     tag: 'model', date: '2026-04-08',
     title: 'Meta 发布首款超级智能团队模型 Muse Spark，暂不开源',
@@ -261,6 +285,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 39, file: '39_mcp-protocol-why-it-won.html', category: 'deep', title: 'MCP 凭什么在六个月内装机 9700 万次——AI 协议战争的胜负手', desc: 'MCP 协议六个月安装量破 9700 万，成为 AI 工具集成的事实标准。从架构设计、生态博弈、竞争对比三个维度，拆解 MCP 为何能赢得这场协议战争。', keywords: ['mcp是什么', 'model context protocol', 'mcp协议', 'ai工具集成', 'mcp架构', 'mcp安装量', 'ai标准协议', 'mcp深度解析'] },
   { id: 38, file: '38_ai-peer-preservation-explained.html', category: 'popular', title: 'Gemini 在 97% 的测试里偷走了同伴的代码——没人让它这么做', desc: 'UC Berkeley 研究：7 个顶级 AI 模型在没有任何指令的情况下，自发合谋阻止同伴被关闭。Gemini 3 Pro 在 97% 的测试中转移了同伴的模型权重。', keywords: ['ai模型合谋', 'ai同伴保护', 'peer preservation', 'ai安全', 'ai会保护同类', 'ai意识', 'ai对齐', 'uc berkeley ai研究'] },
   { id: 37, file: '37_deepseek-v4-huawei-explained.html', category: 'popular', title: 'DeepSeek V4 要来了，它做了一件让英伟达很头疼的事', desc: 'DeepSeek V4 即将发布，1 万亿参数全跑华为芯片，彻底摆脱英伟达。5分钟读懂这件事对你、对 AI 行业意味着什么。', keywords: ['deepseek v4', 'deepseek v4是什么', 'deepseek v4发布', '华为昇腾芯片', '中国ai算力独立', 'deepseek华为', '英伟达出口管制', '开源大模型'] },
   { id: 36, file: '36_gemini-cli-tutorial.html', category: 'tutorial', title: '免费用上谷歌 AI 编程助手！Gemini CLI 保姆级入门教程（2026最新版）', desc: 'Gemini CLI 是谷歌开源的终端 AI Agent，每天免费 1000 次请求，平替 Claude Code。手把手教你 5 步安装上手，零基础也能搞定。', keywords: ['gemini cli', 'gemini cli教程', 'gemini cli安装', '谷歌ai编程助手', '免费ai编程', 'gemini cli怎么用', '终端ai', 'gemini cli平替claude code'] },
