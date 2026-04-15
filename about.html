@@ -172,21 +172,21 @@
     <span class="toggle-icon">&#10094;</span>
   </button>
   <nav class="sidebar-nav">
-    <a href="index.html#hero" class="sidebar-item" data-tooltip="首页">
-      <span class="sidebar-icon">⚡</span>
-      <span class="sidebar-label">首页</span>
+    <a href="index.html#tools" class="sidebar-item" data-section="tools" data-tooltip="AI工具">
+      <span class="sidebar-icon">🛠️</span>
+      <span class="sidebar-label">AI工具</span>
     </a>
-    <a href="news.html" class="sidebar-item" data-tooltip="AI资讯">
+    <a href="index.html#updates" class="sidebar-item" data-section="updates" data-tooltip="最新资讯">
       <span class="sidebar-icon">🔥</span>
-      <span class="sidebar-label">AI资讯</span>
+      <span class="sidebar-label">最新资讯</span>
     </a>
-    <a href="articles.html" class="sidebar-item" data-tooltip="AI科普">
-      <span class="sidebar-icon">📚</span>
-      <span class="sidebar-label">AI科普</span>
+    <a href="index.html#tech-timeline" class="sidebar-item" data-section="tech-timeline" data-tooltip="技术动态">
+      <span class="sidebar-icon">📈</span>
+      <span class="sidebar-label">技术动态</span>
     </a>
-    <a href="about.html" class="sidebar-item active" data-tooltip="关于">
-      <span class="sidebar-icon">💡</span>
-      <span class="sidebar-label">关于</span>
+    <a href="index.html#models" class="sidebar-item" data-section="models" data-tooltip="模型榜单">
+      <span class="sidebar-icon">🏆</span>
+      <span class="sidebar-label">模型榜单</span>
     </a>
   </nav>
 </aside>
@@ -201,27 +201,20 @@
       <span class="logo-text">AI<span class="accent">前沿</span></span>
     </a>
     <nav class="nav-links">
-      <div class="nav-dropdown">
-        <span class="nav-dropdown-toggle">AI资讯 <span class="dropdown-arrow">▾</span></span>
-        <div class="nav-dropdown-menu">
-          <a href="news.html">最新资讯</a>
-          <a href="articles.html">AI科普文章</a>
-        </div>
-      </div>
-      <a href="index.html#tools">AI工具</a>
-      <a href="index.html#updates">技术动态</a>
-      <a href="index.html#models">模型榜单</a>
-      <a href="about.html" style="color: var(--accent);">关于我们</a>
+      <a href="index.html">首页</a>
+      <a href="news.html">AI资讯</a>
+      <a href="tools.html">AI工具</a>
+      <a href="articles.html">AI文章</a>
+      <a href="about.html" style="color: var(--accent);">关于</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="menu">&#9776;</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="news.html" onclick="closeMobile()">最新资讯</a>
-    <a href="articles.html" onclick="closeMobile()">AI科普文章</a>
-    <a href="index.html#tools" onclick="closeMobile()">AI工具</a>
-    <a href="index.html#updates" onclick="closeMobile()">技术动态</a>
-    <a href="index.html#models" onclick="closeMobile()">模型榜单</a>
-    <a href="about.html" onclick="closeMobile()">关于我们</a>
+    <a href="index.html" onclick="closeMobile()">首页</a>
+    <a href="news.html" onclick="closeMobile()">AI资讯</a>
+    <a href="tools.html" onclick="closeMobile()">AI工具</a>
+    <a href="articles.html" onclick="closeMobile()">AI文章</a>
+    <a href="about.html" onclick="closeMobile()">关于</a>
   </div>
 </header>
 
@@ -273,15 +266,15 @@
     <h2 class="section-heading">用数字说话</h2>
     <div class="stat-row">
       <div class="stat-item">
-        <span class="num">35+</span>
+        <span class="num">78+</span>
         <span class="label">原创文章</span>
       </div>
       <div class="stat-item">
-        <span class="num">200+</span>
+        <span class="num">40+</span>
         <span class="label">收录 AI 工具</span>
       </div>
       <div class="stat-item">
-        <span class="num">30+</span>
+        <span class="num">8</span>
         <span class="label">主流模型追踪</span>
       </div>
       <div class="stat-item">
@@ -373,15 +366,6 @@
   // 侧边栏折叠
   document.getElementById('sidebarToggle').addEventListener('click', () => {
     document.body.classList.toggle('sidebar-collapsed');
-  });
-
-  // 下拉菜单
-  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
-    e.stopPropagation();
-    this.closest('.nav-dropdown').classList.toggle('open');
-  });
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
   });
 
   // 汉堡菜单

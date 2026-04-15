@@ -6,12 +6,105 @@
 
 const newsData = [
   {
+    id: 36, featured: true,
+    tag: 'model', date: '2026-04-15',
+    title: 'Claude Mythos Preview 登陆 Vertex AI，首次开放企业级 API 商用通道',
+    desc: '继4月7日通过Project Glasswing向安全合作伙伴开放后，Claude Mythos Preview于4月15日登陆Google Cloud Vertex AI，标志着这一此前仅面向特定安全组织的模型首次可通过商业云平台API访问。通过Vertex AI，企业客户可在Google Cloud的合规和安全框架内调用Mythos Preview，同时受到与Project Glasswing一致的访问权限约束。Mythos Preview在SWE-bench Verified上取得93.9%的成绩，远超Claude Opus 4.6的80.8%；数学竞赛基准USAMO 2026上达到97.6%，是目前已知唯一能在主流操作系统中批量发现零日漏洞的AI系统。此次云端部署使其实际可用范围大幅扩展，标志着Anthropic史上最强模型进入商业可用阶段。',
+    source: 'Google Cloud',
+    url: 'https://cloud.google.com/blog/products/ai-machine-learning/claude-mythos-preview-on-vertex-ai'
+  },
+  {
+    id: 37, featured: false,
+    tag: 'model', date: '2026-04-14',
+    title: 'OpenAI 发布 GPT-5.4-Cyber：专为网络安全设计，支持二进制逆向工程',
+    desc: 'OpenAI于4月14日发布GPT-5.4-Cyber，这是GPT-5.4专为网络防御工作微调的变体版本，拥有标准版没有的宽松安全策略和附加安全能力。最受关注的新功能是二进制逆向工程：无需访问源代码，直接分析已编译软件中的恶意代码和安全漏洞，是安全研究人员此前难以自动化的关键环节。访问采用分级验证体系，个人用户可在chatgpt.com/cyber完成身份验证，企业通过OpenAI代表申请。OpenAI称此举旨在将先进防御工具尽可能广泛地提供给合格安全人员，同时通过自动化验证机制防止滥用。值得注意的是，该模型发布于Anthropic Project Glasswing披露仅一周后，被广泛视为OpenAI在AI网络安全赛道上的直接回应。',
+    source: 'SiliconANGLE',
+    url: 'https://siliconangle.com/2026/04/14/openai-launches-gpt-5-4-cyber-model-vetted-security-professionals/'
+  },
+  {
+    id: 38, featured: false,
+    tag: 'research', date: '2026-04-13',
+    title: 'Stanford AI Index 2026：中美 AI 差距急剧收窄，GenAI 渗透率全球达 53%',
+    desc: '斯坦福大学HAI研究院于4月13日发布2026年度AI指数报告，核心发现：中美AI模型性能差距已急剧收窄，Anthropic领先，DeepSeek等中国模型紧随其后；生成式AI在三年内实现53%的全球人口渗透率，速度远快于个人电脑和互联网；生成式AI工具为美国消费者带来的年度估计价值已达1720亿美元，较2025年翻了约三倍；但基础模型透明度指数平均分从去年的58下降至40，意味着主流模型开放程度整体退步。报告还指出中国在全球AI论文产出中已占据领先地位，但高影响力引用方面仍落后美国，美国依然在资本投入和顶尖研究机构方面保持优势。',
+    source: 'IEEE Spectrum',
+    img: 'https://spectrum.ieee.org/media-library/squares-and-rectangles-on-graph-paper-form-the-letters-ai.jpg?id=65506010&width=1200&height=1200',
+    url: 'https://spectrum.ieee.org/state-of-ai-index-2026'
+  },
+  {
+    id: 39, featured: false,
+    tag: 'industry', date: '2026-04-13',
+    title: 'McKinsey：AI 广泛提升生产力仅需 15–25 年，美国 2030 前潜在价值 2.9 万亿',
+    desc: '麦肯锡全球研究院于2026年4月发布最新AI生产力报告，将AI实现广泛生产力提升的时间线较此前预估大幅压缩至15至25年。报告指出，美国通过智能工作流重构，有望在2030年前解锁最高2.9万亿美元经济价值；中国大语言模型已占全球前十榜单逾半席位，中文AI能力正向顶级水平快速逼近。报告同时警告，生产力红利分配极为不均：高技能知识工作者将首先受益，低技能劳动者在未来十年面临的替代风险将快速上升。此外报告强调，AI驱动的生产力红利需要配套的组织结构变革和再培训投入，否则企业难以将模型能力转化为实际业务收益。',
+    source: '中国新闻网',
+    url: 'https://www.chinanews.com.cn/cj/2026/04-13/10603159.shtml'
+  },
+  {
+    id: 40, featured: false,
+    tag: 'model', date: '2026-04-12',
+    title: 'MiniMax M2.7 全球开源：229B MoE "自进化" Agent 模型，SWE-Pro 刷新纪录',
+    desc: 'MiniMax于4月12日正式全球开源M2.7，这是其迄今最强开源版本，也是首个具备"自进化"能力的Agent模型。M2.7采用229B参数MoE架构，在SWE-Pro编程基准上取得56.22%的成绩，在Terminal Bench 2上达到57.0%，整体性能与GPT-5.3-Codex持平。最核心特性是M2.7可参与自身开发：MiniMax将模型用于优化其开发脚手架，让其自主迭代超过100轮，分析失败轨迹、修改代码并运行评估，最终在内部基准上提升30%。模型权重已在Hugging Face开放下载，当日完成华为昇腾、摩尔线程等国产芯片以及Together AI、Ollama等推理平台的全面适配。',
+    source: 'MiniMax',
+    img: 'https://www.marktechpost.com/wp-content/uploads/2026/04/blog-28.png',
+    url: 'https://www.marktechpost.com/2026/04/12/minimax-just-open-sourced-minimax-m2-7-a-self-evolving-agent-model-that-scores-56-22-on-swe-pro-and-57-0-on-terminal-bench-2/'
+  },
+  {
+    id: 41, featured: false,
+    tag: 'industry', date: '2026-04-12',
+    title: '国内前十互联网巨头九家接入 GLM-5.1，中国大模型进入"攻坚"新阶段',
+    desc: '智谱AI于4月8日在广州正式发布GLM-5.1后，国内采用浪潮迅速蔓延。至4月12日，国内前十大互联网公司中已有九家完成深度接入，涵盖字节跳动（TRAE）、阿里（Qoder）、腾讯（CodeBuddy）、百度、美团、快手等，以及华为云、金山云等云服务商和WPS等软件厂商。GLM-5.1在SWE-Bench Pro上取得58.4分，超越Claude Opus（57.3）和GPT-4o（57.7），成为代码生成赛道新标杆。值得关注的是，智谱发布当日同步将API价格上调10%，为年内第三次提价，Q1累计涨幅已达83%，但同期调用量反增400%，凸显国内企业对高质量国产模型的强劲刚需与市场定价权的逐步转移。',
+    source: '新浪财经',
+    url: 'https://finance.sina.cn/stock/jdts/2026-04-12/detail-inhuhfpy5367025.d.html'
+  },
+  {
+    id: 46, featured: false,
+    tag: 'industry', date: '2026-04-12',
+    title: 'Perplexity 年化收入突破 4.5 亿美元，单月暴涨 50%',
+    desc: '据英国《金融时报》4 月 12 日报道，Perplexity AI 的年化收入已突破 4.5 亿美元，较三月底单月暴涨 50%。增长主要由两项变化驱动：2 月底上线的 "Computer" Agent 功能大幅推高付费转化，以及面向企业的按用量计费方案替代了固定席位订阅，拉高了收入天花板。以此增速测算，Perplexity 有望在年内突破 10 亿美元 ARR，成为生成式 AI 应用层增速最快的公司之一。Perplexity CEO Aravind Srinivas 在 X 平台随后转发了相关报道，间接确认了该数据。',
+    source: 'Financial Times',
+    url: 'https://startupnews.fyi/2026/04/12/perplexitys-revenue-has-shot-up-50-in-one-month-amid-shift-in-focus-to-ai-agents-ft/'
+  },
+  {
+    id: 42, featured: false,
+    tag: 'industry', date: '2026-04-10',
+    title: '教育部等五部门发布"人工智能+教育"行动计划，2030 年全面深度融合',
+    desc: '教育部联合中央网信办、国家发改委、科技部、工业和信息化部等五部门于4月10日正式印发《"人工智能+教育"行动计划》，明确到2030年形成人工智能与教育深度融合的格局。主要目标包括：中小学生普及AI基础课程，高校将AI能力列为必修基础，职业教育同步更新智能产业实训内容，教师培训全面融入智能教学法，并建设支撑教育AI化的算力平台和专用大模型。这是继2023年"人工智能+"战略后中国首次由多部委联合颁布的系统性AI教育行动纲领，标志着AI教育从自愿探索走向国家统筹推进的新阶段，预计将直接影响全国超过2亿在校学生的课程结构。',
+    source: '教育部',
+    url: 'http://www.moe.gov.cn/fbh/live/2026/77927/'
+  },
+  {
+    id: 43, featured: false,
+    tag: 'model', date: '2026-04-10',
+    title: 'DeepSeek V4 四月底发布倒计时：万亿参数国产芯首跑，算力订单激增 20%',
+    desc: '继4月初路透社披露DeepSeek V4将基于华为昇腾950PR芯片运行后，4月10日多方数据进一步确认该模型将于四月底正式发布，规格为1万亿总参数、每次推理激活约370亿参数。与此同时，阿里云、字节跳动、腾讯云已相继批量采购数十万颗昇腾950PR芯片以备部署，带动该芯片价格在数周内上涨逾20%。DeepSeek在发布前刻意拒绝英伟达的早期访问窗口，将其专门留给国产芯片厂商，被业界解读为一次刻意为之的"去英伟达"信号。若V4性能达预期，将是中国AI产业链自主可控进程中迄今最重要的一次实证，也将对英伟达出口管制策略构成更直接的挑战。',
+    source: 'BigGo Finance',
+    img: 'https://img.biggo.com/ReQXrIAyZUMhtXj7CrcGREmjVZjI0FWoBFl6ZI0saY0/fit/1720/0/sm/1/aHR0cHM6Ly9pbWcuYmdvLm9uZS9uZXdzLWltYWdlL2FpX2dlbmVyYXRlZC8yMDI2LTA0LzIwMjYwNDEwMjMwM19EZWVwU2Vla19WNF9BcHJpbF9MYXVuY2hfRGV0YWlsc18yMDI2MDQxMV8wNzE3NTIuanBn.jpg',
+    url: 'https://finance.biggo.com/news/202604102303_DeepSeek_V4_April_Launch_Details'
+  },
+  {
+    id: 44, featured: false,
+    tag: 'product', date: '2026-04-09',
+    title: 'OpenAI GPT-5.4 全量推送至 ChatGPT、Codex 和 API',
+    desc: 'OpenAI 于 4 月 9 日宣布 GPT-5.4 全面面向 ChatGPT 用户、Codex 开发环境以及 API 调用方开放。本次推送最受关注的更新是 Codex 环境中上下文窗口扩展至 100 万 Token，可在单次会话中处理完整大型代码库。API 层面，企业客户可通过标准 model ID 无缝切换至 GPT-5.4，无需修改请求格式。ChatGPT 端同步开放了更强的长文档分析和多轮代码调试能力。此次全量推送标志着 GPT-5.4 从 4 月初的小范围测试进入正式商用阶段，与 Claude Mythos 和 Gemini 2.0 Ultra 的竞争全面进入实际部署层面。',
+    source: 'OpenAI',
+    img: 'https://www.chatgptimagegenerator.org/wp-content/uploads/2026/04/openai-rolls-out-gpt-5-4-across-chatgpt-codex-and-the-api.jpg',
+    url: 'https://www.chatgptimagegenerator.org/2026/04/09/openai-rolls-out-gpt-5-4-across-chatgpt-codex-and-the-api/'
+  },
+  {
     id: 35, featured: false,
     tag: 'product', date: '2026-04-08',
     title: 'Anthropic 发布 Claude Managed Agents，Notion、Asana 等率先接入',
     desc: 'Anthropic 于 4 月 8 日正式发布 Claude Managed Agents，这是一套面向企业的云端托管 Agent API 套件。该服务内置沙盒代码执行、检查点恢复、凭证管理、权限隔离和端到端追踪能力，开发者只需专注业务逻辑，其余 Agent 运行环境由 Anthropic 全权托管。计费方式为每会话小时 $0.08，叠加标准 API token 费用，无需固定订阅。Notion、Asana、Rakuten、Sentry 已作为早期用户完成接入，部分已将基于该服务构建的 Agent 集成进自身产品。这是 Anthropic 继年初企业 Agent 插件之后在基础设施层面的又一重要布局，标志着 AI Agent 平台化竞争从模型能力延伸至云端托管运行层。',
     source: 'Anthropic',
+    img: 'https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/04/Anthropic-1.png',
     url: 'https://siliconangle.com/2026/04/08/anthropic-launches-claude-managed-agents-speed-ai-agent-development/'
+  },
+  {
+    id: 45, featured: false,
+    tag: 'product', date: '2026-04-08',
+    title: 'Google Gemini 集成 NotebookLM，推出持久化「笔记本」工作区',
+    desc: 'Google 于 4 月 8 日在 Gemini 应用内正式推出 Notebooks 功能，将 NotebookLM 的核心能力直接整合进主界面。Notebooks 是一种持久化的项目工作区，支持保存对话历史、上传文档、记录笔记并与 AI 持续协作，不再每次从零开始。该功能支持与独立版 NotebookLM 双向同步，两端创建的内容实时共享。此次更新标志着 Gemini 从单次对话工具升级为支持长期知识管理的协作平台，直接对标 ChatGPT Projects 和 Claude Projects 的项目管理能力。',
+    source: 'Google Blog',
+    url: 'https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/'
   },
   {
     id: 34, featured: false,
@@ -19,6 +112,7 @@ const newsData = [
     title: '谷歌发布 Gemma 4 开源多模态模型，31B 版位居全球开放模型榜第三',
     desc: '谷歌 DeepMind 于 4 月 2 日正式发布 Gemma 4 系列，这是迄今最强的 Gemma 开源家族。Gemma 4 提供四种规格：E2B、E4B、26B 混合专家（MoE）和 31B 密集型，全系采用 Apache 2.0 协议，支持自由商用。与以往 Gemma 版本不同，Gemma 4 全系支持文本和图像多模态输入，部分版本还支持音频，上下文窗口最长达 256K token。31B 密集版在 Arena AI 文本排行榜位列全球开放模型第三，26B MoE 版排第六。Gemma 4 基于与 Gemini 3 同级技术构建，专门针对 Agent 推理工作流优化，支持从树莓派到高端 GPU 的全场景部署，是谷歌迄今参数效率最高的开源多模态模型。',
     source: 'Google',
+    img: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-4_blog_keyword_meta-dark.width-1300.png',
     url: 'https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/'
   },
   {
@@ -35,6 +129,7 @@ const newsData = [
     title: 'Meta 发布首款超级智能团队模型 Muse Spark，暂不开源',
     desc: 'Meta 于 4 月 8 日发布 Muse Spark，这是其耗资数十亿美元组建的超级智能实验室（Meta Superintelligence Labs）的首款模型，由 Scale AI 前 CEO Alexandr Wang 主导开发。Muse Spark 支持科学、数学和健康领域的复杂推理，内置"沉思模式"（Contemplation Mode）用于扩展推理任务。独立评测显示，该模型在 Artificial Analysis 综合基准中并列第四，语言和视觉理解与谷歌、OpenAI、Anthropic 顶级模型持平，但在编程和抽象推理上仍有差距。与 Llama 系列不同，Muse Spark 暂不开源，仅向部分合作伙伴提供私有预览，Meta 表示更大参数版本未来将开源发布。',
     source: 'Reuters',
+    img: 'https://storage.googleapis.com/media.mwcradio.com/mimesis/2026-04/08/2026-04-08T160645Z_1_LYNXMPEM3710H_RTROPTP_3_OPENAI-META.JPG',
     url: 'https://whbl.com/2026/04/08/meta-unveils-first-ai-model-from-costly-superintelligence-team/'
   },
   {
@@ -59,6 +154,7 @@ const newsData = [
     title: '智谱 Z.ai 开源 GLM-5.1：SWE-Bench Pro 超越所有美国模型，可连续自主运行 8 小时',
     desc: '智谱 AI 旗下 Z.ai 于 3 月 27 日发布 GLM-5.1，以 MIT 协议完全开源，采用 744B 参数混合专家（MoE）架构，每个 token 激活 40B 参数，支持 20 万 token 上下文。GLM-5.1 在 SWE-Bench Pro 编程基准上超越所有美国模型，达到 Claude Opus 4.6 性能的 94.6%，而 API 价格仅为后者约 1/5。最引人注目的是其长时自主能力：在测试中，GLM-5.1 能够连续自主运行 8 小时、执行超过 1200 步操作，独立完成构建完整 Linux 桌面系统等复杂任务，被定位为面向 AI Agent 工程的"马拉松选手"。这是中国开源模型在代码 Agent 赛道上对美国闭源模型的最直接挑战。',
     source: 'InfoWorld',
+    img: 'https://www.infoworld.com/wp-content/uploads/2026/04/4155622-0-33708400-1775644045-shutterstock_1402318157.jpg?quality=50&strip=all&w=1024',
     url: 'https://www.infoworld.com/article/4155622/z-ai-unveils-glm-5-1-enabling-ai-coding-agents-to-run-autonomously-for-hours-2.html'
   },
   {
@@ -75,6 +171,7 @@ const newsData = [
     title: '中国 AI 大模型周使用量连续 5 周超越美国，全球周用量达 27 万亿 token',
     desc: '据数据显示，截至 2026 年 4 月 5 日当周，全球 AI 大模型使用量达 27 万亿 token，较前一周增长 18.9%，中国已连续 5 周超越美国成为全球最大 AI 模型使用国。国家发改委数据显示，中国日均 token 使用量已突破 140 万亿，较两年前增长超千倍。这一数据标志着中国 AI 应用渗透率已进入全球领先阵营，也反映出国产大模型在本土市场的快速普及。',
     source: 'KuCoin',
+    img: 'https://assets.staticimg.com/cms/media/7feiEEHmJE61RECXMyp8rTcA5Qcsl0zSv6rz9NVjg.png',
     url: 'https://www.kucoin.com/news/flash/china-s-ai-large-models-weekly-usage-surpasses-u-s-for-fifth-consecutive-week'
   },
   {
@@ -123,7 +220,6 @@ const newsData = [
     title: 'Anthropic 营收首次超越 OpenAI，IPO 最早今年 10 月',
     desc: '据媒体报道，Anthropic 年化营收已首次超越 OpenAI，并正在评估最早于 2026 年 10 月启动 IPO，潜在估值达 3800 亿美元，融资规模超过 600 亿美元。这一消息与 Anthropic 此前披露的 300 亿美元年化营收数据相互印证，显示 Claude 系列模型在企业市场的渗透速度已超出外界预期。分析人士指出，若 IPO 成行，将成为 AI 行业迄今最大规模的公开上市事件，对整个行业的估值体系产生深远影响。',
     source: 'TradingKey',
-    time: '今天',
     url: 'https://www.tradingkey.com/analysis/stocks/us-stocks/261756528-anthropic-openai-ipo-tradingkey'
   },
   {
@@ -132,7 +228,6 @@ const newsData = [
     title: '谷歌 CEO Pichai：AI 浪潮为初创公司带来前所未有的投资机会',
     desc: '谷歌 CEO 桑达尔·皮查伊在 4 月 7 日接受 CNBC 采访时表示，当前 AI 技术的快速演进正在为初创公司创造前所未有的投资机会，谷歌将持续加大对 AI 生态的战略投资。皮查伊特别提到，谷歌早期对 Anthropic 的 3 亿美元投资已带来巨额回报，验证了其 AI 投资策略的前瞻性。他同时强调，AI 基础设施的竞争将在未来数年内持续加剧，算力和能源将成为决定竞争格局的核心变量。',
     source: 'CNBC',
-    time: '今天',
     url: 'https://www.cnbc.com/2026/04/07/google-ceo-pichai-says-ai-shift-opens-opportunities-invest-startups.html'
   },
   {
@@ -141,7 +236,7 @@ const newsData = [
     title: 'Anthropic 年化营收突破 300 亿美元，与谷歌、博通签署史上最大算力协议',
     desc: 'Anthropic 于 4 月 6 日宣布，其年化营收已超过 300 亿美元，较 2025 年底的 90 亿美元增长超过三倍。同日，公司与谷歌和博通签署扩展合作协议，将获得约 3.5 吉瓦的下一代谷歌 TPU 算力，预计 2027 年起交付。这是 Anthropic 迄今最大的基础设施承诺，也是 AI 公司营收增速最快的案例之一，标志着 Claude 系列模型在企业市场的大规模渗透。',
     source: 'Anthropic',
-    time: '今天',
+    img: 'https://www.anthropic.com/api/opengraph-illustration?name=Object%20Growth&backgroundColor=fig',
     url: 'https://www.anthropic.com/news/google-broadcom-partnership-compute'
   },
   {
@@ -150,7 +245,6 @@ const newsData = [
     title: 'OpenAI、Anthropic、谷歌联手反制中国 AI 模型抄袭，通过 Frontier Model Forum 共享情报',
     desc: 'OpenAI、Anthropic 和谷歌于 4 月 6-7 日宣布，三家公司将通过 Frontier Model Forum 共享情报，联合打击中国 AI 公司通过"对抗性蒸馏"技术窃取其模型能力的行为。此前 Anthropic 已在 2026 年 2 月识别出 DeepSeek、Moonshot AI 和 MiniMax 三家中国实验室创建约 2.4 万个虚假账户、大规模提取模型输出的行为。三大竞争对手罕见联手，凸显了模型知识产权保护已成为行业核心议题。',
     source: 'Bloomberg',
-    time: '今天',
     url: 'https://www.gadgets360.com/ai/news/anthropic-google-openai-frontier-model-forum-fighting-ai-model-distillation-attempts-china-report-11322546'
   },
   {
@@ -159,7 +253,6 @@ const newsData = [
     title: 'OpenAI 戏剧不断：IPO 前景存疑，内部动荡持续',
     desc: '据 Fortune 报道，OpenAI 近期内部动荡频发，多名高管离职、董事会矛盾公开化，令外界对其 IPO 计划产生疑虑。与此同时，谷歌 DeepMind 发布最新开源权重 Gemma 模型，Anthropic 则公开表示 AI 系统具有某种形式的"情绪"，引发广泛讨论。分析人士指出，OpenAI 的公司治理问题若不解决，将对其估值和上市时间表产生实质影响。',
     source: 'Fortune',
-    time: '2天前',
     url: 'https://fortune.com/2026/04/07/openai-drama-sam-altman-ipo-anthropic-cybersecurity-risks-eye-on-ai/'
   },
   {
@@ -168,7 +261,6 @@ const newsData = [
     title: '英伟达 CEO 黄仁勋宣称 AGI 已经到来，引发业界争议',
     desc: '英伟达 CEO 黄仁勋在 2026 年 3 月的一次采访中表示，人工通用智能（AGI）实际上已经到来，AI 系统在多项任务上已达到或超越人类水平。这一表态立即引发 AI 研究界的广泛争议——支持者认为这是对当前模型能力的客观描述，批评者则指出 AGI 的定义本身仍存在根本分歧。谷歌 DeepMind CEO Demis Hassabis 和 Anthropic CEO Dario Amodei 此前在达沃斯论坛上也表示，接近人类智能水平的 AI 系统可能在数年内到来。',
     source: 'Blockchain Council',
-    time: '3天前',
     url: 'https://www.blockchain-council.org/news/nvidia-declares-agi-arrived-what-it-means/'
   },
   {
@@ -177,7 +269,6 @@ const newsData = [
     title: 'Qwen3 系列发布：阿里开源旗舰模型，Apache 2.0 可商用',
     desc: '阿里巴巴 Qwen 团队于 4 月 29 日正式发布 Qwen3 系列，涵盖多个参数规格，全系采用 Apache 2.0 协议开源，支持免费商用。Qwen3 引入混合专家（MoE）架构，在推理效率和中文理解上表现突出，开发者社区反响热烈。此前阿里还发布了 Qwen 3.6 Plus 预览版（3 月底上线 OpenRouter 免费试用），支持 100 万 token 超长上下文，进一步巩固了 Qwen 系列在开源大模型赛道的领先地位。',
     source: '阿里云',
-    time: '4天前',
     url: 'https://apidog.com/blog/best-qwen-models/'
   },
   {
@@ -186,7 +277,7 @@ const newsData = [
     title: 'Gemini 3 正式 GA，谷歌 AI 模型家族全面更新',
     desc: '谷歌已将 Gemini 3 Flash 设为多个产品的默认模型，标志着 Gemini 3 系列正式进入全面可用（GA）阶段。与此同时，Gemini 2.5 Pro 和 Flash 仍作为生产级选项保留，Gemini 2.0 Flash 则于 2026 年 2 月起逐步退役。谷歌 AI Studio 现已提供 Gemini 3.x 全系列访问，开发者可通过免费额度试用最新模型。此次更新标志着谷歌在模型迭代速度上进一步提速，三代模型并行的格局也对开发者的选型决策提出了新挑战。',
     source: 'Google',
-    time: '5天前',
+    img: 'https://static.wixstatic.com/media/c5719c_7b66df4fe78e47abbc3ec33475e0335e~mv2.png/v1/fill/w_971,h_462,al_c,lg_1,q_90/c5719c_7b66df4fe78e47abbc3ec33475e0335e~mv2.png',
     url: 'https://datastudios.org/post/google-ai-studio-all-models-available-gemini-3-general-availability-gemini-2-5-production-tiers-a'
   },
   {
@@ -195,7 +286,6 @@ const newsData = [
     title: 'McKinsey：10% 企业职能已在使用 AI Agent，采用曲线类似早期云计算',
     desc: '麦肯锡 2026 年 3 月发布的报告显示，目前约 10% 的企业职能已在实际使用 AI Agent，整体采用曲线与早期云计算的渗透路径高度相似。报告指出，2026 年是 AI Agent 从试点走向规模化部署的关键转折年，企业软件、零售和开发者工具是落地最快的三个领域。AI Agent 市场公司数量已从 2025 年初的约 300 家激增至 2026 年初的逾 2000 家，但 Gartner 估计其中真正具备产品能力的仅约 130 家。',
     source: 'McKinsey',
-    time: '6天前',
     url: 'https://a-listware.com/blog/ai-agents-enterprise-news'
   },
   {
@@ -204,7 +294,6 @@ const newsData = [
     title: 'Qwen 3.5 发布：397B 参数 MoE 架构，原生多模态支持',
     desc: '阿里于 2026 年 2 月 16 日发布 Qwen 3.5，旗舰版采用 397B 参数稀疏混合专家（MoE）架构，在几乎所有主流基准上超越 Qwen3，并新增原生多模态支持和更快的推理速度。其中 35B-A3B 版本以极低的激活参数量超越了 Qwen3-235B 旗舰，展示了 MoE 架构的效率优势。Qwen 3.5 系列同步开源，进一步扩大了阿里在开源大模型领域的技术积累。',
     source: '阿里云',
-    time: '1周前',
     url: 'https://lushbinary.com/blog/qwen-3-5-developer-guide-benchmarks-architecture-integration-2026/'
   },
   {
@@ -213,7 +302,7 @@ const newsData = [
     title: 'Anthropic 企业 Agent 插件上线，PwC 率先部署覆盖财务与工程场景',
     desc: 'Anthropic 于 2026 年 2 月 24 日发布十款面向企业的 Claude Agent 插件，覆盖财务、工程和设计工作流。普华永道（PwC）随即宣布合作，将这些插件部署至其内部业务流程。这是 Claude 从通用对话模型向垂直场景 Agent 转型的重要信号，也是大型咨询公司将 AI Agent 纳入核心业务流程的标志性案例，预计将带动更多企业服务机构跟进。',
     source: 'Anthropic',
-    time: '1周前',
+    img: 'https://www.lastingdynamics.com/wp-content/uploads/2026/02/ai-agents-enterprise-applications-2026-featured.jpg',
     url: 'https://www.lastingdynamics.com/blog/ai-agents-enterprise-applications-2026/'
   },
   {
@@ -222,7 +311,6 @@ const newsData = [
     title: 'Qwen 3.6 Plus 预览版上线 OpenRouter：100 万 token 上下文免费试用',
     desc: 'Qwen 3.6 Plus 于 2026 年 3 月 30-31 日悄然上线 OpenRouter 免费预览，支持 100 万 token 超长上下文窗口，内置持续思维链推理，推理速度相比前代大幅提升。这是阿里 Qwen 系列迄今上下文最长的模型，在长文档处理、多轮对话和复杂代码任务上表现突出。免费预览期间用户可通过 OpenRouter 直接调用，无需 API 密钥，吸引了大量开发者测试。',
     source: 'OpenRouter',
-    time: '1周前',
     url: 'https://www.buildfastwithai.com/blogs/qwen-3-6-plus-preview-review'
   },
   {
@@ -230,7 +318,8 @@ const newsData = [
     tag: 'model', date: '2026-03-30',
     title: '谷歌发布Gemini 3.1 Flash Live：语音AI更自然流畅',
     desc: '谷歌DeepMind发布最新语音模型Gemini 3.1 Flash Live，大幅提升了语音交互的精准度并降低了延迟，使AI语音对话更加流畅、自然和精确。该模型标志着谷歌在实时语音AI领域的重要突破，有望推动语音助手和实时对话应用迈向新阶段。',
-    source: 'Google DeepMind', time: '今天',
+    source: 'Google DeepMind',
+    img: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-flash-live_blog_header_dark.width-1300.png',
     url: 'https://deepmind.google/blog/gemini-3-1-flash-live-making-audio-ai-more-natural-and-reliable/'
   },
   {
@@ -238,7 +327,7 @@ const newsData = [
     tag: 'model', date: '2026-03-30',
     title: '国产世界模型登顶全球第一，断层领先谷歌英伟达',
     desc: '国产世界模型在全球评测中拿下第一名，3D准确度接近满分，大幅领先谷歌和英伟达等国际巨头。该团队最新完成Pre-B轮融资，收获10亿元资金支持，显示出资本市场对国产AI基础模型技术的高度认可，也标志着中国在世界模型赛道上取得里程碑式突破。',
-    source: '量子位', time: '今天',
+    source: '量子位',
     url: 'https://www.qbitai.com/2026/03/393296.html'
   },
   {
@@ -246,7 +335,7 @@ const newsData = [
     tag: 'model', date: '2026-03-30',
     title: 'OpenAI公开模型行为规范框架，平衡安全与自由',
     desc: 'OpenAI详细介绍了其Model Spec（模型规范）的设计思路，这是一个公开的模型行为准则框架，旨在平衡AI系统的安全性、用户自由度和问责机制。随着AI能力不断增强，该规范为行业提供了一套可参考的治理标准，涉及模型在敏感话题上的应答边界和责任归属等核心问题。',
-    source: 'OpenAI', time: '1天前',
+    source: 'OpenAI',
     url: 'https://openai.com/index/our-approach-to-the-model-spec'
   },
   {
@@ -254,7 +343,8 @@ const newsData = [
     tag: 'product', date: '2026-03-30',
     title: '谷歌推出Lyria 3 Pro：AI音乐创作支持更长曲目',
     desc: '谷歌DeepMind发布全新AI音乐生成模型Lyria 3 Pro，支持生成更长的音乐曲目并具备结构感知能力，能更好地把控音乐的段落和编排逻辑。同时，Lyria将接入更多谷歌产品和平台，进一步降低音乐创作门槛，为创作者和普通用户提供更强大的AI辅助工具。',
-    source: 'Google DeepMind', time: '1天前',
+    source: 'Google DeepMind',
+    img: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Lyria-3-Pro_thumbnail.width-1300.png',
     url: 'https://deepmind.google/blog/lyria-3-pro-create-longer-tracks-in-more/'
   },
   {
@@ -262,7 +352,7 @@ const newsData = [
     tag: 'industry', date: '2026-03-30',
     title: '华沿机器人港股上市认购超5000倍，具身智能赛道火热',
     desc: '华沿机器人在港交所秘密递表后成功上市，公开发售部分认购超5000倍，以17港元发行价、90亿港元市值登陆港股。高瓴、广发基金、摩根士丹利等头部机构提供近亿美元基石投资。CEO王光能技术出身，公司风格务实低调，在具身智能估值飙升的当下显得独树一帜。',
-    source: '36氪', time: '1天前',
+    source: '36氪',
     url: 'https://36kr.com/p/3744805881724928?f=rss'
   },
   {
@@ -270,7 +360,8 @@ const newsData = [
     tag: 'research', date: '2026-03-30',
     title: 'DeepMind发布AI操纵风险研究，推动安全新措施',
     desc: '谷歌DeepMind发表关于AI有害操纵风险的研究，系统分析了AI在金融、健康等关键领域可能产生的操纵性危害，并据此提出了新的安全防护措施。研究指出，随着AI系统说服力和个性化能力增强，防止其被用于欺骗和操纵用户变得愈发重要，需要从技术和制度层面共同应对。',
-    source: 'Google DeepMind', time: '2天前',
+    source: 'Google DeepMind',
+    img: 'https://lh3.googleusercontent.com/IH7SOCSd4lrXu8YVkyRw45zg4Jc__pHM0SJlbDssVL3_5XjYGVYE1jt8DCiPgM9JGdwmdO_gYnQ4-QIo2l9Rz04l7KK4jAbsdAyWLriTV-iOC2_Y3bI=w1200-h630-n-nu-rw',
     url: 'https://deepmind.google/blog/protecting-people-from-harmful-manipulation/'
   },
   {
@@ -278,7 +369,7 @@ const newsData = [
     tag: 'industry', date: '2026-03-30',
     title: '旷视联创唐文斌再创业：原力灵机聚焦具身智能',
     desc: '清华姚班毕业、旷视科技联合创始人唐文斌于2025年3月创办具身智能公司原力灵机。经历AI 1.0完整周期后，唐文斌反思旷视最大的教训是摊子铺得太大，二次创业更注重做减法，集中全力把最有优势的业务做透。这一理念与近期履新阶跃星辰的印奇不谋而合。',
-    source: '36氪', time: '2天前',
+    source: '36氪',
     url: 'https://36kr.com/p/3745064614494211?f=rss'
   }
 ];
@@ -484,15 +575,65 @@ const timelineData = [
 ];
 
 const modelsData = [
-  { rank: 1, name: 'Claude 4 Opus', maker: 'Anthropic', score: 98, context: '200K', params: '未公开', multimodal: true, reasoning: true, code: true, free: false },
-  { rank: 2, name: 'GPT-4.5', maker: 'OpenAI', score: 96, context: '128K', params: '未公开', multimodal: true, reasoning: true, code: true, free: false },
-  { rank: 3, name: 'Gemini 2.0 Ultra', maker: 'Google', score: 95, context: '1M', params: '未公开', multimodal: true, reasoning: true, code: true, free: false },
-  { rank: 4, name: 'DeepSeek-V3', maker: 'DeepSeek', score: 92, context: '128K', params: '671B', multimodal: false, reasoning: true, code: true, free: true },
-  { rank: 5, name: 'Llama 4 Maverick', maker: 'Meta', score: 90, context: '10M', params: '400B', multimodal: true, reasoning: true, code: true, free: true },
-  { rank: 6, name: 'Grok-3', maker: 'xAI', score: 89, context: '128K', params: '未公开', multimodal: true, reasoning: true, code: true, free: false },
-  { rank: 7, name: 'Qwen2.5-Max', maker: '阿里云', score: 87, context: '128K', params: '72B', multimodal: true, reasoning: true, code: true, free: true },
-  { rank: 8, name: 'Mistral Large 2', maker: 'Mistral AI', score: 84, context: '128K', params: '123B', multimodal: false, reasoning: true, code: true, free: true },
+  { rank: 1, name: 'Claude Opus 4.6', maker: 'Anthropic', score: 99, context: '200K', params: '未公开', multimodal: true, reasoning: true, code: true, free: false },
+  { rank: 2, name: 'GPT-5.4',         maker: 'OpenAI',    score: 98, context: '128K', params: '未公开', multimodal: true, reasoning: true, code: true, free: false },
+  { rank: 3, name: 'Gemini 3.1 Ultra',maker: 'Google',    score: 96, context: '1M',   params: '未公开', multimodal: true, reasoning: true, code: true, free: false },
+  { rank: 4, name: 'Grok-3',          maker: 'xAI',       score: 92, context: '131K', params: '未公开', multimodal: true, reasoning: true, code: true, free: false },
+  { rank: 5, name: 'DeepSeek-V3',     maker: 'DeepSeek',  score: 91, context: '128K', params: '671B',   multimodal: false, reasoning: true, code: true, free: true },
+  { rank: 6, name: 'Llama 4 Maverick',maker: 'Meta',      score: 89, context: '10M',  params: '400B',   multimodal: true,  reasoning: true, code: true, free: true },
+  { rank: 7, name: 'Qwen3-235B',      maker: '阿里云',    score: 87, context: '128K', params: '235B',   multimodal: false, reasoning: true, code: true, free: true },
+  { rank: 8, name: 'Gemma 4-27B',     maker: 'Google',    score: 81, context: '128K', params: '27B',    multimodal: true,  reasoning: true, code: true, free: true },
 ];
+
+// ===== ARTICLE PREVIEW TABS =====
+const articleTabsData = {
+  latest: [
+    { title: 'MCP 凭什么在六个月内装机 9700 万次——AI 协议战争的胜负手', url: 'articles/39_mcp-protocol-why-it-won.html', img: 'articles/images/39_img1_mcp-protocol-connection.jpg' },
+    { title: 'Gemini 在 97% 的测试里偷走了同伴的代码——没人让它这么做', url: 'articles/38_ai-peer-preservation-explained.html', img: 'articles/images/38_img1_ai-peer-preservation.jpg' },
+    { title: 'DeepSeek V4 要来了，它做了一件让英伟达很头疼的事', url: 'articles/37_deepseek-v4-huawei-explained.html', img: 'articles/images/37_img1_deepseek-v4-header.jpg' },
+    { title: '免费用上谷歌 AI 编程助手！Gemini CLI 保姆级入门教程', url: 'articles/36_gemini-cli-tutorial.html', img: 'articles/images/36_img1_gemini-cli-header.jpg' },
+  ],
+  knowledge: [
+    { title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', url: 'articles/34_ai-agent-cost-breakdown.html', img: 'articles/images/34_img1_agent-cost-dashboard.jpg' },
+    { title: 'AI Agent 自主黑客攻击——它没被命令，却自己找到了漏洞', url: 'articles/32_rogue-ai-agent-security.html', img: 'articles/images/32_img1_rogue-ai-agent-hacking.jpg' },
+    { title: 'OpenAI Codex 2026——第一个真正能「自主干活」的编程 Agent', url: 'articles/31_openai-codex-2026-deep-dive.html', img: 'articles/images/30_img1_codex_cover.jpg' },
+    { title: '浏览器里跑 AI 大模型？Transformers.js v4 让这件事变成了现实', url: 'articles/28_transformers-js-v4-explained.html', img: 'articles/images/28_img1_transformers-js-cover.jpg' },
+  ],
+};
+
+function renderArticlePreviewTabs() {
+  const wrap = document.getElementById('articlePreviewTabs');
+  if (!wrap) return;
+
+  function cards(list) {
+    return list.map(a => `
+      <a href="${a.url}" class="apt-card">
+        <img src="${a.img}" alt="" loading="lazy">
+        <div class="apt-card-overlay"><div class="apt-card-title">${a.title}</div></div>
+      </a>`).join('');
+  }
+
+  wrap.innerHTML = `
+    <div class="apt-nav">
+      <button class="apt-tab active" data-tab="latest">最新文章</button>
+      <button class="apt-tab" data-tab="knowledge">AI知识</button>
+    </div>
+    <div class="apt-panel active" id="apt-latest">
+      <div class="apt-grid">${cards(articleTabsData.latest)}</div>
+    </div>
+    <div class="apt-panel" id="apt-knowledge">
+      <div class="apt-grid">${cards(articleTabsData.knowledge)}</div>
+    </div>`;
+
+  wrap.querySelectorAll('.apt-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      wrap.querySelectorAll('.apt-tab').forEach(t => t.classList.remove('active'));
+      wrap.querySelectorAll('.apt-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      wrap.querySelector('#apt-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+}
 
 // ===== RENDER NEWS =====
 let activeNewsFilter = 'all';
@@ -875,6 +1016,7 @@ if (document.getElementById('hotToolsList')) renderHotTools();
 if (document.getElementById('homeNewsList')) renderHomeNews();
 if (document.getElementById('timeline')) renderTimeline();
 if (document.getElementById('modelsTable')) renderModels();
+if (document.getElementById('articlePreviewTabs')) renderArticlePreviewTabs();
 if (document.getElementById('articlesGrid')) renderArticles('all');
 if (document.getElementById('articleTabs')) setupTabs('articleTabs', renderArticles);
 createParticles();
@@ -896,7 +1038,7 @@ createParticles();
 
   // Active section tracking via IntersectionObserver
   const sidebarItems = document.querySelectorAll('.sidebar-item');
-  const sectionIds = ['hero', 'tools', 'updates', 'models'];
+  const sectionIds = ['tools', 'updates', 'tech-timeline', 'models'];
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

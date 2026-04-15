@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('ai-article-theme')||'light');</script>
   <meta name="description" content="深度拆解AI Agent架构：四大核心组件、ReAct推理框架、多智能体编排模式与主流框架选型指南">
   <title>你以为的 AI Agent 架构，和真正跑在生产上的差在哪？</title>
   <link rel="stylesheet" href="style.css">
@@ -100,8 +101,28 @@
     "image": "https://cc-newplayer.github.io/seo-farm/articles/images/10_img1_components.jpg"
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="article-common.css" />
 </head>
 <body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../index.html" class="site-nav-logo">⚡ AI<span class="accent">前沿</span></a>
+    <div class="site-nav-links">
+      <a href="../index.html">首页</a>
+      <a href="../news.html">AI资讯</a>
+      <a href="../tools.html">AI工具</a>
+      <a href="../articles.html">AI文章</a>
+      <a href="../about.html">关于</a>
+      <button id="themeToggle" class="theme-btn" aria-label="切换主题">🌙</button>
+    </div>
+  </div>
+</nav>
+<aside class="toc-sidebar" id="tocSidebar">
+  <div class="toc-label">📑 本文目录</div>
+  <ul class="toc-list" id="tocList"></ul>
+</aside>
 <div class="page-wrapper">
 
   <!-- ① 文章头部 -->
@@ -118,6 +139,10 @@
       深度拆解 AI Agent 的四大核心组件、ReAct 推理框架原理、多智能体编排模式与主流框架选型逻辑——读完本文，你能获得一套可以直接用的架构选型判断框架。
     </p>
   </header>
+  <div class="article-cover">
+    <span class="cover-icon">⚡</span>
+    <span class="cover-tagline">Agent 架构 · 生产级实现拆解</span>
+  </div>
 
   <!-- ② 正文 -->
   <div class="article-body">
@@ -455,13 +480,24 @@ flowchart TD
   </footer>
 
 </div><!-- end page-wrapper -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span class="site-footer-logo">⚡ AI<span class="accent">前沿</span></span>
+    <span>© 2026 AI前沿 · 原创内容</span>
+    <div class="site-footer-links">
+      <a href="../news.html">AI资讯</a>
+      <a href="../articles.html">AI科普</a>
+      <a href="../index.html">首页</a>
+    </div>
+  </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
+var _mt = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default';
 mermaid.initialize({
   startOnLoad: true,
-  theme: 'default',
-  flowchart: { curve: 'basis', useMaxWidth: true, htmlLabels: true }
+  theme: _mt, flowchart: { curve: 'basis', useMaxWidth: true, htmlLabels: true }
 });
 
 // Chart.js：多智能体 vs 单体 Agent 性能对比
@@ -508,6 +544,50 @@ new Chart(document.getElementById('agentCompareChart'), {
     }
   }
 });
+</script>
+<script>
+(function () {
+  var headings = document.querySelectorAll('.article-body h2');
+  var tocList  = document.getElementById('tocList');
+  if (tocList && headings.length) {
+    headings.forEach(function (h, i) {
+      if (!h.id) h.id = 'sec-' + i;
+      var li = document.createElement('li');
+      li.className = 'toc-item';
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.className = 'toc-link';
+      a.textContent = h.textContent;
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById(h.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          tocList.querySelectorAll('.toc-link').forEach(function (l) { l.classList.remove('toc-active'); });
+          var active = tocList.querySelector('a[href="#' + id + '"]');
+          if (active) active.classList.add('toc-active');
+        }
+      });
+    }, { rootMargin: '-5% 0px -75% 0px' });
+    headings.forEach(function (h) { observer.observe(h); });
+  }
+  var btn = document.getElementById('themeToggle');
+  if (btn) {
+    btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('ai-article-theme', next);
+      btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }
+})();
 </script>
 </body>
 </html>

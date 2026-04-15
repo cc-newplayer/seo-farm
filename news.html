@@ -17,6 +17,162 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== NEWS PAGE LAYOUT ===== */
+    .news-page-wrap {
+      padding-top: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .news-main {
+      flex: 1;
+      min-width: 0;
+      padding: 32px 0 64px;
+    }
+    .news-page-header { margin-bottom: 20px; }
+    .news-page-header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+    .news-page-header p { color: var(--text-muted); font-size: 0.88rem; }
+
+    /* ── filters ── */
+    .news-filters { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .filter-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .filter-row-label {
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--text-muted); flex-shrink: 0; margin-right: 2px;
+    }
+    .nf-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 4px 10px; border-radius: 999px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--text-muted); font-size: 0.78rem;
+      cursor: pointer; transition: all 0.15s; font-family: inherit; white-space: nowrap;
+    }
+    .nf-chip:hover { color: var(--text); border-color: var(--accent); }
+    .nf-chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ── date groups ── */
+    .news-date-group { margin-bottom: 28px; }
+    .news-date-label {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--text-muted);
+      padding-bottom: 10px; border-bottom: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+    .news-feed { display: flex; flex-direction: column; gap: 8px; }
+
+    /* ── news card ── */
+    .news-card {
+      display: flex; flex-direction: row; align-items: flex-start; gap: 14px; padding: 14px 16px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      text-decoration: none; color: var(--text);
+    }
+    .news-card:hover {
+      border-color: var(--accent); transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(108,99,255,0.1);
+    }
+    .news-card-content { flex: 1; min-width: 0; }
+    .news-card-meta {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 0.72rem; color: var(--text-muted);
+      margin-bottom: 6px; flex-wrap: wrap;
+    }
+    .news-card-source { display: inline-flex; align-items: center; gap: 4px; }
+    .news-card-source img { width: 13px; height: 13px; border-radius: 2px; }
+    .nc-sep { opacity: 0.3; }
+    .nc-tag {
+      padding: 1px 6px; border-radius: 999px;
+      font-size: 0.66rem; font-weight: 500;
+    }
+    .nc-tag-model    { background: rgba(99,102,241,0.15); color: #818cf8; }
+    .nc-tag-product  { background: rgba(16,163,127,0.15); color: #10a37f; }
+    .nc-tag-research { background: rgba(59,130,246,0.15); color: #60a5fa; }
+    .nc-tag-industry { background: rgba(245,158,11,0.15); color: #fbbf24; }
+    .news-card-title {
+      font-size: 0.92rem; font-weight: 600; line-height: 1.45;
+      margin-bottom: 5px;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .news-card-desc {
+      font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    /* 缩略图：统一 112×72，有原图 cover，无原图居中 logo */
+    .news-card-thumb {
+      flex-shrink: 0; border-radius: 8px; overflow: hidden;
+      width: 112px; height: 72px;
+    }
+    .news-card-thumb.thumb-article img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .news-card-thumb.thumb-fav {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .news-card-thumb.thumb-fav img { width: 40px; height: 40px; object-fit: contain; }
+
+    /* ── right sticky sidebar ── */
+    .news-sidebar {
+      width: 272px; flex-shrink: 0;
+      position: sticky; top: 88px;
+      align-self: flex-start;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding: 32px 0 32px;
+      display: flex; flex-direction: column; gap: 16px;
+      scrollbar-width: none;
+    }
+    .news-sidebar::-webkit-scrollbar { display: none; }
+    .ns-block {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 16px;
+    }
+    .ns-title {
+      font-size: 0.82rem; font-weight: 600;
+      margin-bottom: 12px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ns-pick { display: flex; flex-direction: column; gap: 10px; }
+    .ns-pick-item {
+      display: flex; gap: 8px; text-decoration: none;
+      color: var(--text); align-items: flex-start;
+    }
+    .ns-pick-item:hover .ns-pick-title { color: var(--accent); }
+    .ns-pick-num {
+      font-size: 0.7rem; color: var(--text-muted);
+      font-weight: 700; flex-shrink: 0; width: 16px; margin-top: 2px;
+    }
+    .ns-pick-title {
+      font-size: 0.77rem; line-height: 1.4;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+      transition: color 0.15s;
+    }
+    .ns-source-list { display: flex; flex-direction: column; gap: 8px; }
+    .ns-source-item { display: flex; align-items: center; gap: 7px; font-size: 0.76rem; }
+    .ns-source-item img { width: 13px; height: 13px; border-radius: 2px; flex-shrink: 0; }
+    .ns-source-name { flex: 1; color: var(--text-muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .ns-bar-wrap { width: 52px; height: 4px; background: var(--border); border-radius: 2px; flex-shrink: 0; }
+    .ns-bar { height: 100%; background: var(--accent); border-radius: 2px; }
+    .ns-source-cnt { font-size: 0.68rem; color: var(--text-muted); width: 18px; text-align: right; flex-shrink: 0; }
+
+    /* ── mobile ── */
+    @media (max-width: 900px) {
+      .news-sidebar { display: none; }
+    }
+    @media (max-width: 600px) {
+      .news-page-wrap { padding-left: 16px; padding-right: 16px; }
+      .news-card-thumb { display: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -26,21 +182,21 @@
     <span class="toggle-icon">&#10094;</span>
   </button>
   <nav class="sidebar-nav">
-    <a href="index.html" class="sidebar-item" data-tooltip="首页">
-      <span class="sidebar-icon">⚡</span>
-      <span class="sidebar-label">首页</span>
+    <a href="index.html#tools" class="sidebar-item" data-tooltip="AI工具">
+      <span class="sidebar-icon">🛠️</span>
+      <span class="sidebar-label">AI工具</span>
     </a>
-    <a href="news.html" class="sidebar-item active" data-tooltip="AI资讯">
+    <a href="index.html#updates" class="sidebar-item" data-tooltip="最新资讯">
       <span class="sidebar-icon">🔥</span>
-      <span class="sidebar-label">AI资讯</span>
+      <span class="sidebar-label">最新资讯</span>
     </a>
-    <a href="articles.html" class="sidebar-item" data-tooltip="AI科普">
-      <span class="sidebar-icon">📚</span>
-      <span class="sidebar-label">AI科普</span>
+    <a href="index.html#tech-timeline" class="sidebar-item" data-tooltip="技术动态">
+      <span class="sidebar-icon">📈</span>
+      <span class="sidebar-label">技术动态</span>
     </a>
-    <a href="about.html" class="sidebar-item" data-tooltip="关于">
-      <span class="sidebar-icon">💡</span>
-      <span class="sidebar-label">关于</span>
+    <a href="index.html#models" class="sidebar-item" data-tooltip="模型榜单">
+      <span class="sidebar-icon">🏆</span>
+      <span class="sidebar-label">模型榜单</span>
     </a>
   </nav>
 </aside>
@@ -48,53 +204,74 @@
 <div class="main-wrap" id="mainWrap">
 
 <!-- ===== NAV ===== -->
-<header class="navbar">
+<header class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="index.html" class="logo">
       <span class="logo-icon">⚡</span>
       <span class="logo-text">AI<span class="accent">前沿</span></span>
     </a>
     <nav class="nav-links">
-      <div class="nav-dropdown">
-        <span class="nav-dropdown-toggle">AI资讯 <span class="dropdown-arrow">▾</span></span>
-        <div class="nav-dropdown-menu">
-          <a href="news.html">最新资讯</a>
-          <a href="articles.html">AI科普文章</a>
-        </div>
-      </div>
-      <a href="index.html#tools">AI工具</a>
-      <a href="index.html#updates">技术动态</a>
-      <a href="index.html#models">模型榜单</a>
-      <a href="about.html">关于我们</a>
+      <a href="index.html">首页</a>
+      <a href="news.html" style="color: var(--accent);">AI资讯</a>
+      <a href="tools.html">AI工具</a>
+      <a href="articles.html">AI文章</a>
+      <a href="about.html">关于</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="menu">&#9776;</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="news.html" onclick="closeMobile()">最新资讯</a>
-    <a href="articles.html" onclick="closeMobile()">AI科普文章</a>
-    <a href="index.html#tools" onclick="closeMobile()">AI工具</a>
-    <a href="index.html#updates" onclick="closeMobile()">技术动态</a>
-    <a href="index.html#models" onclick="closeMobile()">模型榜单</a>
+    <a href="index.html" onclick="closeMobile()">首页</a>
+    <a href="news.html" onclick="closeMobile()">AI资讯</a>
+    <a href="tools.html" onclick="closeMobile()">AI工具</a>
+    <a href="articles.html" onclick="closeMobile()">AI文章</a>
+    <a href="about.html" onclick="closeMobile()">关于</a>
   </div>
 </header>
 
-<!-- ===== NEWS ===== -->
-<section class="section" style="padding-top: 80px;">
-  <div class="container">
-    <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);font-size:0.875rem;text-decoration:none;margin-bottom:32px;">← 返回首页</a>
-    <div class="section-header">
-      <h2 class="section-title">🔥 AI 前沿资讯</h2>
-      <div class="filter-tabs" id="newsTabs">
-        <button class="tab active" data-filter="all">全部</button>
-        <button class="tab" data-filter="model">大模型</button>
-        <button class="tab" data-filter="product">产品</button>
-        <button class="tab" data-filter="research">研究</button>
-        <button class="tab" data-filter="industry">行业</button>
-      </div>
+<!-- ===== NEWS PAGE ===== -->
+<div class="news-page-wrap">
+
+  <!-- ── Left: filters + grouped news ── -->
+  <div class="news-main">
+    <div class="news-page-header">
+      <h1>🔥 AI 前沿资讯</h1>
+      <p>追踪全球 AI 最新动态，按话题与来源精准筛选</p>
     </div>
-    <div class="news-grid" id="newsGrid"></div>
+
+    <div class="news-filters">
+      <!-- Row 1: Topic -->
+      <div class="filter-row" id="topicFilter">
+        <span class="filter-row-label">话题</span>
+        <button class="nf-chip active" data-topic="all">全部</button>
+        <button class="nf-chip" data-topic="model">🧠 大模型</button>
+        <button class="nf-chip" data-topic="product">📦 产品动态</button>
+        <button class="nf-chip" data-topic="research">🔬 技术研究</button>
+        <button class="nf-chip" data-topic="industry">🏢 行业动态</button>
+      </div>
+      <!-- Row 2: Source (populated by JS) -->
+      <div class="filter-row" id="sourceFilter"></div>
+    </div>
+
+    <div id="newsGroups"></div>
   </div>
-</section>
+
+  <!-- ── Right: sticky sidebar ── -->
+  <aside class="news-sidebar">
+    <div class="ns-block">
+      <div class="ns-title">⭐ 最新资讯</div>
+      <div id="todayPicks"></div>
+    </div>
+    <div class="ns-block">
+      <div class="ns-title">🔥 本周热点</div>
+      <div id="weekHot"></div>
+    </div>
+    <div class="ns-block">
+      <div class="ns-title">📊 来源分布</div>
+      <div id="sourceStats"></div>
+    </div>
+  </aside>
+
+</div><!-- /.news-page-wrap -->
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
@@ -102,51 +279,364 @@
     <div class="footer-brand">
       <span class="logo-icon">⚡</span>
       <span class="logo-text">AI<span class="accent">前沿</span></span>
+      <p>追踪全球人工智能最新进展</p>
     </div>
-    <p class="footer-copy">© 2026 AI前沿 · 数据持续更新中</p>
+    <div class="footer-links">
+      <div><h4>导航</h4><a href="news.html">AI资讯</a><a href="articles.html">AI科普</a><a href="tools.html">AI工具</a></div>
+      <div><h4>关注我们</h4><a href="#">微博</a><a href="#">知乎</a><a href="#">微信公众号</a></div>
+    </div>
   </div>
+  <div class="footer-bottom"><p>© 2025 AI前沿  ·  数据持续更新中</p></div>
 </footer>
 
 </div><!-- /.main-wrap -->
 
-<!-- ===== ARTICLE MODAL ===== -->
-<div class="article-modal" id="articleModal" onclick="if(event.target===this)closeArticle()">
-  <div class="article-panel">
-    <button class="article-close" onclick="closeArticle()" aria-label="关闭">✕</button>
-    <div class="article-body" id="articleBody"></div>
-  </div>
-</div>
-
 <script src="script.js"></script>
 <script>
-  // 覆盖 init：news 页只渲染 news
-  renderNews('all');
-  setupTabs('newsTabs', renderNews);
+// ── Source domain map ──
+const sourceDomainMap = {
+  'Google':             'google.com',
+  'Google DeepMind':    'deepmind.google',
+  'Anthropic':          'anthropic.com',
+  'OpenAI':             'openai.com',
+  '36氪':               '36kr.com',
+  '量子位':             'qbitai.com',
+  '阿里云':             'aliyun.com',
+  'Reuters':            'reuters.com',
+  'Fortune':            'fortune.com',
+  'Forbes':             'forbes.com',
+  'CNBC':               'cnbc.com',
+  'Bloomberg':          'bloomberg.com',
+  'McKinsey':           'mckinsey.com',
+  'Axios':              'axios.com',
+  'InfoWorld':          'infoworld.com',
+  'ScienceNet':         'sciencenet.cn',
+  'KuCoin':             'kucoin.com',
+  'The Neuron':         'theneuron.ai',
+  'TradingKey':         'tradingkey.com',
+  'Blockchain Council': 'blockchain-council.org',
+  'OpenRouter':         'openrouter.ai',
+  '网安标委':           'tc260.org.cn',
+};
+function srcFavicon(source, sz) {
+  const domain = sourceDomainMap[source];
+  if (!domain) return '';
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=${sz || 16}`;
+}
 
-  // 侧边栏折叠
-  if (localStorage.getItem('sidebarCollapsed') === 'true') {
-    document.body.classList.add('sidebar-collapsed');
+const tagLabels   = { model: '大模型', product: '产品', research: '研究', industry: '行业' };
+const tagThumbBg  = { model: '#6366f1', product: '#10a37f', research: '#3b82f6', industry: '#f59e0b' };
+
+let activeTopicFilter  = 'all';
+let activeSourceFilter = 'all';
+
+// ── Build source filter row ──
+function buildSourceFilter() {
+  const counts = {};
+  newsData.forEach(n => { counts[n.source] = (counts[n.source] || 0) + 1; });
+  const topSources = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1]).slice(0, 9).map(([s]) => s);
+
+  const container = document.getElementById('sourceFilter');
+  container.innerHTML =
+    '<span class="filter-row-label">来源</span>' +
+    '<button class="nf-chip active" data-source="all">全部</button>' +
+    topSources.map(s => {
+      const fav = srcFavicon(s, 16);
+      const img = fav ? `<img src="${fav}" width="13" height="13" style="border-radius:2px;opacity:.85">` : '';
+      return `<button class="nf-chip" data-source="${s}">${img}${s}</button>`;
+    }).join('');
+
+  container.querySelectorAll('.nf-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.nf-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeSourceFilter = btn.dataset.source;
+      renderNewsGroups();
+    });
+  });
+}
+
+// ── Date label ──
+function getDateLabel(dateStr) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const d = new Date(dateStr + 'T00:00:00');
+  const diff = Math.round((today - d) / 86400000);
+  if (diff === 0) return '今天';
+  if (diff === 1) return '昨天';
+  if (diff === 2) return '前天';
+  const parts = dateStr.split('-');
+  return `${parseInt(parts[1])} 月 ${parseInt(parts[2])} 日`;
+}
+
+// ── Render grouped news ──
+function renderNewsGroups() {
+  let filtered = newsData;
+  if (activeTopicFilter  !== 'all') filtered = filtered.filter(n => n.tag    === activeTopicFilter);
+  if (activeSourceFilter !== 'all') filtered = filtered.filter(n => n.source === activeSourceFilter);
+
+  const groups = {};
+  filtered.forEach(n => {
+    if (!groups[n.date]) groups[n.date] = [];
+    groups[n.date].push(n);
+  });
+
+  const container = document.getElementById('newsGroups');
+  const dates = Object.keys(groups).sort((a, b) => b.localeCompare(a));
+
+  if (dates.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-muted);padding:40px 0 20px">暂无相关资讯</p>';
+    return;
   }
+
+  container.innerHTML = dates.map(date => {
+    const items = groups[date];
+    const cards = items.map(n => {
+      const srcImg = srcFavicon(n.source, 16);
+      const metaFav = srcImg ? `<img src="${srcImg}" width="13" height="13">` : '';
+      const thumbColor = tagThumbBg[n.tag] || '#6366f1';
+      // 优先用原文 OG 图，否则降级为来源 favicon
+      let thumbClass, thumbStyle, thumbContent;
+      if (n.img) {
+        thumbClass = 'news-card-thumb thumb-article';
+        thumbStyle = '';
+        thumbContent = `<img src="${n.img}" alt="">`;
+      } else {
+        thumbClass = 'news-card-thumb thumb-fav';
+        thumbStyle = `style="background:${thumbColor}18"`;
+        const fav = srcFavicon(n.source, 64);
+        thumbContent = fav
+          ? `<img src="${fav}" width="38" height="38">`
+          : `<span style="font-size:1.4rem;opacity:.5">${n.source.charAt(0)}</span>`;
+      }
+      return `<a class="news-card" href="${n.url}" target="_blank" rel="noopener"${!n.img ? ` data-fetch-img="${encodeURIComponent(n.url)}"` : ''}>
+        <div class="news-card-content">
+          <div class="news-card-meta">
+            <span class="news-card-source">${metaFav}${n.source}</span>
+            <span class="nc-sep">·</span>
+            <span class="nc-tag nc-tag-${n.tag}">${tagLabels[n.tag] || n.tag}</span>
+            <span class="nc-sep">·</span>
+            <span>${n.date}</span>
+          </div>
+          <div class="news-card-title">${n.title}</div>
+          <div class="news-card-desc">${n.desc}</div>
+        </div>
+        <div class="${thumbClass}" ${thumbStyle}>${thumbContent}</div>
+      </a>`;
+    }).join('');
+
+    return `<div class="news-date-group">
+      <div class="news-date-label">${getDateLabel(date)}&ensp;·&ensp;${items.length} 条</div>
+      <div class="news-feed">${cards}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── Render sidebar ──
+function renderSidebar() {
+  const TAG_RANK = { model: 4, product: 3, research: 2, industry: 1 };
+  const sorted = [...newsData].sort((a, b) => b.date.localeCompare(a.date) || a.id - b.id);
+
+  function rankItems(a, b) {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    const ta = TAG_RANK[a.tag] || 0, tb = TAG_RANK[b.tag] || 0;
+    if (ta !== tb) return tb - ta;
+    return b.date.localeCompare(a.date);
+  }
+
+  // 最新资讯：最新的 5 条（不限日期）
+  const latestItems = sorted.slice(0, 5);
+  document.getElementById('todayPicks').innerHTML =
+    `<div class="ns-pick">${latestItems.map((n, i) => {
+      const numStyle = i === 0 ? 'color:#ef4444;font-weight:700' : i === 1 ? 'color:#f97316;font-weight:700' : '';
+      return `<a class="ns-pick-item" href="${n.url}" target="_blank" rel="noopener">
+        <span class="ns-pick-num" style="${numStyle}">${i + 1}</span>
+        <span class="ns-pick-title">${n.title}</span>
+      </a>`;
+    }).join('')}</div>`;
+
+  // 本周热点：过去 7 天，每天最重要 1 条为基础，不足 5 时升级取第 2、3 名
+  const today = new Date().toISOString().slice(0, 10);
+  const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+  const weekItems = sorted.filter(n => n.date >= weekAgo && n.date <= today);
+
+  const byDay = {};
+  weekItems.forEach(n => {
+    if (!byDay[n.date]) byDay[n.date] = [];
+    byDay[n.date].push(n);
+  });
+  Object.keys(byDay).forEach(d => byDay[d].sort(rankItems));
+
+  // 每天取最重要 1 条 → 最多 7 候选，按重要性排序取前 5
+  const dayBests = Object.keys(byDay).map(d => byDay[d][0]);
+  dayBests.sort(rankItems);
+  const hotCandidates = dayBests.slice(0, 5);
+
+  // 不足 5 条时：升级取各天的第 2、3... 名补充
+  if (hotCandidates.length < 5) {
+    const seen = new Set(hotCandidates.map(n => n.id));
+    let round = 1;
+    while (hotCandidates.length < 5) {
+      const extras = [];
+      Object.keys(byDay).forEach(d => {
+        if (byDay[d].length > round && !seen.has(byDay[d][round].id)) {
+          seen.add(byDay[d][round].id);
+          extras.push(byDay[d][round]);
+        }
+      });
+      if (!extras.length) break;
+      extras.sort(rankItems);
+      hotCandidates.push(...extras.slice(0, 5 - hotCandidates.length));
+      round++;
+    }
+  }
+
+  // 展示时按日期降序排列
+  hotCandidates.sort((a, b) => b.date.localeCompare(a.date) || rankItems(a, b));
+
+  document.getElementById('weekHot').innerHTML =
+    hotCandidates.length
+      ? `<div class="ns-pick">${hotCandidates.map((n, i) => {
+          const numStyle = i === 0 ? 'color:#ef4444;font-weight:700' : i === 1 ? 'color:#f97316;font-weight:700' : '';
+          return `<a class="ns-pick-item" href="${n.url}" target="_blank" rel="noopener">
+            <span class="ns-pick-num" style="${numStyle}">${i + 1}</span>
+            <span class="ns-pick-title">${n.title}</span>
+          </a>`;
+        }).join('')}</div>`
+      : '<p style="color:var(--text-muted);font-size:.85rem;padding:8px 0">本周暂无资讯</p>';
+
+  // 来源分布
+  const counts = {};
+  newsData.forEach(n => { counts[n.source] = (counts[n.source] || 0) + 1; });
+  const topSrc = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  const maxCnt = topSrc[0][1];
+  document.getElementById('sourceStats').innerHTML =
+    `<div class="ns-source-list">${topSrc.map(([src, cnt]) => {
+      const fav = srcFavicon(src, 16);
+      const img = fav ? `<img src="${fav}" width="13" height="13">` : `<span style="width:13px;display:inline-block"></span>`;
+      return `<div class="ns-source-item">
+        ${img}
+        <span class="ns-source-name">${src}</span>
+        <div class="ns-bar-wrap"><div class="ns-bar" style="width:${Math.round(cnt/maxCnt*100)}%"></div></div>
+        <span class="ns-source-cnt">${cnt}</span>
+      </div>`;
+    }).join('')}</div>`;
+}
+
+// ── Topic filter ──
+document.querySelectorAll('#topicFilter .nf-chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#topicFilter .nf-chip').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTopicFilter = btn.dataset.topic;
+    renderNewsGroups();
+  });
+});
+
+// ── Navbar scroll ──
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ── Hamburger ──
+function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+
+// ── Sidebar collapse ──
+(function() {
+  if (localStorage.getItem('sidebarCollapsed') === 'true') document.body.classList.add('sidebar-collapsed');
   document.getElementById('sidebarToggle').addEventListener('click', () => {
     const c = document.body.classList.toggle('sidebar-collapsed');
     localStorage.setItem('sidebarCollapsed', c);
   });
+})();
 
-  // 下拉菜单
-  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
-    e.stopPropagation();
-    this.closest('.nav-dropdown').classList.toggle('open');
-  });
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
-  });
+// ── Init ──
+buildSourceFilter();
+renderNewsGroups();
+renderSidebar();
 
-  // 汉堡菜单
-  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  });
+// ── 懒加载文章头图（通过 microlink.io，对没有 n.img 的卡片补图）──
+(function() {
+  const CACHE_PREFIX = 'ogimg_v1_';
+  const CONCURRENT   = 2;   // 最多同时发出几个请求
+  let   inflight     = 0;
+  const queue        = [];
+
+  function applyImg(card, imgUrl) {
+    const thumb = card.querySelector('.news-card-thumb');
+    if (!thumb || thumb.classList.contains('thumb-article')) return;
+    thumb.className = 'news-card-thumb thumb-article';
+    thumb.removeAttribute('style');
+    thumb.innerHTML = `<img src="${imgUrl}" alt="" onerror="this.closest('.news-card-thumb').style.display='none'">`;
+  }
+
+  async function fetchOne(card, encodedUrl) {
+    inflight++;
+    const rawUrl = decodeURIComponent(encodedUrl);
+    try {
+      const cached = sessionStorage.getItem(CACHE_PREFIX + rawUrl);
+      if (cached === '__none__') return;
+      if (cached) { applyImg(card, cached); return; }
+
+      const res = await fetch(
+        `https://api.microlink.io/?url=${encodedUrl}`,
+        { signal: AbortSignal.timeout(6000) }
+      );
+      if (!res.ok) throw new Error('http ' + res.status);
+      const json = await res.json();
+      const imgUrl = json?.data?.image?.url;
+      if (imgUrl && /^https?:\/\//.test(imgUrl)) {
+        sessionStorage.setItem(CACHE_PREFIX + rawUrl, imgUrl);
+        applyImg(card, imgUrl);
+      } else {
+        sessionStorage.setItem(CACHE_PREFIX + rawUrl, '__none__');
+      }
+    } catch(e) {
+      sessionStorage.setItem(CACHE_PREFIX + rawUrl, '__none__');
+    } finally {
+      inflight--;
+      if (queue.length) {
+        const next = queue.shift();
+        fetchOne(next.card, next.encodedUrl);
+      }
+    }
+  }
+
+  function enqueue(card) {
+    const encodedUrl = card.getAttribute('data-fetch-img');
+    if (!encodedUrl) return;
+    card.removeAttribute('data-fetch-img'); // 防止重复入队
+    if (inflight < CONCURRENT) {
+      fetchOne(card, encodedUrl);
+    } else {
+      queue.push({ card, encodedUrl });
+    }
+  }
+
+  // 用 IntersectionObserver 在卡片进入视口时才请求
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        observer.unobserve(e.target);
+        enqueue(e.target);
+      }
+    });
+  }, { rootMargin: '200px' }); // 提前 200px 触发
+
+  // 初始挂载（renderNewsGroups 每次重绘后需重新绑）
+  function attachObserver() {
+    document.querySelectorAll('.news-card[data-fetch-img]').forEach(c => observer.observe(c));
+  }
+  // 重写 renderNewsGroups 后也要重新 attach
+  const _origRender = renderNewsGroups;
+  window.renderNewsGroups = function() { _origRender(); attachObserver(); };
+  attachObserver();
+})();
 </script>
-<script src="animations.js"></script>
 </body>
 </html>

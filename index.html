@@ -61,21 +61,21 @@
     <span class="toggle-icon">&#10094;</span>
   </button>
   <nav class="sidebar-nav">
-    <a href="#hero" class="sidebar-item active" data-section="hero" data-tooltip="首页">
-      <span class="sidebar-icon">⚡</span>
-      <span class="sidebar-label">首页</span>
+    <a href="#tools" class="sidebar-item" data-section="tools" data-tooltip="AI工具">
+      <span class="sidebar-icon">🛠️</span>
+      <span class="sidebar-label">AI工具</span>
     </a>
-    <a href="news.html" class="sidebar-item" data-section="news" data-tooltip="AI资讯">
+    <a href="#updates" class="sidebar-item" data-section="updates" data-tooltip="最新资讯">
       <span class="sidebar-icon">🔥</span>
-      <span class="sidebar-label">AI资讯</span>
+      <span class="sidebar-label">最新资讯</span>
     </a>
-    <a href="articles.html" class="sidebar-item" data-section="articles" data-tooltip="AI科普">
-      <span class="sidebar-icon">📚</span>
-      <span class="sidebar-label">AI科普</span>
+    <a href="#tech-timeline" class="sidebar-item" data-section="tech-timeline" data-tooltip="技术动态">
+      <span class="sidebar-icon">📈</span>
+      <span class="sidebar-label">技术动态</span>
     </a>
-    <a href="about.html" class="sidebar-item" data-tooltip="关于">
-      <span class="sidebar-icon">💡</span>
-      <span class="sidebar-label">关于</span>
+    <a href="#models" class="sidebar-item" data-section="models" data-tooltip="模型榜单">
+      <span class="sidebar-icon">🏆</span>
+      <span class="sidebar-label">模型榜单</span>
     </a>
   </nav>
 </aside>
@@ -90,26 +90,20 @@
       <span class="logo-text">AI<span class="accent">前沿</span></span>
     </a>
     <nav class="nav-links">
-      <div class="nav-dropdown">
-        <span class="nav-dropdown-toggle">AI资讯 <span class="dropdown-arrow">▾</span></span>
-        <div class="nav-dropdown-menu">
-          <a href="news.html">最新资讯</a>
-          <a href="articles.html">AI科普文章</a>
-        </div>
-      </div>
-      <a href="#tools">AI工具</a>
-      <a href="#updates">技术动态</a>
-      <a href="#models">模型榜单</a>
-      <a href="about.html">关于我们</a>
+      <a href="index.html" style="color: var(--accent);">首页</a>
+      <a href="news.html">AI资讯</a>
+      <a href="tools.html">AI工具</a>
+      <a href="articles.html">AI文章</a>
+      <a href="about.html">关于</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="menu">&#9776;</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#news" onclick="closeMobile()">最新资讯</a>
-    <a href="#articles" onclick="closeMobile()">AI科普文章</a>
-    <a href="#tools" onclick="closeMobile()">AI工具</a>
-    <a href="#updates" onclick="closeMobile()">技术动态</a>
-    <a href="#models" onclick="closeMobile()">模型榜单</a>
+    <a href="index.html" onclick="closeMobile()">首页</a>
+    <a href="news.html" onclick="closeMobile()">AI资讯</a>
+    <a href="tools.html" onclick="closeMobile()">AI工具</a>
+    <a href="articles.html" onclick="closeMobile()">AI文章</a>
+    <a href="about.html" onclick="closeMobile()">关于</a>
   </div>
 </header>
 
@@ -124,10 +118,11 @@
       <input type="text" id="searchInput" placeholder="搜索 AI 资讯、工具、模型…" />
       <button onclick="doSearch()">搜索</button>
     </div>
+    <div class="article-preview-tabs" id="articlePreviewTabs"></div>
     <div class="hero-stats">
-      <div class="stat"><span class="stat-num">200+</span><span class="stat-label">AI工具</span></div>
-      <div class="stat"><span class="stat-num">50+</span><span class="stat-label">每日资讯</span></div>
-      <div class="stat"><span class="stat-num">30+</span><span class="stat-label">主流模型</span></div>
+      <div class="stat"><span class="stat-num">40+</span><span class="stat-label">AI工具</span></div>
+      <div class="stat"><span class="stat-num">30+</span><span class="stat-label">条资讯</span></div>
+      <div class="stat"><span class="stat-num">8</span><span class="stat-label">主流模型</span></div>
     </div>
   </div>
   <div class="hero-particles" id="particles"></div>
@@ -174,7 +169,7 @@
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">🏆 主流模型榜单</h2>
-      <p class="section-sub">基于综合能力评测排名（2025年）</p>
+      <p class="section-sub">基于综合能力评测排名（2026年）</p>
     </div>
     <div class="models-table-wrap">
       <table class="models-table" id="modelsTable"></table>
@@ -195,7 +190,7 @@
       <div><h4>关注我们</h4><a href="#">微博</a><a href="#">知乎</a><a href="#">微信公众号</a></div>
     </div>
   </div>
-  <div class="footer-bottom"><p>© 2025 AI前沿  ·  数据持续更新中</p></div>
+  <div class="footer-bottom"><p>© 2026 AI前沿  ·  数据持续更新中</p></div>
 </footer>
 
 <button class="back-top" id="backTop" onclick="scrollTo(0,0)" title="回到顶部">↑</button>
@@ -212,15 +207,5 @@
 
 <script src="script.js"></script>
 <script src="animations.js"></script>
-<script>
-  // 下拉菜单点击切换
-  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
-    e.stopPropagation();
-    this.closest('.nav-dropdown').classList.toggle('open');
-  });
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
-  });
-</script>
 </body>
 </html>
