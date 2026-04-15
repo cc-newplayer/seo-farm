@@ -325,24 +325,24 @@ const articlesData = [
 
 const toolsData = [
   // ── 有教程的工具（优先展示）──
-  { id: 3,  name: 'Gemini',     icon: '💎', category: 'chat',         color: '#4285f4', desc: '谷歌出品，免费可用 Gemini 3 Pro，深度整合 Google 搜索。',             badge: 'freemium', stars: 4, url: 'https://gemini.google.com',              matchKeys: ['gemini'] },
-  { id: 1,  name: 'ChatGPT',   icon: '🤖', category: 'chat',         color: '#10a37f', desc: 'OpenAI 旗舰，免费版支持 GPT-4o，多模态能力全面。',                   badge: 'freemium', stars: 5, url: 'https://chat.openai.com',               matchKeys: ['chatgpt', 'gpt-5', 'gpt5'] },
-  { id: 19, name: 'Dify',      icon: '🧩', category: 'productivity', color: '#7c3aed', desc: '零代码搭 AI 应用，开源可自托管，支持 RAG 与 Agent 工作流。',           badge: 'freemium', stars: 5, url: 'https://dify.ai',                         matchKeys: ['dify'] },
-  { id: 20, name: 'Coze',      icon: '🤝', category: 'productivity', color: '#1677ff', desc: '字节出品，零代码建 AI Bot，一键发布至抖音、微信等多平台。',             badge: 'freemium', stars: 5, url: 'https://www.coze.cn',                    matchKeys: ['coze', '扣子'] },
-  { id: 21, name: 'n8n',       icon: '🔗', category: 'productivity', color: '#ea4b71', desc: '开源自动化工作流，可视化连接 500+ 应用，支持自托管数据不出境。',       badge: 'free',     stars: 5, url: 'https://n8n.io',                         matchKeys: ['n8n'] },
-  { id: 22, name: 'Ollama',    icon: '🦙', category: 'code',         color: '#2d6a4f', desc: '3 条命令本地跑 DeepSeek / Llama，数据完全不出机，完全免费。',          badge: 'free',     stars: 5, url: 'https://ollama.com',                     matchKeys: ['ollama'] },
-  { id: 23, name: 'LangGraph', icon: '🕸️', category: 'code',         color: '#e76f51', desc: 'LangChain 出品，构建有状态多步骤 Agent 工作流的主流框架。',            badge: 'free',     stars: 4, url: 'https://langchain-ai.github.io/langgraph', matchKeys: ['langgraph'] },
-  { id: 14, name: 'Kling',     icon: '🎞️', category: 'video',        color: '#e67e22', desc: '快手出品，国产顶级 AI 视频生成，支持文生视频与图生视频。',              badge: 'freemium', stars: 4, url: 'https://klingai.com',                     matchKeys: ['kling', '可灵'] },
+  { id: 3,  name: 'Gemini',     icon: '💎', logo: 'https://logo.clearbit.com/google.com',           category: 'chat',         color: '#4285f4', desc: '谷歌出品，免费可用 Gemini 3 Pro，深度整合 Google 搜索。',             badge: 'freemium', stars: 4, url: 'https://gemini.google.com',              matchKeys: ['gemini'] },
+  { id: 1,  name: 'ChatGPT',   icon: '🤖', logo: 'https://logo.clearbit.com/openai.com',           category: 'chat',         color: '#10a37f', desc: 'OpenAI 旗舰，免费版支持 GPT-4o，多模态能力全面。',                   badge: 'freemium', stars: 5, url: 'https://chat.openai.com',               matchKeys: ['chatgpt', 'gpt-5', 'gpt5'] },
+  { id: 19, name: 'Dify',      icon: '🧩', logo: 'https://logo.clearbit.com/dify.ai',              category: 'productivity', color: '#7c3aed', desc: '零代码搭 AI 应用，开源可自托管，支持 RAG 与 Agent 工作流。',           badge: 'freemium', stars: 5, url: 'https://dify.ai',                         matchKeys: ['dify'] },
+  { id: 20, name: 'Coze',      icon: '🤝', logo: 'https://logo.clearbit.com/coze.com',             category: 'productivity', color: '#1677ff', desc: '字节出品，零代码建 AI Bot，一键发布至抖音、微信等多平台。',             badge: 'freemium', stars: 5, url: 'https://www.coze.cn',                    matchKeys: ['coze', '扣子'] },
+  { id: 21, name: 'n8n',       icon: '🔗', logo: 'https://logo.clearbit.com/n8n.io',               category: 'productivity', color: '#ea4b71', desc: '开源自动化工作流，可视化连接 500+ 应用，支持自托管数据不出境。',       badge: 'free',     stars: 5, url: 'https://n8n.io',                         matchKeys: ['n8n'] },
+  { id: 22, name: 'Ollama',    icon: '🦙', logo: 'https://logo.clearbit.com/ollama.com',           category: 'code',         color: '#2d6a4f', desc: '3 条命令本地跑 DeepSeek / Llama，数据完全不出机，完全免费。',          badge: 'free',     stars: 5, url: 'https://ollama.com',                     matchKeys: ['ollama'] },
+  { id: 23, name: 'LangGraph', icon: '🕸', logo: 'https://logo.clearbit.com/langchain.com',        category: 'code',         color: '#e76f51', desc: 'LangChain 出品，构建有状态多步骤 Agent 工作流的主流框架。',            badge: 'free',     stars: 4, url: 'https://langchain-ai.github.io/langgraph', matchKeys: ['langgraph'] },
+  { id: 14, name: 'Kling',     icon: '🎞', logo: 'https://logo.clearbit.com/klingai.com',          category: 'video',        color: '#e67e22', desc: '快手出品，国产顶级 AI 视频生成，支持文生视频与图生视频。',              badge: 'freemium', stars: 4, url: 'https://klingai.com',                     matchKeys: ['kling', '可灵'] },
   // ── 其他工具 ──
-  { id: 4,  name: 'DeepSeek',        icon: '🔍', category: 'chat',         color: '#6366f1', desc: '国产顶级大模型，API 比 GPT 便宜 10 倍，支持深度思考模式。',       badge: 'freemium', stars: 5, url: 'https://chat.deepseek.com',               matchKeys: ['deepseek'] },
-  { id: 2,  name: 'Claude',          icon: '✨', category: 'chat',         color: '#cc9b7a', desc: 'Anthropic 出品，长文本分析与代码能力顶尖，安全性最高。',           badge: 'freemium', stars: 5, url: 'https://claude.ai',                       matchKeys: ['claude'] },
-  { id: 5,  name: 'Midjourney',      icon: '🎨', category: 'image',        color: '#9b59b6', desc: 'AI 绘画标杆，艺术风格最丰富，精细参数可控。',                     badge: 'paid',     stars: 5, url: 'https://midjourney.com',                  matchKeys: ['midjourney'] },
-  { id: 8,  name: 'Flux',            icon: '⚡', category: 'image',        color: '#1abc9c', desc: '开源图像生成模型，写实效果业内最佳，可免费本地部署。',             badge: 'freemium', stars: 5, url: 'https://blackforestlabs.ai',              matchKeys: ['flux'] },
-  { id: 10, name: 'Cursor',          icon: '🖱️', category: 'code',         color: '#667eea', desc: 'AI 原生代码编辑器，接入 Claude / GPT，支持全代码库理解。',        badge: 'freemium', stars: 5, url: 'https://cursor.sh',                      matchKeys: ['cursor'] },
-  { id: 12, name: 'Sora',            icon: '🎬', category: 'video',        color: '#e74c3c', desc: 'OpenAI 出品，支持分钟级高清连贯视频生成。',                       badge: 'paid',     stars: 5, url: 'https://sora.com',                        matchKeys: ['sora'] },
-  { id: 15, name: 'ElevenLabs',      icon: '🎵', category: 'audio',        color: '#3498db', desc: '语音合成标杆，支持声音克隆与 29 种语言配音。',                     badge: 'freemium', stars: 5, url: 'https://elevenlabs.io',                  matchKeys: ['elevenlabs'] },
-  { id: 16, name: 'Suno',            icon: '🎶', category: 'audio',        color: '#e91e63', desc: '一句话生成完整歌曲，免费版每天 50 首，支持多种曲风。',             badge: 'freemium', stars: 5, url: 'https://suno.ai',                        matchKeys: ['suno'] },
-  { id: 18, name: 'Perplexity',      icon: '🔭', category: 'productivity', color: '#20b2aa', desc: 'AI 搜索引擎，实时联网并附来源引用，免费版即可使用。',               badge: 'freemium', stars: 5, url: 'https://perplexity.ai',                  matchKeys: ['perplexity'] },
+  { id: 4,  name: 'DeepSeek',        icon: '🔍', logo: 'https://logo.clearbit.com/deepseek.com',       category: 'chat',         color: '#6366f1', desc: '国产顶级大模型，API 比 GPT 便宜 10 倍，支持深度思考模式。',       badge: 'freemium', stars: 5, url: 'https://chat.deepseek.com',               matchKeys: ['deepseek'] },
+  { id: 2,  name: 'Claude',          icon: '✨', logo: 'https://logo.clearbit.com/anthropic.com',      category: 'chat',         color: '#cc9b7a', desc: 'Anthropic 出品，长文本分析与代码能力顶尖，安全性最高。',           badge: 'freemium', stars: 5, url: 'https://claude.ai',                       matchKeys: ['claude'] },
+  { id: 5,  name: 'Midjourney',      icon: '🎨', logo: 'https://logo.clearbit.com/midjourney.com',     category: 'image',        color: '#9b59b6', desc: 'AI 绘画标杆，艺术风格最丰富，精细参数可控。',                     badge: 'paid',     stars: 5, url: 'https://midjourney.com',                  matchKeys: ['midjourney'] },
+  { id: 8,  name: 'Flux',            icon: '⚡', logo: 'https://logo.clearbit.com/blackforestlabs.ai', category: 'image',        color: '#1abc9c', desc: '开源图像生成模型，写实效果业内最佳，可免费本地部署。',             badge: 'freemium', stars: 5, url: 'https://blackforestlabs.ai',              matchKeys: ['flux'] },
+  { id: 10, name: 'Cursor',          icon: '🖱', logo: 'https://logo.clearbit.com/cursor.com',         category: 'code',         color: '#667eea', desc: 'AI 原生代码编辑器，接入 Claude / GPT，支持全代码库理解。',        badge: 'freemium', stars: 5, url: 'https://cursor.sh',                      matchKeys: ['cursor'] },
+  { id: 12, name: 'Sora',            icon: '🎬', logo: 'https://logo.clearbit.com/sora.com',           category: 'video',        color: '#e74c3c', desc: 'OpenAI 出品，支持分钟级高清连贯视频生成。',                       badge: 'paid',     stars: 5, url: 'https://sora.com',                        matchKeys: ['sora'] },
+  { id: 15, name: 'ElevenLabs',      icon: '🎵', logo: 'https://logo.clearbit.com/elevenlabs.io',      category: 'audio',        color: '#3498db', desc: '语音合成标杆，支持声音克隆与 29 种语言配音。',                     badge: 'freemium', stars: 5, url: 'https://elevenlabs.io',                  matchKeys: ['elevenlabs'] },
+  { id: 16, name: 'Suno',            icon: '🎶', logo: 'https://logo.clearbit.com/suno.ai',            category: 'audio',        color: '#e91e63', desc: '一句话生成完整歌曲，免费版每天 50 首，支持多种曲风。',             badge: 'freemium', stars: 5, url: 'https://suno.ai',                        matchKeys: ['suno'] },
+  { id: 18, name: 'Perplexity',      icon: '🔭', logo: 'https://logo.clearbit.com/perplexity.ai',      category: 'productivity', color: '#20b2aa', desc: 'AI 搜索引擎，实时联网并附来源引用，免费版即可使用。',               badge: 'freemium', stars: 5, url: 'https://perplexity.ai',                  matchKeys: ['perplexity'] },
 ];
 
 const timelineData = [
@@ -574,6 +574,12 @@ function hexToRgba(hex, alpha) {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
+function toolIconHtml(t) {
+  if (!t.logo) return t.icon;
+  const fb = t.icon.replace(/'/g, '&#39;');
+  return `<img class="tool-logo-img" src="${t.logo}" alt="${t.name}" data-fb="${fb}" onerror="this.parentElement.textContent=this.dataset.fb">`;
+}
+
 function renderToolCategories() {
   const container = document.getElementById('toolCategories');
   if (!container) return;
@@ -612,7 +618,7 @@ function renderHotTools() {
       : '';
     return `
     <div class="tool-list-item" style="--cat-color:${cat.color};--cat-color-faint:${colorFaint}" onclick="window.open('${t.url}','_blank')">
-      <div class="tool-list-icon" style="background:${t.color}22">${t.icon}</div>
+      <div class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</div>
       <div class="tool-list-body">
         <div class="tool-list-name">${t.name}</div>
         <div class="tool-list-desc">${t.desc}</div>
@@ -650,7 +656,7 @@ function renderTools(filter) {
       : '';
     return `
     <div class="tool-list-item" onclick="window.open('${t.url}','_blank')">
-      <div class="tool-list-icon" style="background:${t.color}22">${t.icon}</div>
+      <div class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</div>
       <div class="tool-list-body">
         <div class="tool-list-name">${t.name}</div>
         <div class="tool-list-desc">${t.desc}</div>
@@ -767,7 +773,7 @@ function doSearch() {
     toolsTarget.innerHTML = toolResult.length
       ? toolResult.map(t => `
           <div class="tool-list-item" onclick="window.open('${t.url}','_blank')">
-            <div class="tool-list-icon" style="background:${t.color}22">${t.icon}</div>
+            <div class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</div>
             <div class="tool-list-body">
               <div class="tool-list-name">${t.name}</div>
               <div class="tool-list-desc">${t.desc}</div>
