@@ -325,24 +325,55 @@ const articlesData = [
 
 const toolsData = [
   // ── 有教程的工具（优先展示）──
-  { id: 3,  name: 'Gemini',     icon: '💎', logo: 'https://logo.clearbit.com/google.com',           category: 'chat',         color: '#4285f4', desc: '谷歌出品，免费可用 Gemini 3 Pro，深度整合 Google 搜索。',             badge: 'freemium', stars: 4, url: 'https://gemini.google.com',              matchKeys: ['gemini'] },
-  { id: 1,  name: 'ChatGPT',   icon: '🤖', logo: 'https://logo.clearbit.com/openai.com',           category: 'chat',         color: '#10a37f', desc: 'OpenAI 旗舰，免费版支持 GPT-4o，多模态能力全面。',                   badge: 'freemium', stars: 5, url: 'https://chat.openai.com',               matchKeys: ['chatgpt', 'gpt-5', 'gpt5'] },
-  { id: 19, name: 'Dify',      icon: '🧩', logo: 'https://logo.clearbit.com/dify.ai',              category: 'productivity', color: '#7c3aed', desc: '零代码搭 AI 应用，开源可自托管，支持 RAG 与 Agent 工作流。',           badge: 'freemium', stars: 5, url: 'https://dify.ai',                         matchKeys: ['dify'] },
-  { id: 20, name: 'Coze',      icon: '🤝', logo: 'https://logo.clearbit.com/coze.com',             category: 'productivity', color: '#1677ff', desc: '字节出品，零代码建 AI Bot，一键发布至抖音、微信等多平台。',             badge: 'freemium', stars: 5, url: 'https://www.coze.cn',                    matchKeys: ['coze', '扣子'] },
-  { id: 21, name: 'n8n',       icon: '🔗', logo: 'https://logo.clearbit.com/n8n.io',               category: 'productivity', color: '#ea4b71', desc: '开源自动化工作流，可视化连接 500+ 应用，支持自托管数据不出境。',       badge: 'free',     stars: 5, url: 'https://n8n.io',                         matchKeys: ['n8n'] },
-  { id: 22, name: 'Ollama',    icon: '🦙', logo: 'https://logo.clearbit.com/ollama.com',           category: 'code',         color: '#2d6a4f', desc: '3 条命令本地跑 DeepSeek / Llama，数据完全不出机，完全免费。',          badge: 'free',     stars: 5, url: 'https://ollama.com',                     matchKeys: ['ollama'] },
-  { id: 23, name: 'LangGraph', icon: '🕸', logo: 'https://logo.clearbit.com/langchain.com',        category: 'code',         color: '#e76f51', desc: 'LangChain 出品，构建有状态多步骤 Agent 工作流的主流框架。',            badge: 'free',     stars: 4, url: 'https://langchain-ai.github.io/langgraph', matchKeys: ['langgraph'] },
-  { id: 14, name: 'Kling',     icon: '🎞', logo: 'https://logo.clearbit.com/klingai.com',          category: 'video',        color: '#e67e22', desc: '快手出品，国产顶级 AI 视频生成，支持文生视频与图生视频。',              badge: 'freemium', stars: 4, url: 'https://klingai.com',                     matchKeys: ['kling', '可灵'] },
+  { id: 3,  name: 'Gemini',     icon: '💎', logo: 'https://www.google.com/s2/favicons?domain=gemini.google.com&sz=32',  category: 'chat',         color: '#4285f4', desc: '谷歌出品，免费可用 Gemini 3 Pro，深度整合 Google 搜索。',             badge: 'freemium', stars: 4, url: 'https://gemini.google.com',              matchKeys: ['gemini'] },
+  { id: 1,  name: 'ChatGPT',   icon: '🤖', logo: 'https://www.google.com/s2/favicons?domain=openai.com&sz=32',           category: 'chat',         color: '#10a37f', desc: 'OpenAI 旗舰，免费版支持 GPT-4o，多模态能力全面。',                   badge: 'freemium', stars: 5, url: 'https://chat.openai.com',               matchKeys: ['chatgpt', 'gpt-5', 'gpt5'] },
+  { id: 19, name: 'Dify',      icon: '🧩', logo: 'https://www.google.com/s2/favicons?domain=dify.ai&sz=32',              category: 'productivity', color: '#7c3aed', desc: '零代码搭 AI 应用，开源可自托管，支持 RAG 与 Agent 工作流。',           badge: 'freemium', stars: 5, url: 'https://dify.ai',                         matchKeys: ['dify'] },
+  { id: 20, name: 'Coze',      icon: '🤝', logo: 'https://www.google.com/s2/favicons?domain=coze.cn&sz=32',              category: 'productivity', color: '#1677ff', desc: '字节出品，零代码建 AI Bot，一键发布至抖音、微信等多平台。',             badge: 'freemium', stars: 5, url: 'https://www.coze.cn',                    matchKeys: ['coze', '扣子'] },
+  { id: 21, name: 'n8n',       icon: '🔗', logo: 'https://www.google.com/s2/favicons?domain=n8n.io&sz=32',               category: 'productivity', color: '#ea4b71', desc: '开源自动化工作流，可视化连接 500+ 应用，支持自托管数据不出境。',       badge: 'free',     stars: 5, url: 'https://n8n.io',                         matchKeys: ['n8n'] },
+  { id: 22, name: 'Ollama',    icon: '🦙', logo: 'https://www.google.com/s2/favicons?domain=ollama.com&sz=32',           category: 'code',         color: '#2d6a4f', desc: '3 条命令本地跑 DeepSeek / Llama，数据完全不出机，完全免费。',          badge: 'free',     stars: 5, url: 'https://ollama.com',                     matchKeys: ['ollama'] },
+  { id: 23, name: 'LangGraph', icon: '🕸', logo: 'https://www.google.com/s2/favicons?domain=langchain.com&sz=32',        category: 'code',         color: '#e76f51', desc: 'LangChain 出品，构建有状态多步骤 Agent 工作流的主流框架。',            badge: 'free',     stars: 4, url: 'https://langchain-ai.github.io/langgraph', matchKeys: ['langgraph'] },
+  { id: 14, name: 'Kling',     icon: '🎞', logo: 'https://www.google.com/s2/favicons?domain=klingai.com&sz=32',          category: 'video',        color: '#e67e22', desc: '快手出品，国产顶级 AI 视频生成，支持文生视频与图生视频。',              badge: 'freemium', stars: 4, url: 'https://klingai.com',                     matchKeys: ['kling', '可灵'] },
   // ── 其他工具 ──
-  { id: 4,  name: 'DeepSeek',        icon: '🔍', logo: 'https://logo.clearbit.com/deepseek.com',       category: 'chat',         color: '#6366f1', desc: '国产顶级大模型，API 比 GPT 便宜 10 倍，支持深度思考模式。',       badge: 'freemium', stars: 5, url: 'https://chat.deepseek.com',               matchKeys: ['deepseek'] },
-  { id: 2,  name: 'Claude',          icon: '✨', logo: 'https://logo.clearbit.com/anthropic.com',      category: 'chat',         color: '#cc9b7a', desc: 'Anthropic 出品，长文本分析与代码能力顶尖，安全性最高。',           badge: 'freemium', stars: 5, url: 'https://claude.ai',                       matchKeys: ['claude'] },
-  { id: 5,  name: 'Midjourney',      icon: '🎨', logo: 'https://logo.clearbit.com/midjourney.com',     category: 'image',        color: '#9b59b6', desc: 'AI 绘画标杆，艺术风格最丰富，精细参数可控。',                     badge: 'paid',     stars: 5, url: 'https://midjourney.com',                  matchKeys: ['midjourney'] },
-  { id: 8,  name: 'Flux',            icon: '⚡', logo: 'https://logo.clearbit.com/blackforestlabs.ai', category: 'image',        color: '#1abc9c', desc: '开源图像生成模型，写实效果业内最佳，可免费本地部署。',             badge: 'freemium', stars: 5, url: 'https://blackforestlabs.ai',              matchKeys: ['flux'] },
-  { id: 10, name: 'Cursor',          icon: '🖱', logo: 'https://logo.clearbit.com/cursor.com',         category: 'code',         color: '#667eea', desc: 'AI 原生代码编辑器，接入 Claude / GPT，支持全代码库理解。',        badge: 'freemium', stars: 5, url: 'https://cursor.sh',                      matchKeys: ['cursor'] },
-  { id: 12, name: 'Sora',            icon: '🎬', logo: 'https://logo.clearbit.com/sora.com',           category: 'video',        color: '#e74c3c', desc: 'OpenAI 出品，支持分钟级高清连贯视频生成。',                       badge: 'paid',     stars: 5, url: 'https://sora.com',                        matchKeys: ['sora'] },
-  { id: 15, name: 'ElevenLabs',      icon: '🎵', logo: 'https://logo.clearbit.com/elevenlabs.io',      category: 'audio',        color: '#3498db', desc: '语音合成标杆，支持声音克隆与 29 种语言配音。',                     badge: 'freemium', stars: 5, url: 'https://elevenlabs.io',                  matchKeys: ['elevenlabs'] },
-  { id: 16, name: 'Suno',            icon: '🎶', logo: 'https://logo.clearbit.com/suno.ai',            category: 'audio',        color: '#e91e63', desc: '一句话生成完整歌曲，免费版每天 50 首，支持多种曲风。',             badge: 'freemium', stars: 5, url: 'https://suno.ai',                        matchKeys: ['suno'] },
-  { id: 18, name: 'Perplexity',      icon: '🔭', logo: 'https://logo.clearbit.com/perplexity.ai',      category: 'productivity', color: '#20b2aa', desc: 'AI 搜索引擎，实时联网并附来源引用，免费版即可使用。',               badge: 'freemium', stars: 5, url: 'https://perplexity.ai',                  matchKeys: ['perplexity'] },
+  { id: 4,  name: 'DeepSeek',        icon: '🔍', logo: 'https://www.google.com/s2/favicons?domain=deepseek.com&sz=32',       category: 'chat',         color: '#6366f1', desc: '国产顶级大模型，API 比 GPT 便宜 10 倍，支持深度思考模式。',       badge: 'freemium', stars: 5, url: 'https://chat.deepseek.com',               matchKeys: ['deepseek'] },
+  { id: 2,  name: 'Claude',          icon: '✨', logo: 'https://www.google.com/s2/favicons?domain=claude.ai&sz=32',          category: 'chat',         color: '#cc9b7a', desc: 'Anthropic 出品，长文本分析与代码能力顶尖，安全性最高。',           badge: 'freemium', stars: 5, url: 'https://claude.ai',                       matchKeys: ['claude'] },
+  { id: 5,  name: 'Midjourney',      icon: '🎨', logo: 'https://www.google.com/s2/favicons?domain=midjourney.com&sz=32',     category: 'image',        color: '#9b59b6', desc: 'AI 绘画标杆，艺术风格最丰富，精细参数可控。',                     badge: 'paid',     stars: 5, url: 'https://midjourney.com',                  matchKeys: ['midjourney'] },
+  { id: 8,  name: 'Flux',            icon: '⚡', logo: 'https://www.google.com/s2/favicons?domain=blackforestlabs.ai&sz=32', category: 'image',        color: '#1abc9c', desc: '开源图像生成模型，写实效果业内最佳，可免费本地部署。',             badge: 'freemium', stars: 5, url: 'https://blackforestlabs.ai',              matchKeys: ['flux'] },
+  { id: 10, name: 'Cursor',          icon: '🖱', logo: 'https://www.google.com/s2/favicons?domain=cursor.com&sz=32',         category: 'code',         color: '#667eea', desc: 'AI 原生代码编辑器，接入 Claude / GPT，支持全代码库理解。',        badge: 'freemium', stars: 5, url: 'https://cursor.sh',                      matchKeys: ['cursor'] },
+  { id: 12, name: 'Sora',            icon: '🎬', logo: 'https://www.google.com/s2/favicons?domain=sora.com&sz=32',           category: 'video',        color: '#e74c3c', desc: 'OpenAI 出品，支持分钟级高清连贯视频生成。',                       badge: 'paid',     stars: 5, url: 'https://sora.com',                        matchKeys: ['sora'] },
+  { id: 15, name: 'ElevenLabs',      icon: '🎵', logo: 'https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=32',      category: 'audio',        color: '#3498db', desc: '语音合成标杆，支持声音克隆与 29 种语言配音。',                     badge: 'freemium', stars: 5, url: 'https://elevenlabs.io',                  matchKeys: ['elevenlabs'] },
+  { id: 16, name: 'Suno',            icon: '🎶', logo: 'https://www.google.com/s2/favicons?domain=suno.com&sz=32',           category: 'audio',        color: '#e91e63', desc: '一句话生成完整歌曲，免费版每天 50 首，支持多种曲风。',             badge: 'freemium', stars: 5, url: 'https://suno.ai',                        matchKeys: ['suno'] },
+  { id: 18, name: 'Perplexity',      icon: '🔭', logo: 'https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32',      category: 'productivity', color: '#20b2aa', desc: 'AI 搜索引擎，实时联网并附来源引用，免费版即可使用。',               badge: 'freemium', stars: 5, url: 'https://perplexity.ai',                  matchKeys: ['perplexity'] },
+  // ── 对话助手 ──
+  { id: 24, name: 'Kimi',           icon: '🌙', logo: 'https://www.google.com/s2/favicons?domain=kimi.moonshot.cn&sz=32',   category: 'chat',         color: '#7c3aed', desc: '月之暗面出品，200 万字超长上下文，国内访问流畅免费。',              badge: 'freemium', stars: 4, url: 'https://kimi.moonshot.cn',             matchKeys: [] },
+  { id: 25, name: '豆包',           icon: '🫘', logo: 'https://www.google.com/s2/favicons?domain=www.doubao.com&sz=32',    category: 'chat',         color: '#3b82f6', desc: '字节出品，免费好用，国内最流畅的 AI 对话助手之一。',                badge: 'free',     stars: 4, url: 'https://www.doubao.com',               matchKeys: [] },
+  { id: 26, name: 'Grok',           icon: '👾', logo: 'https://www.google.com/s2/favicons?domain=grok.com&sz=32',          category: 'chat',         color: '#6366f1', desc: 'xAI 出品，马斯克旗下大模型，实时联网，无限制思考。',                badge: 'freemium', stars: 4, url: 'https://grok.com',                    matchKeys: [] },
+  { id: 27, name: 'MS Copilot',     icon: '🪟', logo: 'https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=32', category: 'chat',     color: '#0078d4', desc: '微软 GPT-4 加持，实时联网，深度集成 Office 全套。',                 badge: 'freemium', stars: 4, url: 'https://copilot.microsoft.com',      matchKeys: [] },
+  { id: 28, name: '通义千问',       icon: '🔶', logo: 'https://www.google.com/s2/favicons?domain=tongyi.aliyun.com&sz=32', category: 'chat',         color: '#f59e0b', desc: '阿里出品，支持长文本与多模态，Qwen 系列旗舰。',                     badge: 'free',     stars: 4, url: 'https://tongyi.aliyun.com',           matchKeys: [] },
+  // ── 编程辅助 ──
+  { id: 29, name: 'GitHub Copilot', icon: '🐙', logo: 'https://www.google.com/s2/favicons?domain=github.com&sz=32',        category: 'code',         color: '#24292f', desc: 'GitHub 官方 AI 代码补全，支持所有主流 IDE，生态最完善。',           badge: 'paid',     stars: 5, url: 'https://github.com/features/copilot', matchKeys: [] },
+  { id: 30, name: 'Windsurf',       icon: '🏄', logo: 'https://www.google.com/s2/favicons?domain=codeium.com&sz=32',       category: 'code',         color: '#0ea5e9', desc: 'Codeium 出品的 AI 编辑器，免费额度慷慨，补全速度快。',              badge: 'freemium', stars: 4, url: 'https://codeium.com/windsurf',       matchKeys: [] },
+  { id: 31, name: 'Bolt.new',       icon: '⚡', logo: 'https://www.google.com/s2/favicons?domain=bolt.new&sz=32',          category: 'code',         color: '#f59e0b', desc: '浏览器内全栈 AI 开发，一句话生成可部署应用，免费可用。',            badge: 'freemium', stars: 4, url: 'https://bolt.new',                   matchKeys: [] },
+  { id: 32, name: 'v0',             icon: '▲',  logo: 'https://www.google.com/s2/favicons?domain=v0.dev&sz=32',            category: 'code',         color: '#000000', desc: 'Vercel 出品，一句话生成 React/UI 组件，前端开发神器。',              badge: 'freemium', stars: 4, url: 'https://v0.dev',                     matchKeys: [] },
+  { id: 33, name: 'Aider',          icon: '🤖', logo: 'https://www.google.com/s2/favicons?domain=aider.chat&sz=32',        category: 'code',         color: '#6ee7b7', desc: '终端 AI 结对编程，支持 Git 自动提交，完全开源免费。',               badge: 'free',     stars: 4, url: 'https://aider.chat',                 matchKeys: [] },
+  // ── 图像生成 ──
+  { id: 34, name: 'DALL·E 3',       icon: '🖼', logo: 'https://www.google.com/s2/favicons?domain=openai.com&sz=32',        category: 'image',        color: '#10a37f', desc: 'OpenAI 出品，文字理解最精准，集成在 ChatGPT Plus 内。',              badge: 'paid',     stars: 5, url: 'https://openai.com/dall-e-3',        matchKeys: [] },
+  { id: 35, name: 'Stable Diffusion', icon: '🎭', logo: 'https://www.google.com/s2/favicons?domain=stability.ai&sz=32',   category: 'image',        color: '#ef4444', desc: '最流行开源图像模型，完全本地运行，无限免费使用。',                   badge: 'free',     stars: 5, url: 'https://stability.ai',              matchKeys: [] },
+  { id: 36, name: 'Adobe Firefly',  icon: '🔥', logo: 'https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=32', category: 'image',       color: '#f97316', desc: 'Adobe 出品，商用版权安全，直接集成 PS/Illustrator。',               badge: 'freemium', stars: 4, url: 'https://firefly.adobe.com',         matchKeys: [] },
+  { id: 37, name: 'Leonardo AI',    icon: '🎨', logo: 'https://www.google.com/s2/favicons?domain=leonardo.ai&sz=32',      category: 'image',        color: '#8b5cf6', desc: '每天 150 张免费图，游戏和概念艺术风格最强。',                       badge: 'freemium', stars: 4, url: 'https://leonardo.ai',               matchKeys: [] },
+  { id: 38, name: '即梦 AI',        icon: '🌌', logo: 'https://www.google.com/s2/favicons?domain=jimeng.jianying.com&sz=32', category: 'image',      color: '#3b82f6', desc: '字节出品，免费文生图与视频，国内直接访问，无需翻墙。',               badge: 'freemium', stars: 4, url: 'https://jimeng.jianying.com',       matchKeys: [] },
+  // ── 视频创作 ──
+  { id: 39, name: 'Runway',         icon: '🎥', logo: 'https://www.google.com/s2/favicons?domain=runwayml.com&sz=32',      category: 'video',        color: '#374151', desc: '专业级 AI 视频编辑平台，Gen-3 画质业界标杆。',                      badge: 'freemium', stars: 5, url: 'https://runwayml.com',               matchKeys: [] },
+  { id: 40, name: 'Pika',           icon: '🌊', logo: 'https://www.google.com/s2/favicons?domain=pika.art&sz=32',         category: 'video',        color: '#ec4899', desc: '简单易用的 AI 视频生成，支持图生视频，免费可用。',                   badge: 'freemium', stars: 4, url: 'https://pika.art',                  matchKeys: [] },
+  { id: 41, name: 'Luma Dream Machine', icon: '🌠', logo: 'https://www.google.com/s2/favicons?domain=lumalabs.ai&sz=32',  category: 'video',        color: '#14b8a6', desc: '物理动态最逼真的 AI 视频，免费每月 30 次生成。',                     badge: 'freemium', stars: 4, url: 'https://lumalabs.ai/dream-machine', matchKeys: [] },
+  { id: 42, name: 'HeyGen',         icon: '🧑', logo: 'https://www.google.com/s2/favicons?domain=heygen.com&sz=32',       category: 'video',        color: '#f59e0b', desc: 'AI 数字人视频，支持多语言口型同步，营销内容首选。',                  badge: 'freemium', stars: 4, url: 'https://heygen.com',                matchKeys: [] },
+  // ── 音频创作 ──
+  { id: 43, name: 'Udio',           icon: '🎸', logo: 'https://www.google.com/s2/favicons?domain=udio.com&sz=32',         category: 'audio',        color: '#8b5cf6', desc: '音乐生成标杆之一，人声质量优异，免费版每月 600 次。',                badge: 'freemium', stars: 4, url: 'https://udio.com',                  matchKeys: [] },
+  { id: 44, name: 'Murf AI',        icon: '🎙', logo: 'https://www.google.com/s2/favicons?domain=murf.ai&sz=32',          category: 'audio',        color: '#0ea5e9', desc: '专业 AI 配音平台，120+ 语音，支持中文精准控制。',                   badge: 'freemium', stars: 4, url: 'https://murf.ai',                  matchKeys: [] },
+  // ── 效率工具 ──
+  { id: 45, name: 'Notion AI',      icon: '📝', logo: 'https://www.google.com/s2/favicons?domain=notion.so&sz=32',        category: 'productivity', color: '#374151', desc: 'Notion 内置 AI，写作、总结、翻译一体化，无需切换工具。',             badge: 'freemium', stars: 5, url: 'https://notion.so',                 matchKeys: [] },
+  { id: 46, name: 'Gamma',          icon: '✦',  logo: 'https://www.google.com/s2/favicons?domain=gamma.app&sz=32',        category: 'productivity', color: '#a855f7', desc: '一键生成精美 PPT 和文档，告别手动排版，免费可用。',                  badge: 'freemium', stars: 4, url: 'https://gamma.app',                 matchKeys: [] },
+  { id: 47, name: 'NotebookLM',     icon: '📓', logo: 'https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=32', category: 'productivity', color: '#34a853', desc: '谷歌出品，上传资料让 AI 变身私人研究助理，完全免费。',           badge: 'free',     stars: 5, url: 'https://notebooklm.google.com',    matchKeys: [] },
+  { id: 48, name: 'Manus',          icon: '🤲', logo: 'https://www.google.com/s2/favicons?domain=manus.im&sz=32',         category: 'productivity', color: '#6366f1', desc: '全球首个真正自主 AI Agent，可独立完成复杂研究与执行任务。',          badge: 'free',     stars: 5, url: 'https://manus.im',                  matchKeys: [] },
 ];
 
 const timelineData = [
@@ -576,8 +607,7 @@ function hexToRgba(hex, alpha) {
 
 function toolIconHtml(t) {
   if (!t.logo) return t.icon;
-  const fb = t.icon.replace(/'/g, '&#39;');
-  return `<img class="tool-logo-img" src="${t.logo}" alt="${t.name}" data-fb="${fb}" onerror="this.parentElement.textContent=this.dataset.fb">`;
+  return `<img class="tool-logo-img" src="${t.logo}" alt="${t.name}" loading="lazy">`;
 }
 
 function renderToolCategories() {
@@ -618,15 +648,17 @@ function renderHotTools() {
       : '';
     return `
     <div class="tool-list-item" style="--cat-color:${cat.color};--cat-color-faint:${colorFaint}" onclick="window.open('${t.url}','_blank')">
-      <div class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</div>
-      <div class="tool-list-body">
-        <div class="tool-list-name">${t.name}</div>
-        <div class="tool-list-desc">${t.desc}</div>
+      <div class="tool-card-top">
+        <span class="tool-name-wrap">
+          <span class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</span>
+          <span class="tool-list-name">${t.name}</span>
+        </span>
+        <span class="tool-card-actions">
+          <span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span>
+          ${tutorialBtn}
+        </span>
       </div>
-      <div class="tool-list-meta">
-        <span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span>
-        ${tutorialBtn}
-      </div>
+      <div class="tool-list-desc">${t.desc}</div>
     </div>`;
   }).join('');
 }
@@ -656,15 +688,17 @@ function renderTools(filter) {
       : '';
     return `
     <div class="tool-list-item" onclick="window.open('${t.url}','_blank')">
-      <div class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</div>
-      <div class="tool-list-body">
-        <div class="tool-list-name">${t.name}</div>
-        <div class="tool-list-desc">${t.desc}</div>
+      <div class="tool-card-top">
+        <span class="tool-name-wrap">
+          <span class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</span>
+          <span class="tool-list-name">${t.name}</span>
+        </span>
+        <span class="tool-card-actions">
+          <span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span>
+          ${tutorialBtn}
+        </span>
       </div>
-      <div class="tool-list-meta">
-        <span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span>
-        ${tutorialBtn}
-      </div>
+      <div class="tool-list-desc">${t.desc}</div>
     </div>`;
   }).join('');
 }
@@ -773,14 +807,16 @@ function doSearch() {
     toolsTarget.innerHTML = toolResult.length
       ? toolResult.map(t => `
           <div class="tool-list-item" onclick="window.open('${t.url}','_blank')">
-            <div class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</div>
-            <div class="tool-list-body">
-              <div class="tool-list-name">${t.name}</div>
-              <div class="tool-list-desc">${t.desc}</div>
+            <div class="tool-card-top">
+              <span class="tool-name-wrap">
+                <span class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</span>
+                <span class="tool-list-name">${t.name}</span>
+              </span>
+              <span class="tool-card-actions">
+                <span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span>
+              </span>
             </div>
-            <div class="tool-list-meta">
-              <span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span>
-            </div>
+            <div class="tool-list-desc">${t.desc}</div>
           </div>
         `).join('')
       : '<p style="color:var(--text-muted);padding:20px;grid-column:1/-1">未找到相关工具</p>';
