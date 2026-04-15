@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 工具导航 - AI前沿</title>
+  <meta name="description" content="精选全球主流AI工具，涵盖对话助手、图像生成、编程辅助、视频创作、音频创作、效率工具六大分类，帮你找到最适合的AI工具。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cc-newplayer.github.io/seo-farm/tools.html" />
+  <link rel="sitemap" type="application/xml" href="https://cc-newplayer.github.io/seo-farm/sitemap.xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI 工具导航 - AI前沿" />
+  <meta property="og:description" content="精选全球主流AI工具，涵盖对话、图像、编程、视频、音频、效率六大分类。" />
+  <meta property="og:url" content="https://cc-newplayer.github.io/seo-farm/tools.html" />
+  <meta property="og:site_name" content="AI前沿" />
+  <meta property="og:locale" content="zh_CN" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== tools page layout ===== */
+    .tools-page-wrap {
+      padding-top: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+      display: flex;
+      gap: 0;
+      min-height: 100vh;
+    }
+    /* ── left sticky category nav ── */
+    .tools-sidenav {
+      width: 200px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 80px;
+      align-self: flex-start;
+      padding: 32px 0 32px 0;
+      height: calc(100vh - 80px);
+      overflow-y: auto;
+      border-right: 1px solid var(--border);
+    }
+    .tools-sidenav h3 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 0 20px 12px;
+    }
+    .sidenav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .sidenav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+    .sidenav-item.active {
+      /* color, border-left-color, background injected by JS (per-category color) */
+      font-weight: 500;
+    }
+    .sidenav-count {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    /* ── right content area ── */
+    .tools-content {
+      flex: 1;
+      min-width: 0;
+      padding: 32px 40px 64px;
+    }
+    .tools-page-header {
+      margin-bottom: 40px;
+    }
+    .tools-page-header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .tools-page-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    /* ── category section ── */
+    .tools-category-section { }
+    .tools-category-section:last-child { margin-bottom: 0; }
+    .category-section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .category-section-icon { font-size: 1.4rem; }
+    .category-section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .category-section-count {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+    /* ── tools grid within section ── */
+    .tools-section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    /* ── sidenav scrollspy ── */
+    @media (max-width: 768px) {
+      .tools-sidenav { display: none; }
+      .tools-content { padding: 24px 20px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="切换导航">
+    <span class="toggle-icon">&#10094;</span>
+  </button>
+  <nav class="sidebar-nav">
+    <a href="index.html#hero" class="sidebar-item" data-tooltip="首页">
+      <span class="sidebar-icon">⚡</span>
+      <span class="sidebar-label">首页</span>
+    </a>
+    <a href="news.html" class="sidebar-item" data-tooltip="AI资讯">
+      <span class="sidebar-icon">🔥</span>
+      <span class="sidebar-label">AI资讯</span>
+    </a>
+    <a href="articles.html" class="sidebar-item" data-tooltip="AI科普">
+      <span class="sidebar-icon">📚</span>
+      <span class="sidebar-label">AI科普</span>
+    </a>
+    <a href="tools.html" class="sidebar-item active" data-tooltip="AI工具">
+      <span class="sidebar-icon">🛠️</span>
+      <span class="sidebar-label">AI工具</span>
+    </a>
+    <a href="about.html" class="sidebar-item" data-tooltip="关于">
+      <span class="sidebar-icon">💡</span>
+      <span class="sidebar-label">关于</span>
+    </a>
+  </nav>
+</aside>
+
+<div class="main-wrap" id="mainWrap">
+
+<!-- ===== NAV ===== -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+    </a>
+    <nav class="nav-links">
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-toggle">AI资讯 <span class="dropdown-arrow">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="news.html">最新资讯</a>
+          <a href="articles.html">AI科普文章</a>
+        </div>
+      </div>
+      <a href="tools.html" style="color:var(--accent)">AI工具</a>
+      <a href="index.html#models">模型榜单</a>
+      <a href="about.html">关于我们</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="news.html" onclick="closeMobile()">最新资讯</a>
+    <a href="articles.html" onclick="closeMobile()">AI科普文章</a>
+    <a href="tools.html" onclick="closeMobile()">AI工具</a>
+    <a href="index.html#models" onclick="closeMobile()">模型榜单</a>
+  </div>
+</header>
+
+<!-- ===== TOOLS PAGE LAYOUT ===== -->
+<div class="tools-page-wrap" id="toolsPageWrap">
+
+  <!-- Left category nav -->
+  <nav class="tools-sidenav" id="toolsSidenav">
+    <h3>工具分类</h3>
+    <!-- populated by JS -->
+  </nav>
+
+  <!-- Right content -->
+  <div class="tools-content">
+    <div class="tools-page-header">
+      <h1>🛠️ AI 工具导航</h1>
+      <p>精选全球主流 AI 工具，找到最适合你的那一款</p>
+    </div>
+    <!-- category sections populated by JS -->
+    <div id="toolsAllSections"></div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AI<span class="accent">前沿</span></span>
+      <p>追踪全球人工智能最新进展</p>
+    </div>
+    <div class="footer-links">
+      <div><h4>导航</h4><a href="news.html">AI资讯</a><a href="articles.html">AI科普</a><a href="tools.html">AI工具</a></div>
+      <div><h4>关注我们</h4><a href="#">微博</a><a href="#">知乎</a><a href="#">微信公众号</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 AI前沿  ·  数据持续更新中</p></div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="scrollTo(0,0)" title="回到顶部">↑</button>
+
+</div><!-- /.main-wrap -->
+
+<script src="script.js"></script>
+<script>
+  // ── render all category sections ──
+  function renderToolsPage() {
+    const cats = toolCategoryMeta; // use from script.js (has color)
+
+    // build sidenav — carry data-color for scrollspy
+    const sidenav = document.getElementById('toolsSidenav');
+    sidenav.innerHTML = '<h3>工具分类</h3>' + cats.map(c => {
+      const count = toolsData.filter(t => t.category === c.id).length;
+      return `<a class="sidenav-item" href="#${c.id}" data-cat="${c.id}" data-color="${c.color}">
+        <span>${c.icon}</span>
+        <span>${c.label}</span>
+        <span class="sidenav-count">${count}</span>
+      </a>`;
+    }).join('');
+
+    // build category sections
+    const container = document.getElementById('toolsAllSections');
+    container.innerHTML = cats.map(c => {
+      const tools = toolsData.filter(t => t.category === c.id);
+      const colorFaint = hexToRgba(c.color, 0.15);
+      const toolCards = tools.map(t => {
+        const tutorials = (t.matchKeys && articlesData)
+          ? articlesData.filter(a => a.category === 'tutorial' && a.keywords && t.matchKeys.some(mk =>
+              a.keywords.some(k => k.toLowerCase().includes(mk.toLowerCase()))
+            ))
+          : [];
+        const tutorialBtn = tutorials.length > 0
+          ? `<a class="tool-tutorial-btn" href="tool-tutorials.html?tool=${t.id}" onclick="event.stopPropagation()"># 使用教程</a>`
+          : '';
+        return `<div class="tool-list-item cat-tool" style="--cat-color:${c.color};--cat-color-faint:${colorFaint};border-color:${colorFaint}" onclick="window.open('${t.url}','_blank')">
+          <div class="tool-list-icon" style="background:${t.color}22">${t.icon}</div>
+          <div class="tool-list-body">
+            <div class="tool-list-name">${t.name}</div>
+            <div class="tool-list-desc">${t.desc}</div>
+          </div>
+          <div class="tool-list-meta">
+            <span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span>
+            ${tutorialBtn}
+          </div>
+        </div>`;
+      }).join('');
+
+      return `<section class="tools-category-section" id="${c.id}" style="background:${hexToRgba(c.color,0.05)};border:1px solid ${hexToRgba(c.color,0.18)};border-radius:var(--radius);padding:24px;margin-bottom:32px">
+        <div class="category-section-header" style="border-bottom-color:${hexToRgba(c.color,0.25)}">
+          <span class="category-section-icon">${c.icon}</span>
+          <span class="category-section-title">${c.label}</span>
+          <span class="category-section-count">${tools.length} 个工具</span>
+        </div>
+        <div class="tools-section-grid">${toolCards}</div>
+      </section>`;
+    }).join('');
+  }
+
+  renderToolsPage();
+
+  // ── scrollspy: highlight sidenav with category color ──
+  const sections = document.querySelectorAll('.tools-category-section');
+  const navItems = document.querySelectorAll('.sidenav-item');
+
+  function setActiveNavItem(catId) {
+    navItems.forEach(el => {
+      const isActive = el.dataset.cat === catId;
+      el.classList.toggle('active', isActive);
+      if (isActive) {
+        const col = el.dataset.color;
+        el.style.color = col;
+        el.style.borderLeftColor = col;
+        el.style.background = hexToRgba(col, 0.1);
+      } else {
+        el.style.color = '';
+        el.style.borderLeftColor = '';
+        el.style.background = '';
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActiveNavItem(entry.target.id);
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  // ── hash jump on load ──
+  if (location.hash) {
+    const target = location.hash.replace('#', '');
+    setActiveNavItem(target);
+    setTimeout(() => {
+      const el = document.getElementById(target);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+
+  // ── nav dropdown ──
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.closest('.nav-dropdown').classList.toggle('open');
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
+  });
+
+  // ── back to top ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // ── hamburger ──
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // ── navbar scroll ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // ── sidebar ──
+  (function () {
+    const body = document.body;
+    const toggleBtn = document.getElementById('sidebarToggle');
+    if (localStorage.getItem('sidebarCollapsed') === 'true') body.classList.add('sidebar-collapsed');
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('sidebar-collapsed');
+      localStorage.setItem('sidebarCollapsed', body.classList.contains('sidebar-collapsed'));
+    });
+  })();
+</script>
+</body>
+</html>
