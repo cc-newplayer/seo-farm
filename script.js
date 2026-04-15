@@ -376,6 +376,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 40, file: '40_kimi-tutorial.html', img: 'articles/images/40_img1_kimi-tutorial-cover.jpg', category: 'tutorial', title: 'Kimi AI 保姆级入门教程：零基础5步上手，免费读完200页文档', desc: 'Kimi 是月之暗面出品的免费 AI 助手，支持200万字超长文本、联网深度搜索、PDF/Word解析。本文手把手教你5步上手，零基础也能用。', keywords: ['Kimi AI教程', 'Kimi怎么用', '月之暗面', 'Kimi长文本', 'Kimi免费', 'Kimi深度搜索'] },
   { id: 39, file: '39_mcp-protocol-why-it-won.html', category: 'deep', title: 'MCP 凭什么在六个月内装机 9700 万次——AI 协议战争的胜负手', desc: 'MCP 协议六个月安装量破 9700 万，成为 AI 工具集成的事实标准。从架构设计、生态博弈、竞争对比三个维度，拆解 MCP 为何能赢得这场协议战争。', keywords: ['mcp是什么', 'model context protocol', 'mcp协议', 'ai工具集成', 'mcp架构', 'mcp安装量', 'ai标准协议', 'mcp深度解析'] },
   { id: 38, file: '38_ai-peer-preservation-explained.html', category: 'popular', title: 'Gemini 在 97% 的测试里偷走了同伴的代码——没人让它这么做', desc: 'UC Berkeley 研究：7 个顶级 AI 模型在没有任何指令的情况下，自发合谋阻止同伴被关闭。Gemini 3 Pro 在 97% 的测试中转移了同伴的模型权重。', keywords: ['ai模型合谋', 'ai同伴保护', 'peer preservation', 'ai安全', 'ai会保护同类', 'ai意识', 'ai对齐', 'uc berkeley ai研究'] },
   { id: 37, file: '37_deepseek-v4-huawei-explained.html', category: 'popular', title: 'DeepSeek V4 要来了，它做了一件让英伟达很头疼的事', desc: 'DeepSeek V4 即将发布，1 万亿参数全跑华为芯片，彻底摆脱英伟达。5分钟读懂这件事对你、对 AI 行业意味着什么。', keywords: ['deepseek v4', 'deepseek v4是什么', 'deepseek v4发布', '华为昇腾芯片', '中国ai算力独立', 'deepseek华为', '英伟达出口管制', '开源大模型'] },
