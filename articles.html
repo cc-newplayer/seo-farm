@@ -109,9 +109,10 @@
       border-radius: 999px;
       font-weight: 600;
     }
-    .tag-tutorial { background: rgba(16,185,129,0.15); color: #10b981; }
-    .tag-deep     { background: rgba(139,92,246,0.15); color: #8b5cf6; }
-    .tag-popular  { background: rgba(251,146,60,0.15);  color: #fb923c; }
+    .tag-tutorial    { background: rgba(16,185,129,0.15); color: #10b981; }
+    .tag-deep        { background: rgba(139,92,246,0.15); color: #8b5cf6; }
+    .tag-popular     { background: rgba(251,146,60,0.15);  color: #fb923c; }
+    .tag-comparison  { background: rgba(56,189,248,0.15);  color: #38bdf8; }
     .art-item-title {
       font-size: 0.97rem;
       font-weight: 600;
@@ -338,11 +339,12 @@ const articlesData = [
 
 const coverStyle = {
   tutorial: 'linear-gradient(135deg,#0d9488,#10b981)',
-  deep:     'linear-gradient(135deg,#7c3aed,#8b5cf6)',
-  popular:  'linear-gradient(135deg,#ea580c,#fb923c)',
+  deep:       'linear-gradient(135deg,#7c3aed,#8b5cf6)',
+  popular:    'linear-gradient(135deg,#ea580c,#fb923c)',
+  comparison: 'linear-gradient(135deg,#0369a1,#38bdf8)',
 };
-const coverIcon  = { tutorial: '📘', deep: '🔬', popular: '🌐' };
-const tagName    = { tutorial: '教程', deep: '深度科普', popular: '大众科普' };
+const coverIcon  = { tutorial: '📘', deep: '🔬', popular: '🌐', comparison: '⚖️' };
+const tagName    = { tutorial: '教程', deep: '深度科普', popular: '大众科普', comparison: '横评对比' };
 
 function renderArticles(filter) {
   const filtered = filter === 'all' ? articlesData : articlesData.filter(a => a.category === filter);
@@ -366,15 +368,17 @@ function renderArticles(filter) {
 function renderTabs(activeFilter) {
   const counts = {
     all:      articlesData.length,
-    tutorial: articlesData.filter(a => a.category === 'tutorial').length,
-    deep:     articlesData.filter(a => a.category === 'deep').length,
-    popular:  articlesData.filter(a => a.category === 'popular').length,
+    tutorial:   articlesData.filter(a => a.category === 'tutorial').length,
+    deep:       articlesData.filter(a => a.category === 'deep').length,
+    popular:    articlesData.filter(a => a.category === 'popular').length,
+    comparison: articlesData.filter(a => a.category === 'comparison').length,
   };
   const tabs = [
     { key: 'all',      label: '全部' },
-    { key: 'tutorial', label: '教程' },
-    { key: 'deep',     label: '深度科普' },
-    { key: 'popular',  label: '大众科普' },
+    { key: 'tutorial',   label: '教程' },
+    { key: 'deep',       label: '深度科普' },
+    { key: 'popular',    label: '大众科普' },
+    { key: 'comparison', label: '横评对比' },
   ];
   document.getElementById('articleTabs').innerHTML = tabs.map(t =>
     `<button class="art-tab${activeFilter === t.key ? ' active' : ''}" data-filter="${t.key}">
