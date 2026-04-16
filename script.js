@@ -1091,6 +1091,13 @@ function doSearch() {
   if (!tools.length && !articles.length && !news.length && !glossary.length) {
     panel.innerHTML = `<div class="sr-empty">未找到与「${q}」相关的内容</div>`;
     panel.style.display = 'block';
+    const wrap = document.querySelector('.search-wrap');
+    if (wrap) {
+      const r = wrap.getBoundingClientRect();
+      panel.style.top   = (r.bottom + 8) + 'px';
+      panel.style.left  = r.left + 'px';
+      panel.style.width = r.width + 'px';
+    }
     return;
   }
 
@@ -1156,6 +1163,14 @@ function doSearch() {
 
   panel.innerHTML = html;
   panel.style.display = 'block';
+  // 定位一次，不跟随滚动更新
+  const wrap = document.querySelector('.search-wrap');
+  if (wrap) {
+    const r = wrap.getBoundingClientRect();
+    panel.style.top   = (r.bottom + 8) + 'px';
+    panel.style.left  = r.left + 'px';
+    panel.style.width = r.width + 'px';
+  }
 }
 
 // 关闭搜索结果
