@@ -1173,12 +1173,19 @@ function doSearch() {
   }
 }
 
+// Portal：把 searchResults 挂到 body，彻底脱离 hero 祖先的 transform/filter 影响
+(function () {
+  const panel = document.getElementById('searchResults');
+  if (panel) document.body.appendChild(panel);
+})();
+
 // 关闭搜索结果
 document.addEventListener('click', e => {
-  const wrap = document.querySelector('.search-wrap');
-  if (wrap && !wrap.contains(e.target)) {
-    const panel = document.getElementById('searchResults');
-    if (panel) panel.style.display = 'none';
+  const wrap  = document.querySelector('.search-wrap');
+  const panel = document.getElementById('searchResults');
+  if (!wrap || !panel) return;
+  if (!wrap.contains(e.target) && !panel.contains(e.target)) {
+    panel.style.display = 'none';
   }
 });
 document.addEventListener('keydown', e => {
