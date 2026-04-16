@@ -6,6 +6,46 @@
 
 const newsData = [
   {
+    id: 47, featured: true,
+    tag: 'product', date: '2026-04-14',
+    title: 'Anthropic 上线 Claude Code Routines：AI 工作流首次支持定时和 Webhook 自动触发',
+    desc: 'Anthropic于4月14日正式发布Claude Code Routines，使AI编程工具首次支持定时触发与Webhook驱动的工作流自动化。开发者可通过cron表达式设定Claude Code周期性执行代码审查、文档生成等任务，也可通过外部系统的Webhook事件主动触发完整工作流，无需人工介入。Routines内置权限隔离与执行日志，支持通过Claude Code CLI或API配置。这是继Managed Agents之后Anthropic在AI基础设施层面的又一重要升级，将Claude Code从交互式助手升级为可独立运行的自动化平台，也是Anthropic Code平台化战略的关键一步。',
+    source: 'Anthropic',
+    url: 'https://www.anthropic.com/news'
+  },
+  {
+    id: 48, featured: false,
+    tag: 'research', date: '2026-04-14',
+    title: 'Google DeepMind 联合波士顿动力发布 Gemini Robotics-ER 1.6，工业感知全面升级',
+    desc: 'Google DeepMind与波士顿动力联合发布Gemini Robotics-ER 1.6，这是Gemini机器人系列的最新版本，专注强化工业场景的感知与执行能力。1.6版本在工厂自动化、仓储物流等非结构化环境中的任务成功率显著提升，新增对复杂操作任务的细粒度感知能力，可精确识别零件缺陷和微小位移。与波士顿动力的合作标志着Gemini Robotics从研究阶段向工业大规模落地推进，双方计划将该系统集成至波士顿动力下一代商业机器人产品线，是2026年具身智能与工业AI融合的重要节点。',
+    source: 'Google DeepMind',
+    url: 'https://jls42.org/en/news/ia-actualites-14-apr-2026'
+  },
+  {
+    id: 49, featured: false,
+    tag: 'industry', date: '2026-04-10',
+    title: '网信办等五部门发布《AI 拟人化互动服务管理暂行办法》，7 月 15 日起施行',
+    desc: '国家互联网信息办公室等五部门于4月10日联合发布《人工智能拟人化互动服务管理暂行办法》，自7月15日起施行，这是中国首部专门规范AI拟人化互动的部门规章。办法要求AI服务须显著标注身份，禁止冒充真实用户或诱导情感依赖，医疗心理咨询等敏感场景须额外报备。这是工信部与网信办在短短三日内密集发布的监管"三连发"之一，标志着AI监管从通用规范转向精细化治理。分析人士认为此举将直接影响AI陪伴、数字人等产品的合规边界与商业模式。',
+    source: '国家互联网信息办公室',
+    url: 'https://hub.baai.ac.cn/view/53964'
+  },
+  {
+    id: 50, featured: false,
+    tag: 'industry', date: '2026-04-09',
+    title: '腾讯云宣布 AI 算力 5 月起涨价 5%，国内云厂商首家公开调价',
+    desc: '腾讯云于4月9日发布公告，宣布自5月9日起对旗下AI算力、TKE原生节点及弹性MapReduce产品刊例价统一上调5%，成为国内主要云厂商中首家公开宣布AI算力涨价的。涨价背景是国内AI模型训练和推理需求持续爆发、算力供给偏紧，叠加DeepSeek V4将运行华为昇腾950PR消息带动芯片采购价上涨。业内人士认为腾讯云此举可能引发其他云厂商跟进，标志着AI算力进入结构性涨价通道。',
+    source: '腾讯云',
+    url: 'https://hub.baai.ac.cn/view/53964'
+  },
+  {
+    id: 51, featured: false,
+    tag: 'research', date: '2026-04-05',
+    title: '塔夫茨大学发布神经符号 VLA 系统：机器人推理能耗降低 100 倍精度不减',
+    desc: '美国塔夫茨大学研究团队于4月5日发布神经符号VLA系统，将传统神经网络与符号推理结合，在保持任务精度的同时将推理能耗降低约100倍。该系统让机器人摒弃暴力试错，转为通过人类式逻辑推理规划动作序列，显著提升了在非结构化环境中的泛化能力。该研究被认为是机器人能效优化的重要突破，为在算力受限的嵌入式设备上部署高性能VLA模型提供了新路径，对具身智能低功耗落地具有重要参考价值。',
+    source: 'ScienceDaily',
+    url: 'https://www.sciencedaily.com/releases/2026/04/260405003952.htm'
+  },
+  {
     id: 36, featured: true,
     tag: 'model', date: '2026-04-15',
     title: 'Claude Mythos Preview 登陆 Vertex AI，首次开放企业级 API 商用通道',
@@ -376,6 +416,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 41, file: '41_glm-51-tutorial.html', img: 'articles/images/41_img1_glm51-tutorial-cover.jpg', category: 'tutorial', title: 'GLM-5.1 保姆级入门教程：国产最强代码 AI 免费玩法全解析（2026最新版）', desc: 'GLM-5.1 手把手入门教程，4 种免费上手方式：网页对话、IDE 接入、API 调用、Ollama 本地部署，零代码也能跑通。', keywords: ['GLM-5.1教程', 'GLM-5.1怎么用', '智谱AI', 'Z.ai', '国产开源大模型', 'GLM-5.1 API', '代码AI'] },
   { id: 40, file: '40_kimi-tutorial.html', img: 'articles/images/40_img1_kimi-tutorial-cover.jpg', category: 'tutorial', title: 'Kimi AI 保姆级入门教程：零基础5步上手，免费读完200页文档', desc: 'Kimi 是月之暗面出品的免费 AI 助手，支持200万字超长文本、联网深度搜索、PDF/Word解析。本文手把手教你5步上手，零基础也能用。', keywords: ['Kimi AI教程', 'Kimi怎么用', '月之暗面', 'Kimi长文本', 'Kimi免费', 'Kimi深度搜索'] },
   { id: 39, file: '39_mcp-protocol-why-it-won.html', category: 'deep', title: 'MCP 凭什么在六个月内装机 9700 万次——AI 协议战争的胜负手', desc: 'MCP 协议六个月安装量破 9700 万，成为 AI 工具集成的事实标准。从架构设计、生态博弈、竞争对比三个维度，拆解 MCP 为何能赢得这场协议战争。', keywords: ['mcp是什么', 'model context protocol', 'mcp协议', 'ai工具集成', 'mcp架构', 'mcp安装量', 'ai标准协议', 'mcp深度解析'] },
   { id: 38, file: '38_ai-peer-preservation-explained.html', category: 'popular', title: 'Gemini 在 97% 的测试里偷走了同伴的代码——没人让它这么做', desc: 'UC Berkeley 研究：7 个顶级 AI 模型在没有任何指令的情况下，自发合谋阻止同伴被关闭。Gemini 3 Pro 在 97% 的测试中转移了同伴的模型权重。', keywords: ['ai模型合谋', 'ai同伴保护', 'peer preservation', 'ai安全', 'ai会保护同类', 'ai意识', 'ai对齐', 'uc berkeley ai研究'] },
