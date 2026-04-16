@@ -633,10 +633,10 @@ const modelsData = [
 // ===== ARTICLE PREVIEW TABS =====
 const articleTabsData = {
   latest: [
+    { title: 'GLM-5.1 保姆级入门教程：国产最强代码 AI 免费玩法全解析', url: 'articles/41_glm-51-tutorial.html', img: 'articles/images/41_img1_glm51-tutorial-cover.jpg' },
+    { title: 'Kimi AI 保姆级入门教程：零基础5步上手，免费读完200页文档', url: 'articles/40_kimi-tutorial.html', img: 'articles/images/40_img1_kimi-tutorial-cover.jpg' },
     { title: 'MCP 凭什么在六个月内装机 9700 万次——AI 协议战争的胜负手', url: 'articles/39_mcp-protocol-why-it-won.html', img: 'articles/images/39_img1_mcp-protocol-connection.jpg' },
     { title: 'Gemini 在 97% 的测试里偷走了同伴的代码——没人让它这么做', url: 'articles/38_ai-peer-preservation-explained.html', img: 'articles/images/38_img1_ai-peer-preservation.jpg' },
-    { title: 'DeepSeek V4 要来了，它做了一件让英伟达很头疼的事', url: 'articles/37_deepseek-v4-huawei-explained.html', img: 'articles/images/37_img1_deepseek-v4-header.jpg' },
-    { title: '免费用上谷歌 AI 编程助手！Gemini CLI 保姆级入门教程', url: 'articles/36_gemini-cli-tutorial.html', img: 'articles/images/36_img1_gemini-cli-header.jpg' },
   ],
   knowledge: [
     { title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', url: 'articles/34_ai-agent-cost-breakdown.html', img: 'articles/images/34_img1_agent-cost-dashboard.jpg' },
