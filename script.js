@@ -1017,35 +1017,107 @@ function setupTabs(containerId, renderFn) {
 // ===== SEARCH =====
 function doSearch() {
   const q = document.getElementById('searchInput').value.trim().toLowerCase();
-  if (!q) return;
-  const toolResult = toolsData.filter(t =>
+  const panel = document.getElementById('searchResults');
+  if (!panel) return;
+  if (!q) { panel.style.display = 'none'; return; }
+
+  const tools    = toolsData.filter(t =>
     t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)
-  );
-  const toolsTarget = document.getElementById('hotToolsList') || document.getElementById('toolsGrid');
-  if (toolsTarget) {
-    toolsTarget.innerHTML = toolResult.length
-      ? toolResult.map(t => `
-          <div class="tool-list-item" onclick="window.open('${t.url}','_blank')">
-            <div class="tool-card-top">
-              <span class="tool-name-wrap">
-                <span class="tool-list-icon" style="background:${t.color}22">${toolIconHtml(t)}</span>
-                <span class="tool-list-name">${t.name}</span>
-              </span>
-              <span class="tool-card-actions">
-                <span class="tool-badge badge-${t.badge}">${badgeLabel(t.badge)}</span>
-              </span>
-            </div>
-            <div class="tool-list-desc">${t.desc}</div>
-          </div>
-        `).join('')
-      : '<p style="color:var(--text-muted);padding:20px;grid-column:1/-1">未找到相关工具</p>';
-    document.querySelector('#tools').scrollIntoView({ behavior: 'smooth' });
+  ).slice(0, 5);
+
+  const articles = articlesData.filter(a =>
+    a.title.toLowerCase().includes(q) ||
+    (a.desc  && a.desc.toLowerCase().includes(q)) ||
+    (a.keywords && a.keywords.some(k => k.toLowerCase().includes(q)))
+  ).slice(0, 4);
+
+  const news = newsData.filter(n =>
+    n.title.toLowerCase().includes(q) ||
+    (n.desc && n.desc.toLowerCase().includes(q)) ||
+    (n.source && n.source.toLowerCase().includes(q))
+  ).slice(0, 3);
+
+  if (!tools.length && !articles.length && !news.length) {
+    panel.innerHTML = `<div class="sr-empty">未找到与「${q}」相关的内容</div>`;
+    panel.style.display = 'block';
+    return;
   }
+
+  let html = '';
+
+  if (tools.length) {
+    html += `<div class="sr-section"><div class="sr-label">🛠 工具</div>`;
+    html += tools.map(t => `
+      <a class="sr-item" href="${t.url}" target="_blank" rel="noopener">
+        <div class="sr-icon" style="background:${t.color}22">${toolIconHtml(t)}</div>
+        <div class="sr-body">
+          <div class="sr-title">${t.name}</div>
+          <div class="sr-sub">${t.desc}</div>
+        </div>
+        <span class="sr-tag sr-tag-tool">${badgeLabel(t.badge)}</span>
+      </a>`).join('');
+    html += `</div>`;
+  }
+
+  if (articles.length) {
+    const catIcon = { tutorial: '📘', popular: '🌐', deep: '🔬' };
+    const catName = { tutorial: '教程', popular: '科普', deep: '深度' };
+    html += `<div class="sr-section"><div class="sr-label">📚 文章</div>`;
+    html += articles.map(a => `
+      <a class="sr-item" href="articles/${a.file}" target="_blank">
+        <div class="sr-icon" style="background:rgba(108,99,255,0.12)">${catIcon[a.category] || '📄'}</div>
+        <div class="sr-body">
+          <div class="sr-title">${a.title}</div>
+          <div class="sr-sub">${a.desc || ''}</div>
+        </div>
+        <span class="sr-tag sr-tag-article">${catName[a.category] || ''}</span>
+      </a>`).join('');
+    html += `</div>`;
+  }
+
+  if (news.length) {
+    html += `<div class="sr-section"><div class="sr-label">📰 资讯</div>`;
+    html += news.map(n => `
+      <a class="sr-item" href="${n.url}" target="_blank" rel="noopener">
+        <div class="sr-icon" style="background:rgba(251,146,60,0.12)">📡</div>
+        <div class="sr-body">
+          <div class="sr-title">${n.title}</div>
+          <div class="sr-sub">${n.source} · ${n.date}</div>
+        </div>
+        <span class="sr-tag sr-tag-news">${tagLabel(n.tag)}</span>
+      </a>`).join('');
+    html += `</div>`;
+  }
+
+  panel.innerHTML = html;
+  panel.style.display = 'block';
 }
 
-// Search on Enter
+// 关闭搜索结果
+document.addEventListener('click', e => {
+  const wrap = document.querySelector('.search-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    const panel = document.getElementById('searchResults');
+    if (panel) panel.style.display = 'none';
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const panel = document.getElementById('searchResults');
+    if (panel) panel.style.display = 'none';
+  }
+});
+
+// Search on Enter / input
 document.getElementById('searchInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') doSearch();
+});
+document.getElementById('searchInput').addEventListener('input', () => {
+  const q = document.getElementById('searchInput').value.trim();
+  if (!q) {
+    const panel = document.getElementById('searchResults');
+    if (panel) panel.style.display = 'none';
+  }
 });
 
 // ===== PARTICLES =====
