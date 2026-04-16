@@ -365,7 +365,7 @@
   </div>
 
   <!-- 结果数量 -->
-  <div class="gloss-count" id="glossCount">共 41 个术语</div>
+  <div class="gloss-count" id="glossCount">共 44 个术语</div>
 
   <!-- 空状态 -->
   <div class="gloss-empty" id="glossEmpty">没有找到匹配的术语</div>
@@ -673,6 +673,46 @@
       </div>
     </div>
 
+    <div class="term-card" data-category="llm" data-keywords="cot chain of thought 思维链 推理 步骤 逻辑">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">CoT（思维链）</span>
+            <span class="term-cat-badge cat-llm">大模型基础</span>
+          </div>
+          <p class="term-oneliner">让 AI "一步步想清楚再回答"的技术，显著提升复杂推理的准确率</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>Chain of Thought。普通模式下 AI 直接给答案，容易在数学、逻辑推理等复杂题上出错。CoT 的做法是让模型先把推理过程逐步写出来，再得出最终答案——就像让人"打草稿"而不是心算。</p>
+          <p>实现方式很简单：在 Prompt 里加上"请一步步思考"即可触发。OpenAI 的 o 系列（o1、o3）和 Claude 的扩展思考模式，本质上都是模型内部自动执行 CoT，再输出最终答案。</p>
+          <p><strong>效果：</strong>同一个模型在数学和编程类任务上，开启 CoT 后正确率通常提升 10–30%。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="llm" data-keywords="system prompt 系统提示词 角色 设定 规则 开发者">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">System Prompt（系统提示词）</span>
+            <span class="term-cat-badge cat-llm">大模型基础</span>
+          </div>
+          <p class="term-oneliner">开发者预设给 AI 的"幕后指令"，定义角色、行为边界和回答风格，普通用户看不到</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>每次对话开始前，开发者可以向模型发送一段"系统级"的特殊指令，模型会始终遵守。比如客服机器人的 System Prompt 可能是"你是 XX 品牌的客服助手，只回答产品相关问题，不讨论竞品"。</p>
+          <p>你在 Coze、Dify 等平台配置"人设"时，填写的角色描述最终都会被封装成 System Prompt 发给模型。这也是为什么"越狱"攻击（Prompt 注入）的目标之一就是覆盖或绕过 System Prompt。</p>
+          <p><strong>注意：</strong>System Prompt 并不是绝对保密的——有经验的用户可以通过特定提问方式让模型"泄露"部分内容，重要商业逻辑不应完全依赖其保密性。</p>
+        </div>
+      </div>
+    </div>
+
     <!-- ── Agent 相关 ── -->
     <div class="gloss-group-label" data-group="agent">Agent 相关</div>
 
@@ -831,6 +871,27 @@
           <p>全自动 Agent 虽然效率高，但在涉及资金、发布、删除等不可逆操作时风险很大。Human-in-the-Loop（HITL）是一种设计模式：Agent 完成分析规划后暂停，等人类确认，再继续执行。</p>
           <p>好的 Agent 系统应该是"完全自动"和"完全人工"之间的平衡，让人类在���的地方介入，而不是事事插手。DeerFlow、LangGraph 都原生支持 HITL checkpoint。</p>
         </div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="agent" data-keywords="a2a agent to agent 协议 通信 互联互通 google">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">A2A（Agent 间通信协议）</span>
+            <span class="term-cat-badge cat-agent">Agent 相关</span>
+          </div>
+          <p class="term-oneliner">让不同厂商的 AI Agent 能互相"说话"和协作的开放协议，由 Google 于 2025 年提出</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>Agent-to-Agent Protocol。MCP 解决的是"Agent 调用工具"的问题，A2A 解决的是"Agent 之间如何委托任务"的问题。比如一个 Coze Agent 把子任务委托给一个 LangGraph Agent，两者之间需要标准化的通信格式，A2A 就是为此而生的。</p>
+          <p>Google 于 2025 年提出并开源，目前已有 50+ 合作伙伴跟进。与 MCP 并列为 2026 年 AI Agent 基础设施的两大核心协议。</p>
+          <p><strong>简单理解：</strong>MCP = Agent 的"工具插口"；A2A = Agent 之间的"对讲机"。</p>
+        </div>
+        <div class="term-related">📄 相关文章：<a href="articles/06_agent-2026-protocols.html">AI Agent 正在经历它的「TCP/IP 时刻」</a></div>
       </div>
     </div>
 
