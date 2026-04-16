@@ -1091,7 +1091,6 @@ function doSearch() {
   if (!tools.length && !articles.length && !news.length && !glossary.length) {
     panel.innerHTML = `<div class="sr-empty">未找到与「${q}」相关的内容</div>`;
     panel.style.display = 'block';
-    lockSearchWrap();
     return;
   }
 
@@ -1157,47 +1156,21 @@ function doSearch() {
 
   panel.innerHTML = html;
   panel.style.display = 'block';
-  lockSearchWrap();
-}
-
-// 把 search-wrap 固定到当前视口位置，搜索框+结果框一起不随页面滚动
-function lockSearchWrap() {
-  const wrap = document.querySelector('.search-wrap');
-  if (!wrap || wrap.dataset.locked) return;
-  const r = wrap.getBoundingClientRect();
-  wrap.style.position = 'fixed';
-  wrap.style.top      = r.top + 'px';
-  wrap.style.left     = r.left + 'px';
-  wrap.style.width    = r.width + 'px';
-  wrap.style.zIndex   = '9999';
-  wrap.dataset.locked = '1';
-}
-
-function unlockSearchWrap() {
-  const wrap = document.querySelector('.search-wrap');
-  if (!wrap) return;
-  wrap.style.position = '';
-  wrap.style.top      = '';
-  wrap.style.left     = '';
-  wrap.style.width    = '';
-  wrap.style.zIndex   = '';
-  delete wrap.dataset.locked;
-}
-
-function closeSearch() {
-  const panel = document.getElementById('searchResults');
-  if (panel) panel.style.display = 'none';
-  unlockSearchWrap();
 }
 
 // 关闭搜索结果
 document.addEventListener('click', e => {
-  const wrap  = document.querySelector('.search-wrap');
-  const panel = document.getElementById('searchResults');
-  if (wrap && !wrap.contains(e.target)) closeSearch();
+  const wrap = document.querySelector('.search-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    const panel = document.getElementById('searchResults');
+    if (panel) panel.style.display = 'none';
+  }
 });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeSearch();
+  if (e.key === 'Escape') {
+    const panel = document.getElementById('searchResults');
+    if (panel) panel.style.display = 'none';
+  }
 });
 
 // Search on Enter / input
@@ -1207,7 +1180,8 @@ document.getElementById('searchInput').addEventListener('keydown', e => {
 document.getElementById('searchInput').addEventListener('input', () => {
   const q = document.getElementById('searchInput').value.trim();
   if (!q) {
-    closeSearch();
+    const panel = document.getElementById('searchResults');
+    if (panel) panel.style.display = 'none';
   } else {
     doSearch();
   }
