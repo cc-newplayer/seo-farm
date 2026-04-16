@@ -212,15 +212,13 @@ body.sidebar-collapsed .navbar { left: var(--sidebar-w-sm); }
   width: 100%; max-width: 540px;
 }
 .search-results {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0; right: 0;
+  position: fixed;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-  z-index: 200;
-  max-height: 500px;
+  z-index: 9999;
+  max-height: 480px;
   overflow-y: auto;
 }
 .sr-section { padding: 8px 0; }
@@ -258,6 +256,7 @@ body.sidebar-collapsed .navbar { left: var(--sidebar-w-sm); }
 .sr-tag-tool     { background: rgba(0,212,170,0.15); color: var(--accent2); }
 .sr-tag-article  { background: rgba(108,99,255,0.15); color: var(--accent); }
 .sr-tag-news     { background: rgba(251,146,60,0.15); color: #fb923c; }
+.sr-tag-glossary { background: rgba(96,165,250,0.15); color: #60a5fa; }
 .sr-empty { padding: 24px; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
 .hero-stats {
   display: flex; gap: 40px; margin-top: 8px;
