@@ -344,7 +344,7 @@
   <div class="gloss-hero">
     <div class="hero-badge">📖 AI 术语速查</div>
     <h1>读懂 AI，从<span class="gradient-text">认识这些词</span>开始</h1>
-    <p>30+ 个核心术语，每个词都有一句话解释和详细展开，帮你在看技术文章时不再卡壳。</p>
+    <p>40+ 个核心术语，每个词都有一句话解释和详细展开，帮你在看技术文章时不再卡壳。</p>
   </div>
 
   <!-- 搜索 -->
@@ -365,7 +365,7 @@
   </div>
 
   <!-- 结果数量 -->
-  <div class="gloss-count" id="glossCount">共 32 个术语</div>
+  <div class="gloss-count" id="glossCount">共 41 个术语</div>
 
   <!-- 空状态 -->
   <div class="gloss-empty" id="glossEmpty">没有找到匹配的术语</div>
@@ -595,6 +595,84 @@
       </div>
     </div>
 
+    <div class="term-card" data-category="llm" data-keywords="llm 大语言模型 large language model 基础">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">LLM（大语言模型）</span>
+            <span class="term-cat-badge cat-llm">大模型基础</span>
+          </div>
+          <p class="term-oneliner">Large Language Model，在海量文本上训练的超大规模语言模型，ChatGPT、Claude、Gemini 都属于 LLM</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>LLM 的核心特征：参数量极大（通常数十亿到万亿级）、在互联网规模的文本数据上预训练、能够理解和生成自然语言、具备一定的通用推理能力。</p>
+          <p>LLM 和"AI"不是同义词——LLM 特指语言模型这一类，不包括图像生成模型（Stable Diffusion、Midjourney）、语音模型等。但在日常讨论中，"大模型"和"LLM"经常被混用。</p>
+          <p><strong>规模门槛：</strong>通常认为 10B 参数以上才算"大"语言模型，以下称为小模型（SLM）。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="llm" data-keywords="多模态 multimodal 图片 音频 视频 视觉">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">多模态（Multimodal）</span>
+            <span class="term-cat-badge cat-llm">大模型基础</span>
+          </div>
+          <p class="term-oneliner">能同时处理文字、图片、音频、视频等多种信息形式的 AI 模型</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>早期语言模型只能处理文字。多模态模型打通了不同信息形式：你可以给它一张菜单照片，让它帮你推荐菜品；给它一段视频，让它总结内容；给它一张图表，让它解读数据。</p>
+          <p>GPT-5.4 支持图文输入；Gemini 系列支持图、文、音频、视频；Claude 3 系列支持图文。下一步是"原生多模态"——从训练阶段就融合多种数据，而不是在语言模型上"打补丁"接入视觉。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="llm" data-keywords="蒸馏 distillation 知识蒸馏 小模型 教师">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">蒸馏（Knowledge Distillation）</span>
+            <span class="term-cat-badge cat-llm">大模型基础</span>
+          </div>
+          <p class="term-oneliner">用大模型的输出来训练小模型，让小模型"继承"大模型的能力，大幅降低部署成本</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>把大模型（Teacher）当老师，用它生成的回答作为训练数据，训练一个参数量更小的学生模型（Student）。学生模型不需要从头看所有原始数据，只需要学老师"怎么思考"。</p>
+          <p>DeepSeek-R1 的成功很大程度上依赖蒸馏——用超大模型的推理轨迹训练更小的模型，让小模型也具备推理链能力，这也是为什么 DeepSeek 能用低得多的成本实现接近顶级模型的推理效果。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="llm" data-keywords="zero-shot few-shot 零样本 少样本 示例 提示">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">Zero-shot / Few-shot</span>
+            <span class="term-cat-badge cat-llm">大模型基础</span>
+          </div>
+          <p class="term-oneliner">Zero-shot：直接问不给例子；Few-shot：给几个示例再问——后者通常能显著提升输出质量</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p><strong>Zero-shot：</strong>直接描述任务，不给任何示例。"帮我把这句话翻译成英文：……"——模型凭自身能力完成。</p>
+          <p><strong>Few-shot：</strong>给 2-5 个输入/输出的示例，再给出实际任务。模型会从示例中推断你想要的格式和风格，输出更贴近预期。在需要特定输出格式时，Few-shot 几乎总比 Zero-shot 效果好。</p>
+          <p><strong>One-shot：</strong>只给一个示例，介于两者之间，适合示例不多的场景。</p>
+        </div>
+      </div>
+    </div>
+
     <!-- ── Agent 相关 ── -->
     <div class="gloss-group-label" data-group="agent">Agent 相关</div>
 
@@ -758,6 +836,65 @@
 
     <!-- ── 工具与平台 ── -->
     <div class="gloss-group-label" data-group="tools">工具与平台</div>
+
+    <div class="term-card" data-category="tools" data-keywords="沙箱 sandbox 隔离 安全 执行环境 agent">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">沙箱（Sandbox）</span>
+            <span class="term-cat-badge cat-tools">工具与平台</span>
+          </div>
+          <p class="term-oneliner">让 AI 在隔离环境中执行代码或操作，出了问题不影响真实系统</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>当 AI Agent 需要执行代码、访问文件或操作系统时，沙箱提供一个与真实环境隔离的容器。AI 在里面做什么都不会影响外部——崩溃了就崩溃，写错文件了也只影响沙箱内部。</p>
+          <p>OpenAI Codex、Claude Managed Agents 都内置沙箱执行环境。对于需要让 AI 跑代码的场景，沙箱是安全部署的基本要求，缺少它意味着 AI 的代码错误可能直接影响生产环境。</p>
+        </div>
+        <div class="term-related">📄 相关文章：<a href="articles/31_openai-codex-2026-deep-dive.html">OpenAI Codex 2026 不是更聪明的 Copilot</a></div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="tools" data-keywords="向量数据库 vector database pinecone chroma rag 检索">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">向量数据库（Vector Database）</span>
+            <span class="term-cat-badge cat-tools">工具与平台</span>
+          </div>
+          <p class="term-oneliner">专门存储和检索 Embedding 向量的数据库，是 RAG 系统的核心存储层</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>普通数据库按"完全匹配"查找（找 id=123 的记录）；向量数据库按"语义相似度"查找（找和这段话最相关的内容）。核心操作是"近似最近邻搜索（ANN）"，在百万量级向量中毫秒内找到最相似的几条。</p>
+          <p>常见产品：<strong>Pinecone</strong>（云服务，开箱即用）、<strong>Chroma</strong>（开源，适合本地开发）、<strong>Weaviate</strong>（开源，功能完整）、<strong>pgvector</strong>（PostgreSQL 插件，不想引入新组件时的选择）。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="tools" data-keywords="gpu 显卡 算力 nvidia 英伟达 训练 推理">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">GPU</span>
+            <span class="term-cat-badge cat-tools">工具与平台</span>
+          </div>
+          <p class="term-oneliner">AI 训练和推理的核心算力硬件，英伟达 H100/H200 是目前最主流的 AI 训练芯片</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>GPU（图形处理器）原本为游戏渲染设计，但其擅长大规模并行矩阵运算的特性与神经网络训练完美契合。训练 GPT-4 级别的模型需要数万张 H100，租用费用每张每小时约 $2-4。</p>
+          <p>英伟达凭借 CUDA 生态几乎垄断了 AI 训练市场（市占率超 80%）。出口管制使中国无法获得 H100/H200，这直接推动了华为昇腾、摩尔线程等国产 AI 芯片的加速发展——也是 DeepSeek V4 选择跑在昇腾上的背景。</p>
+        </div>
+        <div class="term-related">📄 相关文章：<a href="articles/37_deepseek-v4-huawei-explained.html">DeepSeek V4 要来了，它做了一件让英伟达很头疼的事</a></div>
+      </div>
+    </div>
 
     <div class="term-card" data-category="tools" data-keywords="api 接口 调用 key 开发 代码">
       <div class="term-header" onclick="toggleTerm(this)">
@@ -992,6 +1129,64 @@
         <div class="term-detail">
           <p>一个能力很强但"目标不对"的 AI 可能造成巨大危害。对齐研究的核心问题是：如何确保 AI 在能力不断提升的同时，始终按照人类真实意图行事，而不是字面意思或扭曲解读？</p>
           <p>RLHF 是目前最主流的对齐方法，但远不是终点。OpenAI 的 Superalignment 团队、Anthropic 的 Constitutional AI 方法，都是在探索更可靠的对齐路径。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="industry" data-keywords="agi 通用人工智能 general artificial intelligence 超级 强ai">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">AGI（通用人工智能）</span>
+            <span class="term-cat-badge cat-industry">行业术语</span>
+          </div>
+          <p class="term-oneliner">能在所有认知任务上达到或超越人类水平的 AI，目前尚未实现，但已是行业最热门的目标</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>Artificial General Intelligence。区别于当前的"弱 AI"（只擅长特定任务），AGI 能像人类一样在陌生领域快速学习和推理。OpenAI、Anthropic、DeepMind 都把"实现 AGI"写在了公司使命里。</p>
+          <p>关于 AGI 何时到来，预测分歧极大：有人认为 2030 年前可能实现，有人认为还需要几十年甚至根本不可能。目前没有公认的 AGI 定义标准，导致不同人说"AGI"时意思往往大相径庭。</p>
+          <p><strong>ASI（超级智能）</strong>比 AGI 更进一步，指在所有方面都远超人类的 AI，被认为是 AGI 之后的下一阶段。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="industry" data-keywords="scaling law 规模定律 更大 更多 算力 数据">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">Scaling Law（规模定律）</span>
+            <span class="term-cat-badge cat-industry">行业术语</span>
+          </div>
+          <p class="term-oneliner">模型越大、数据越多、算力越多，性能就越好——这个规律驱动了过去五年 AI 的爆炸式进步</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>2020 年 OpenAI 论文发现：模型参数量、训练数据量、训练算力三者与模型性能之间存在幂律关系——按比例同步增大，性能可预测地提升，而且没有明显的"天花板"。这个发现让"堆规模"成为 AI 公司的核心战略。</p>
+          <p>近年出现了对 Scaling Law 是否仍然成立的争议——部分研究者认为单纯堆规模的收益递减，架构创新（MoE、蒸馏、推理时计算）比"更大的模型"更重要。这场争论决定了未来几年 AI 算力投入的方向。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="term-card" data-category="industry" data-keywords="mmlu 综合知识 多学科 评测 大学 考试">
+      <div class="term-header" onclick="toggleTerm(this)">
+        <div class="term-left">
+          <div class="term-title-row">
+            <span class="term-name">MMLU</span>
+            <span class="term-cat-badge cat-industry">行业术语</span>
+          </div>
+          <p class="term-oneliner">评测 AI 综合知识广度的权威基准，覆盖 57 个学科，从数学到法律到医学</p>
+        </div>
+        <span class="term-toggle">+</span>
+      </div>
+      <div class="term-body">
+        <div class="term-detail">
+          <p>Massive Multitask Language Understanding。题目来自大学和专业资格考试，涵盖 STEM、人文、社会科学等 57 个学科。满分 100，人类专家平均约 89 分。</p>
+          <p>主流模型的 MMLU 分数：GPT-5.4 约 90+，Claude Opus 4.6 约 88，Llama 4 约 85。MMLU 侧重"知道什么"，不代表模型能"做到什么"——SWE-bench 等任务型基准更能反映实际能力。</p>
         </div>
       </div>
     </div>
