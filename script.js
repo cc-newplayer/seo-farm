@@ -1060,16 +1060,6 @@ const glossaryData = [
   { term: 'MMLU',                        oneliner: '评测AI综合知识广度的权威基准，覆盖57个学科，从数学到法律到医学',      keywords: 'mmlu 综合知识 多学科 评测 大学 考试' },
 ];
 
-function positionSearchResults() {
-  const wrap = document.querySelector('.search-wrap');
-  const panel = document.getElementById('searchResults');
-  if (!wrap || !panel) return;
-  const rect = wrap.getBoundingClientRect();
-  panel.style.top   = (rect.bottom + 6) + 'px';
-  panel.style.left  = rect.left + 'px';
-  panel.style.width = rect.width + 'px';
-}
-
 function doSearch() {
   const q = document.getElementById('searchInput').value.trim().toLowerCase();
   const panel = document.getElementById('searchResults');
@@ -1100,7 +1090,6 @@ function doSearch() {
 
   if (!tools.length && !articles.length && !news.length && !glossary.length) {
     panel.innerHTML = `<div class="sr-empty">未找到与「${q}」相关的内容</div>`;
-    positionSearchResults();
     panel.style.display = 'block';
     return;
   }
@@ -1166,7 +1155,6 @@ function doSearch() {
   }
 
   panel.innerHTML = html;
-  positionSearchResults();
   panel.style.display = 'block';
 }
 
@@ -1183,10 +1171,6 @@ document.addEventListener('keydown', e => {
     const panel = document.getElementById('searchResults');
     if (panel) panel.style.display = 'none';
   }
-});
-window.addEventListener('resize', () => {
-  const panel = document.getElementById('searchResults');
-  if (panel && panel.style.display !== 'none') positionSearchResults();
 });
 
 // Search on Enter / input
