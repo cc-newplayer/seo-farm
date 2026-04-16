@@ -212,12 +212,14 @@ body.sidebar-collapsed .navbar { left: var(--sidebar-w-sm); }
   width: 100%; max-width: 540px;
 }
 .search-results {
-  position: fixed;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0; right: 0;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-  z-index: 9999;
+  z-index: 200;
   max-height: 300px;
   overflow-y: auto;
 }

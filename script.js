@@ -1091,13 +1091,7 @@ function doSearch() {
   if (!tools.length && !articles.length && !news.length && !glossary.length) {
     panel.innerHTML = `<div class="sr-empty">未找到与「${q}」相关的内容</div>`;
     panel.style.display = 'block';
-    const wrap = document.querySelector('.search-wrap');
-    if (wrap) {
-      const r = wrap.getBoundingClientRect();
-      panel.style.top   = (r.bottom + 8) + 'px';
-      panel.style.left  = r.left + 'px';
-      panel.style.width = r.width + 'px';
-    }
+    lockSearchWrap();
     return;
   }
 
@@ -1163,36 +1157,47 @@ function doSearch() {
 
   panel.innerHTML = html;
   panel.style.display = 'block';
-  // 定位一次，不跟随滚动更新
-  const wrap = document.querySelector('.search-wrap');
-  if (wrap) {
-    const r = wrap.getBoundingClientRect();
-    panel.style.top   = (r.bottom + 8) + 'px';
-    panel.style.left  = r.left + 'px';
-    panel.style.width = r.width + 'px';
-  }
+  lockSearchWrap();
 }
 
-// Portal：把 searchResults 挂到 body，彻底脱离 hero 祖先的 transform/filter 影响
-(function () {
+// 把 search-wrap 固定到当前视口位置，搜索框+结果框一起不随页面滚动
+function lockSearchWrap() {
+  const wrap = document.querySelector('.search-wrap');
+  if (!wrap || wrap.dataset.locked) return;
+  const r = wrap.getBoundingClientRect();
+  wrap.style.position = 'fixed';
+  wrap.style.top      = r.top + 'px';
+  wrap.style.left     = r.left + 'px';
+  wrap.style.width    = r.width + 'px';
+  wrap.style.zIndex   = '9999';
+  wrap.dataset.locked = '1';
+}
+
+function unlockSearchWrap() {
+  const wrap = document.querySelector('.search-wrap');
+  if (!wrap) return;
+  wrap.style.position = '';
+  wrap.style.top      = '';
+  wrap.style.left     = '';
+  wrap.style.width    = '';
+  wrap.style.zIndex   = '';
+  delete wrap.dataset.locked;
+}
+
+function closeSearch() {
   const panel = document.getElementById('searchResults');
-  if (panel) document.body.appendChild(panel);
-})();
+  if (panel) panel.style.display = 'none';
+  unlockSearchWrap();
+}
 
 // 关闭搜索结果
 document.addEventListener('click', e => {
   const wrap  = document.querySelector('.search-wrap');
   const panel = document.getElementById('searchResults');
-  if (!wrap || !panel) return;
-  if (!wrap.contains(e.target) && !panel.contains(e.target)) {
-    panel.style.display = 'none';
-  }
+  if (wrap && !wrap.contains(e.target)) closeSearch();
 });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    const panel = document.getElementById('searchResults');
-    if (panel) panel.style.display = 'none';
-  }
+  if (e.key === 'Escape') closeSearch();
 });
 
 // Search on Enter / input
@@ -1202,8 +1207,7 @@ document.getElementById('searchInput').addEventListener('keydown', e => {
 document.getElementById('searchInput').addEventListener('input', () => {
   const q = document.getElementById('searchInput').value.trim();
   if (!q) {
-    const panel = document.getElementById('searchResults');
-    if (panel) panel.style.display = 'none';
+    closeSearch();
   } else {
     doSearch();
   }
