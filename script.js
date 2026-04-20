@@ -416,6 +416,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 42, file: '42_chatgpt-shopping-acp.html', img: 'articles/images/42_img1_chatgpt-shopping.jpg', category: 'popular', title: 'ChatGPT 现在可以帮你买东西了——这不是购物升级，是电商规则的重写', desc: 'OpenAI 和 Stripe 联手推出 Agentic Commerce Protocol，ChatGPT 可以直接帮你下单了。Etsy 已上线，Shopify 百万商家即将接入。这对消费者和电商从业者意味着什么？', keywords: ['ChatGPT购物功能', 'AI购物', 'Agentic Commerce Protocol', 'AI代购', 'ChatGPT下单', 'AI电商', 'ACP协议'] },
   { id: 41, file: '41_glm-51-tutorial.html', img: 'articles/images/41_img1_glm51-tutorial-cover.jpg', category: 'tutorial', title: 'GLM-5.1 保姆级入门教程：国产最强代码 AI 免费玩法全解析（2026最新版）', desc: 'GLM-5.1 手把手入门教程，4 种免费上手方式：网页对话、IDE 接入、API 调用、Ollama 本地部署，零代码也能跑通。', keywords: ['GLM-5.1教程', 'GLM-5.1怎么用', '智谱AI', 'Z.ai', '国产开源大模型', 'GLM-5.1 API', '代码AI'] },
   { id: 40, file: '40_kimi-tutorial.html', img: 'articles/images/40_img1_kimi-tutorial-cover.jpg', category: 'tutorial', title: 'Kimi AI 保姆级入门教程：零基础5步上手，免费读完200页文档', desc: 'Kimi 是月之暗面出品的免费 AI 助手，支持200万字超长文本、联网深度搜索、PDF/Word解析。本文手把手教你5步上手，零基础也能用。', keywords: ['Kimi AI教程', 'Kimi怎么用', '月之暗面', 'Kimi长文本', 'Kimi免费', 'Kimi深度搜索'] },
   { id: 39, file: '39_mcp-protocol-why-it-won.html', category: 'deep', title: 'MCP 凭什么在六个月内装机 9700 万次——AI 协议战争的胜负手', desc: 'MCP 协议六个月安装量破 9700 万，成为 AI 工具集成的事实标准。从架构设计、生态博弈、竞争对比三个维度，拆解 MCP 为何能赢得这场协议战争。', keywords: ['mcp是什么', 'model context protocol', 'mcp协议', 'ai工具集成', 'mcp架构', 'mcp安装量', 'ai标准协议', 'mcp深度解析'] },
@@ -666,10 +667,10 @@ const modelsData = [
 // ===== ARTICLE PREVIEW TABS =====
 const articleTabsData = {
   latest: [
+    { title: 'ChatGPT 现在可以帮你买东西了——这不是购物升级，是电商规则的重写', url: 'articles/42_chatgpt-shopping-acp.html', img: 'articles/images/42_img1_chatgpt-shopping.jpg' },
     { title: 'GLM-5.1 保姆级入门教程：国产最强代码 AI 免费玩法全解析', url: 'articles/41_glm-51-tutorial.html', img: 'articles/images/41_img1_glm51-tutorial-cover.jpg' },
     { title: 'Kimi AI 保姆级入门教程：零基础5步上手，免费读完200页文档', url: 'articles/40_kimi-tutorial.html', img: 'articles/images/40_img1_kimi-tutorial-cover.jpg' },
     { title: 'MCP 凭什么在六个月内装机 9700 万次——AI 协议战争的胜负手', url: 'articles/39_mcp-protocol-why-it-won.html', img: 'articles/images/39_img1_mcp-protocol-connection.jpg' },
-    { title: 'Gemini 在 97% 的测试里偷走了同伴的代码——没人让它这么做', url: 'articles/38_ai-peer-preservation-explained.html', img: 'articles/images/38_img1_ai-peer-preservation.jpg' },
   ],
   knowledge: [
     { title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', url: 'articles/34_ai-agent-cost-breakdown.html', img: 'articles/images/34_img1_agent-cost-dashboard.jpg' },
