@@ -7,7 +7,7 @@
     <language>zh-CN</language>
     <copyright>© 2026 AI前沿</copyright>
     <managingEditor>cc-newplayer@github.io (AI前沿)</managingEditor>
-    <lastBuildDate>Wed, 16 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cc-newplayer.github.io/seo-farm/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://cc-newplayer.github.io/seo-farm/favicon.ico</url>
@@ -16,6 +16,15 @@
     </image>
 
     <!-- 最新 20 篇文章，按发布时间降序 -->
+
+    <item>
+      <title>法院判了：公司不能因为AI能干你的活就开除你——但这不是好消息</title>
+      <link>https://cc-newplayer.github.io/seo-farm/articles/43_court-rules-ai-cant-replace-workers.html</link>
+      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/43_court-rules-ai-cant-replace-workers.html</guid>
+      <pubDate>Mon, 12 May 2026 00:00:00 +0000</pubDate>
+      <description>杭州法院判决AI替代不构成合法裁员理由，全球首例。但真正的威胁不是被开除，而是被边缘化。</description>
+      <category>大众科普</category>
+    </item>
 
     <item>
       <title>ChatGPT 现在可以帮你买东西了——这不是购物升级，是电商规则的重写</title>
