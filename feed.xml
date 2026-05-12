@@ -18,6 +18,15 @@
     <!-- 最新 20 篇文章，按发布时间降序 -->
 
     <item>
+      <title>OpenAI Daybreak 不只是找漏洞——它能自己写补丁、自己验证、自己部署</title>
+      <link>https://cc-newplayer.github.io/seo-farm/articles/47_openai-daybreak-architecture.html</link>
+      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/47_openai-daybreak-architecture.html</guid>
+      <pubDate>Mon, 12 May 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI今天发布Daybreak，对标Anthropic Mythos。三阶段架构全拆解：识别→验证→修复。</description>
+      <category>深度科普</category>
+    </item>
+
+    <item>
       <title>OpenClaw 凭什么三个月拿下25万星——一个周末项目的架构到底有多疯狂</title>
       <link>https://cc-newplayer.github.io/seo-farm/articles/46_openclaw-architecture-deep-dive.html</link>
       <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/46_openclaw-architecture-deep-dive.html</guid>
