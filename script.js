@@ -416,6 +416,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 44, file: '44_ai-agent-wars-personal-butler.html', img: 'articles/images/44_img1_ai-agent-wars.jpg', category: 'popular', title: '巨头都在抢着做你的"24小时AI管家"——你的工作还安全吗', desc: 'Meta、Google、OpenAI同时曝光AI私人助手计划。能帮你购物、回邮件、订机票。方便是真方便——但如果AI能当管家，谁还花钱雇人？', keywords: ['AI私人助手', 'Meta Hatch', 'Google Remy', 'OpenClaw', 'AI Agent大战', 'AI管家', '人工智能助手'] },
   { id: 43, file: '43_court-rules-ai-cant-replace-workers.html', img: 'articles/images/43_img1_court-ai-ruling.jpg', category: 'popular', title: '法院判了：公司不能因为AI能干你的活就开除你——但这不是好消息', desc: '杭州法院判决AI替代不构成合法裁员理由，全球首例。但真正的威胁不是被开除，而是被边缘化。', keywords: ['AI替代裁员', 'AI取代工作', '杭州法院判决', '劳动法AI', '职场AI冲击', '人工智能裁员'] },
   { id: 42, file: '42_chatgpt-shopping-acp.html', img: 'articles/images/42_img1_chatgpt-shopping.jpg', category: 'popular', title: 'ChatGPT 现在可以帮你买东西了——这不是购物升级，是电商规则的重写', desc: 'OpenAI 和 Stripe 联手推出 Agentic Commerce Protocol，ChatGPT 可以直接帮你下单了。Etsy 已上线，Shopify 百万商家即将接入。这对消费者和电商从业者意味着什么？', keywords: ['ChatGPT购物功能', 'AI购物', 'Agentic Commerce Protocol', 'AI代购', 'ChatGPT下单', 'AI电商', 'ACP协议'] },
   { id: 41, file: '41_glm-51-tutorial.html', img: 'articles/images/41_img1_glm51-tutorial-cover.jpg', category: 'tutorial', title: 'GLM-5.1 保姆级入门教程：国产最强代码 AI 免费玩法全解析（2026最新版）', desc: 'GLM-5.1 手把手入门教程，4 种免费上手方式：网页对话、IDE 接入、API 调用、Ollama 本地部署，零代码也能跑通。', keywords: ['GLM-5.1教程', 'GLM-5.1怎么用', '智谱AI', 'Z.ai', '国产开源大模型', 'GLM-5.1 API', '代码AI'] },
@@ -668,10 +669,10 @@ const modelsData = [
 // ===== ARTICLE PREVIEW TABS =====
 const articleTabsData = {
   latest: [
+    { title: '巨头都在抢着做你的"24小时AI管家"——你的工作还安全吗', url: 'articles/44_ai-agent-wars-personal-butler.html', img: 'articles/images/44_img1_ai-agent-wars.jpg' },
     { title: '法院判了：公司不能因为AI能干你的活就开除你——但这不是好消息', url: 'articles/43_court-rules-ai-cant-replace-workers.html', img: 'articles/images/43_img1_court-ai-ruling.jpg' },
     { title: 'ChatGPT 现在可以帮你买东西了——这不是购物升级，是电商规则的重写', url: 'articles/42_chatgpt-shopping-acp.html', img: 'articles/images/42_img1_chatgpt-shopping.jpg' },
     { title: 'GLM-5.1 保姆级入门教程：国产最强代码 AI 免费玩法全解析', url: 'articles/41_glm-51-tutorial.html', img: 'articles/images/41_img1_glm51-tutorial-cover.jpg' },
-    { title: 'Kimi AI 保姆级入门教程：零基础5步上手，免费读完200页文档', url: 'articles/40_kimi-tutorial.html', img: 'articles/images/40_img1_kimi-tutorial-cover.jpg' },
   ],
   knowledge: [
     { title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', url: 'articles/34_ai-agent-cost-breakdown.html', img: 'articles/images/34_img1_agent-cost-dashboard.jpg' },
