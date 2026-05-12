@@ -18,6 +18,15 @@
     <!-- 最新 20 篇文章，按发布时间降序 -->
 
     <item>
+      <title>OpenClaw 凭什么三个月拿下25万星——一个周末项目的架构到底有多疯狂</title>
+      <link>https://cc-newplayer.github.io/seo-farm/articles/46_openclaw-architecture-deep-dive.html</link>
+      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/46_openclaw-architecture-deep-dive.html</guid>
+      <pubDate>Mon, 12 May 2026 00:00:00 +0000</pubDate>
+      <description>一个奥地利开发者的第44个side project，从WhatsApp转发器变成GitHub史上增长最快的项目。三层架构拆解。</description>
+      <category>深度科普</category>
+    </item>
+
+    <item>
       <title>扎克伯格说一个AI顶几十个人，然后裁了8000人——但这笔账根本算不过来</title>
       <link>https://cc-newplayer.github.io/seo-farm/articles/45_meta-ai-layoffs-roi-paradox.html</link>
       <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/45_meta-ai-layoffs-roi-paradox.html</guid>
