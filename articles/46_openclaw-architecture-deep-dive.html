@@ -35,6 +35,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="article-common.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true, theme:'neutral'});</script>
 </head>
 <body>
 <nav class="site-nav">
@@ -96,6 +98,46 @@
     <h2>三层架构：Gateway → 推理引擎 → 执行环境</h2>
 
     <p>OpenClaw 的架构分三层，每一层解决一个核心问题：</p>
+
+    <div class="mermaid">
+flowchart TB
+    subgraph 渠道层
+        W[WhatsApp]
+        T[Telegram]
+        S[Slack]
+        D[Discord]
+        CLI[命令行]
+    end
+
+    subgraph 第一层：Gateway 控制面
+        GW[Gateway Server<br>Node.js / WebSocket]
+        AUTH[认证鉴权]
+        SESSION[会话管理]
+        UI[Control UI]
+    end
+
+    subgraph 第二层：推理引擎
+        AR[Agent Runner]
+        MEM[记忆系统]
+        LOOP[Agentic Loop<br>思考→行动→观察]
+        LLM[LLM API<br>Claude / GPT]
+    end
+
+    subgraph 第三层：执行环境
+        FS[文件系统]
+        SHELL[Shell 执行]
+        NET[网络访问]
+        APP[应用交互]
+    end
+
+    W & T & S & D & CLI --> GW
+    GW --> AUTH & SESSION
+    GW --> AR
+    AR --> MEM
+    AR --> LOOP
+    LOOP <--> LLM
+    LOOP --> FS & SHELL & NET & APP
+    </div>
 
     <h3>第一层：Gateway（网关控制面）</h3>
 

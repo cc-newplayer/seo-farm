@@ -35,6 +35,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="article-common.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true, theme:'neutral'});</script>
 </head>
 <body>
 <nav class="site-nav">
@@ -82,6 +84,22 @@
     <h2>Daybreak 的三阶段管道架构</h2>
 
     <p>Daybreak 的核心是 Codex Security（3月发布的研究预览版），它围绕一个三阶段管道运作：</p>
+
+    <div class="mermaid">
+flowchart LR
+    A[代码仓库] --> B[阶段一：识别]
+    B --> |威胁模型<br>攻击路径| C[阶段二：验证]
+    C --> |PoC 构造<br>严重度评估| D[阶段三：修复]
+    D --> |生成补丁<br>运行测试| E[PR 提交]
+
+    subgraph 底层引擎
+        F[GPT-5.5-Cyber] -.-> B
+        F -.-> C
+        F -.-> D
+        G[Aardvark Agent] -.-> B
+        G -.-> C
+    end
+    </div>
 
     <h3>阶段一：识别（Identification）</h3>
 
