@@ -236,4 +236,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://cc-newplayer.github.io/seo-farm/articles/45_meta-ai-layoffs-roi-paradox.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
