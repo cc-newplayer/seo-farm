@@ -416,6 +416,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 48, file: '48_codex-mobile-control-explained.html', img: 'articles/images/48_img1_mobile-hero.jpg', category: 'popular', title: 'Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事', desc: 'OpenAI 把 Codex 装进了 ChatGPT 手机 App。表面是手机能写代码了，真相是你的电脑能在你不在的时候持续替你上班——而手机就是那根遥控棒。', keywords: ['Codex 手机', 'OpenAI Codex 移动版', 'ChatGPT App 编程', 'AI 代码 Agent', 'Codex iOS Android', '远程编程', 'AI 自动化'] },
   { id: 47, file: '47_openai-daybreak-architecture.html', img: 'articles/images/47_img1_daybreak-architecture.jpg', category: 'deep', title: 'OpenAI Daybreak 不只是找漏洞——它能自己写补丁、自己验证、自己部署', desc: 'OpenAI今天发布Daybreak，对标Anthropic Mythos。三阶段架构：识别→验证→修复，GPT-5.5-Cyber专用模型+Aardvark自主安全Agent。', keywords: ['OpenAI Daybreak', 'GPT-5.5-Cyber', 'AI网络安全', 'Codex Security', '漏洞检测AI', 'Anthropic Mythos', 'Aardvark'] },
   { id: 46, file: '46_openclaw-architecture-deep-dive.html', img: 'articles/images/46_img1_openclaw-architecture.jpg', category: 'deep', title: 'OpenClaw 凭什么三个月拿下25万星——一个周末项目的架构到底有多疯狂', desc: '一个奥地利开发者的第44个side project，从WhatsApp转发器变成GitHub史上增长最快的项目。三层架构拆解：Gateway控制面、Agentic Loop、无沙箱执行环境。', keywords: ['OpenClaw', 'OpenClaw架构', 'AI Agent', 'Peter Steinberger', '开源AI助手', '自托管AI', 'Gateway架构', 'Agentic Loop'] },
   { id: 45, file: '45_meta-ai-layoffs-roi-paradox.html', img: 'articles/images/45_img1_meta-ai-layoffs-roi.jpg', category: 'popular', title: '扎克伯格说一个AI顶几十个人，然后裁了8000人——但这笔账根本算不过来', desc: 'Meta裁员8000人，理由是AI能替代。但Gartner研究发现：80%用AI裁员的公司，AI根本没达到预期。人被裁了，活也没人干了。', keywords: ['Meta裁员', 'AI裁员', 'AI替代工作', '扎克伯格AI', 'Gartner AI研究', '科技公司裁员2026', 'AI ROI'] },
@@ -672,10 +673,10 @@ const modelsData = [
 // ===== ARTICLE PREVIEW TABS =====
 const articleTabsData = {
   latest: [
+    { title: 'Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事', url: 'articles/48_codex-mobile-control-explained.html', img: 'articles/images/48_img1_mobile-hero.jpg' },
     { title: 'OpenAI Daybreak 不只是找漏洞——它能自己写补丁、自己验证、自己部署', url: 'articles/47_openai-daybreak-architecture.html', img: 'articles/images/47_img1_daybreak-architecture.jpg' },
     { title: 'OpenClaw 凭什么三个月拿下25万星——一个周末项目的架构到底有多疯狂', url: 'articles/46_openclaw-architecture-deep-dive.html', img: 'articles/images/46_img1_openclaw-architecture.jpg' },
     { title: '扎克伯格说一个AI顶几十个人，然后裁了8000人——但这笔账根本算不过来', url: 'articles/45_meta-ai-layoffs-roi-paradox.html', img: 'articles/images/45_img1_meta-ai-layoffs-roi.jpg' },
-    { title: '巨头都在抢着做你的"24小时AI管家"——你的工作还安全吗', url: 'articles/44_ai-agent-wars-personal-butler.html', img: 'articles/images/44_img1_ai-agent-wars.jpg' },
   ],
   knowledge: [
     { title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', url: 'articles/34_ai-agent-cost-breakdown.html', img: 'articles/images/34_img1_agent-cost-dashboard.jpg' },

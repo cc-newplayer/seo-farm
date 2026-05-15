@@ -7,7 +7,7 @@
     <language>zh-CN</language>
     <copyright>© 2026 AI前沿</copyright>
     <managingEditor>cc-newplayer@github.io (AI前沿)</managingEditor>
-    <lastBuildDate>Mon, 12 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cc-newplayer.github.io/seo-farm/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://cc-newplayer.github.io/seo-farm/favicon.ico</url>
@@ -16,6 +16,15 @@
     </image>
 
     <!-- 最新 20 篇文章，按发布时间降序 -->
+
+    <item>
+      <title>Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事</title>
+      <link>https://cc-newplayer.github.io/seo-farm/articles/48_codex-mobile-control-explained.html</link>
+      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/48_codex-mobile-control-explained.html</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI 把 Codex 装进了 ChatGPT 手机 App。表面是手机能写代码了，真相是你的电脑能在你不在的时候持续替你上班——而手机就是那根遥控棒。</description>
+      <category>大众科普</category>
+    </item>
 
     <item>
       <title>OpenAI Daybreak 不只是找漏洞——它能自己写补丁、自己验证、自己部署</title>
@@ -239,15 +248,6 @@
       <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/23_kling-ai-video-tutorial.html</guid>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
       <description>手把手教你用可灵AI生成高质量视频，从注册到出片全程截图，零代码免费上手。</description>
-      <category>保姆级教程</category>
-    </item>
-
-    <item>
-      <title>用 n8n 搭建企业级自动化工作流：从 Webhook 到错误处理全攻略（2026版）</title>
-      <link>https://cc-newplayer.github.io/seo-farm/articles/22_n8n-enterprise-workflow.html</link>
-      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/22_n8n-enterprise-workflow.html</guid>
-      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <description>手把手教你用 n8n 搭建生产级工作流，覆盖 Webhook 实时触发、子工作流复用、错误自动告警三大核心能力。</description>
       <category>保姆级教程</category>
     </item>
 

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('ai-article-theme')||'light');</script>
+  <title>Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事｜AI前沿</title>
+  <meta name="description" content="OpenAI 把 Codex 装进了 ChatGPT 手机 App。表面是手机能写代码了，真相是你的电脑能在你不在的时候持续替你上班——而手机就是那根遥控棒。">
+  <meta name="keywords" content="Codex 手机,OpenAI Codex 移动版,ChatGPT App 编程,AI 代码 Agent,Codex iOS Android,远程编程,AI 自动化">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cc-newplayer.github.io/seo-farm/articles/48_codex-mobile-control-explained.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Codex 上手机了——但你想象的'地铁上写代码'根本不是它要做的事">
+  <meta property="og:description" content="OpenAI 把 Codex 装进了 ChatGPT 手机 App。表面是手机能写代码了，真相是你的电脑能在你不在的时候持续替你上班——而手机就是那根遥控棒。">
+  <meta property="og:url" content="https://cc-newplayer.github.io/seo-farm/articles/48_codex-mobile-control-explained.html">
+  <meta property="og:image" content="https://cc-newplayer.github.io/seo-farm/articles/images/48_img1_mobile-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Codex 上手机了——但你想象的'地铁上写代码'根本不是它要做的事">
+  <meta name="twitter:description" content="OpenAI 把 Codex 装进了 ChatGPT 手机 App。表面是手机能写代码了，真相是你的电脑能在你不在的时候持续替你上班——而手机就是那根遥控棒。">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Codex 上手机了——但你想象的'地铁上写代码'根本不是它要做的事",
+    "description": "OpenAI 把 Codex 装进了 ChatGPT 手机 App。表面是手机能写代码了，真相是你的电脑能在你不在的时候持续替你上班——而手机就是那根遥控棒。",
+    "image": "https://cc-newplayer.github.io/seo-farm/articles/images/48_img1_mobile-hero.jpg",
+    "datePublished": "2026-05-15",
+    "inLanguage": "zh-CN",
+    "keywords": "Codex 手机, OpenAI Codex 移动版, ChatGPT App 编程, AI 代码 Agent, Codex iOS Android, 远程编程, AI 自动化",
+    "author": { "@type": "Organization", "name": "AI前沿", "url": "https://cc-newplayer.github.io/seo-farm/" },
+    "publisher": { "@type": "Organization", "name": "AI前沿", "url": "https://cc-newplayer.github.io/seo-farm/" }
+  }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="article-common.css" />
+</head>
+<body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../index.html" class="site-nav-logo">⚡ AI<span class="accent">前沿</span></a>
+    <div class="site-nav-links">
+      <a href="../index.html">首页</a>
+      <a href="../news.html">AI资讯</a>
+      <a href="../tools.html">AI工具</a>
+      <a href="../articles.html">AI文章</a>
+      <a href="../about.html">关于</a>
+      <button id="themeToggle" class="theme-btn" aria-label="切换主题">🌙</button>
+    </div>
+  </div>
+</nav>
+<aside class="toc-sidebar" id="tocSidebar">
+  <div class="toc-label">📑 本文目录</div>
+  <ul class="toc-list" id="tocList"></ul>
+</aside>
+<div class="page-wrapper">
+
+  <header class="article-header">
+    <div class="badge-row">
+      <span class="badge badge-popular">🌐 大众科普</span>
+      <span class="badge badge-meta">⏱ 约 8 分钟阅读</span>
+      <span class="badge badge-meta">AI 与职场</span>
+    </div>
+    <h1>Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事</h1>
+    <p class="article-lead">2026 年 5 月 14 日，OpenAI 把它的 AI 编程助手 Codex 装进了 ChatGPT 手机 App。所有人都在转发"程序员可以在手机上写代码了"——但这件事的真相，比这刺激得多。</p>
+  </header>
+
+  <div class="article-body">
+    <img src="images/48_img1_mobile-hero.jpg" alt="一个人在咖啡店用手机审批 Codex 代码变更" style="width:100%;border-radius:8px;margin-bottom:24px;">
+
+    <h2>上周四，OpenAI 把"打卡上班"的定义改了</h2>
+
+    <p>2026 年 5 月 14 日，OpenAI 宣布把 Codex 接入 ChatGPT 手机 App，所有套餐——包括免费版——都能用。</p>
+
+    <p>Codex 是 OpenAI 的 AI 编程助手（你可以理解为"会自己写代码、跑测试、改 bug 的 AI 同事"）。它去年起步，一直只能在电脑上用：要么终端命令行，要么 Mac、Windows 桌面 App，要么浏览器。</p>
+
+    <p>现在，它进了手机。</p>
+
+    <p>这条新闻在 X 和小红书上的传播路径几乎一样：先有人转发"OpenAI 让你在地铁上写代码"，然后底下一片"打工人没活路了，连厕所都得改 bug"的玩笑。</p>
+
+    <p>但如果你点进 OpenAI 官方公告仔细看，会发现一个关键细节：<strong>它根本不是让你在手机上写代码。</strong></p>
+
+    <h2>你以为的"手机写代码"，跟它要做的事差了十万八千里</h2>
+
+    <p>OpenAI 自己的说法是这样的：手机 App 充当"你和你电脑之间的中介"。你的代码、密码、权限——一切都还留在那台 Mac 或者远程开发机里。手机只做一件事：让你"看着它干活、点头同意"。</p>
+
+    <p>怎么开始用？打开 Mac 上的 Codex，App 会弹一个二维码，你用手机 ChatGPT 扫一下，配对就完成了。从那一刻起，你的电脑变成了一个 24 小时待命的"代码工人"，手机变成了你这位"工人"的工头本子。</p>
+
+    <p>具体能干什么？OpenAI 列了一个清单：</p>
+
+    <ul>
+      <li>在通勤路上看 Codex 正在跑的所有任务，挨个审查它写的代码</li>
+      <li>它跑到一半要权限——比如要打开一个新文件、要部署到测试环境——你在手机上点"同意"</li>
+      <li>切换它用什么模型（更聪明但更慢的、还是更快但稍弱的）</li>
+      <li>给它派新任务："你现在去查一下昨天那个崩溃的接口"</li>
+      <li>看测试结果、看截图、看代码 diff，跟在电脑上一模一样</li>
+    </ul>
+
+    <p>用一个生活类比：以前你装了个智能扫地机器人，必须坐在家里盯着它工作，发现它卡在沙发底下你得起身去搬。现在你出门买菜，手机推送告诉你"我卡住了，要不要换个路线"，你点一下"换"，它就接着扫。<strong>它的工作没停，你的工作时间也没停——你只是物理上不在那张桌子前面。</strong></p>
+
+    <img src="images/48_img2_subway-approve.jpg" alt="地铁车厢里举着手机审查代码变更的人" style="width:100%;border-radius:8px;margin:24px 0;">
+
+    <h2>它已经在被 400 万人用——而你可能没意识到这意味着什么</h2>
+
+    <p>4 月 21 日，OpenAI 公布 Codex 周活跃用户突破 400 万。两周前这个数字是 300 万。年初是 50 万。<strong>半年内涨了 8 倍。</strong></p>
+
+    <p>另一个数据更刺眼：根据知情人士给路透社的说法，2025 年 9 月时 Codex 的使用量只有 Anthropic 的 Claude Code 的 5%；到 2026 年 1 月，已经追到了 40%。</p>
+
+    <p>这是什么概念？把它放到一个普通人能感受的尺度上：Claude Code 现在已经包揽了全球公开 GitHub 代码提交量的 <strong>4%</strong>。也就是说，每 25 行被推上 GitHub 的代码里，就有 1 行是 AI 写的——不是程序员"用 AI 辅助写"的，是 AI 自己写、自己提交的。</p>
+
+    <p>这里有个反常识的事实：很多人以为 AI 写代码主要是"小玩具"或者"原型"，离生产环境还远。但 Stripe（全球最大的支付公司之一）已经给它内部 <strong>1370 名工程师</strong>全员部署了 Claude Code。其中一个团队用 4 天，完成了一项 1 万行的 Scala 到 Java 代码迁移——同样的工作量，按传统方式预估需要 10 个工程师做一周（10 个工程师周）。</p>
+
+    <p>Anthropic 自家承认：他们公司"大部分代码已经由 Claude Code 写"。工程师做什么？<strong>"管理多个并行跑的 AI agent，给方向，做架构决策。"</strong></p>
+
+    <p>Codex 上手机，不是在一个未成熟的工具上加新功能。它是在一个已经被工业级采用、已经在替代人类劳动的工具上，把最后一道"必须坐在电脑前"的物理限制拆掉。</p>
+
+    <h2>Cisco 砍掉一半评审时间，Ramp 把救火时间砍掉 80%</h2>
+
+    <p>OpenAI 在 5 月 14 日的同一场发布里，附带列了几个企业案例：</p>
+
+    <p><strong>Cisco</strong>（思科）用 Codex 做内部代码评审，<strong>时间砍了 50%</strong>。项目交付周期从"以周计"变成了"以天计"。</p>
+
+    <p><strong>Ramp</strong>（一家美国财务科技公司）把 Codex 接入开发流程后，<strong>线上事故调查时间砍掉了 80%</strong>。原本要花几个小时定位问题的工程师，现在只需要几十分钟。</p>
+
+    <p>更关键的是 Ramp 的另一个动作：他们的销售、风控、财务这些<strong>不写代码的部门</strong>，现在用自然语言查公司数据仓库——不用再写 SQL，不用再排队等数据分析师。</p>
+
+    <p>OpenAI 还透露：ChatGPT 企业版用户里，工程、IT、研究三个部门<strong>之外</strong>的人发"写代码相关的消息"，过去半年涨了 36%。</p>
+
+    <p>翻译一下：以前需要去找程序员帮忙的小工具、小自动化，现在销售、运营、产品自己解决了。这部分被"消化"的需求，本来是初级工程师的活。</p>
+
+    <p>现在这件事接上手机以后，最直接的影响是 <strong>oncall（值班待命）</strong> 这件事的形态变了。半夜服务器报警，以前你要爬起来开电脑、连 VPN、克隆代码——现在你在床上摸过手机，看 Codex 已经定位到出问题的文件、跑完了复现测试、列出 3 个修复方案，你点一下批准，PR 提了，问题解决了，灯都没开。听上去很爽对吧？但请记住：<strong>从公司的角度看，这意味着你"可以随时随地工作"，于是"必须随时随地工作"的边界就开始模糊。</strong></p>
+
+    <h2>对你意味着什么：取决于你在不在那条线之内</h2>
+
+    <p>这件事会把人切成三类，分别对应三种命运。</p>
+
+    <p><strong>如果你是程序员，并且已经在用 AI 编码工具：</strong>恭喜，你刚刚获得了"在哪都能干活"的超能力，下一次绩效评估你会看起来产出翻倍。坏消息是，你的同行也在变成这样——半年涨 8 倍的用户里，大多数都是程序员。"会用 Codex"很快会从加分项变成默认项，就像 10 年前"会用 Stack Overflow"一样。如果你想了解 Codex 在技术上能力的边界，可以读这篇拆解：<a href="31_openai-codex-2026-deep-dive.html">OpenAI Codex 2026 不是更聪明的 Copilot，它是第一个真正能"自主写代码"的 AI Agent</a>。</p>
+
+    <p><strong>如果你是程序员，但还没认真用过 AI 编码：</strong>从今天开始你的处境会越来越尴尬。Cisco 砍 50% 评审时间、Stripe 4 天干完 10 周的活——这些不是新闻，这是新的基线。你的老板下一次问"为什么这个 feature 还没做完"的时候，"我没用 AI"已经不是一个能说出口的理由了。</p>
+
+    <p><strong>如果你是非程序员，比如产品、运营、市场：</strong>你和程序员之间的那堵墙，正在变得更矮。Codex 已经能通过浏览器自动登录后台改设置、查数据库、生成报表——这些过去叫"工程支持"，现在叫"自己用 AI 解决"。你也许不会被替代，但你会被要求承担更多过去要靠程序员才能做的事。</p>
+
+    <img src="images/48_img3_empty-desk.jpg" alt="深夜空办公桌上笔记本仍亮屏运行的场景" style="width:100%;border-radius:8px;margin:24px 0;">
+
+    <h2>这次升级真正改变的事——以及它做不到的事</h2>
+
+    <p>诚实地说，这次更新有几个明显的局限：</p>
+
+    <p><strong>它需要你的电脑一直开着、一直登录着。</strong>你出门前电脑没插电源、没解锁屏幕，那 Codex 在你的手机上就是一块"黑屏"。这意味着你得养成一种新的桌面习惯——下班不关机，"待机"才是常态。</p>
+
+    <p><strong>Windows 用户暂时玩不了。</strong>OpenAI 只在 Mac 上开放了配对功能，Windows 上的 Codex 桌面 App 连接手机"即将推出"。也就是说，全球 70% 的桌面操作系统用户，现在站在门外看。</p>
+
+    <p><strong>它不是真的"在手机上写代码"。</strong>所有的文件、密码、密钥都还在那台电脑里。你的手机是望远镜+遥控器，不是工作台。如果你的电脑掉线了、网断了、被公司 IT 锁屏了，Codex 在你手机上就什么都做不了。</p>
+
+    <p><strong>企业合规问题刚刚到门口。</strong>OpenAI 同一天才把支持 HIPAA（美国医疗数据合规标准）的 Codex 设成"正式可用"——意思是医疗、金融这些受监管行业，刚刚被允许把 Codex 用在生产环境。换句话说，能享受这次"远程修 bug"自由的，主要还是互联网公司和早期采用者，传统行业还在审批流程里。</p>
+
+    <p>真正改变的是另一件事：<strong>过去 100 年，"下班"这两个字的核心定义是"物理上离开工作场所"。但当你的电脑能在你不在的时候持续干活、当出问题手机一点就能接管，这个定义就不再成立了。</strong></p>
+
+    <p>这不是 OpenAI 一家公司的事。Anthropic 早在 2026 年 2 月就把 Claude Code 接进了手机；Meta、Google、字节也在做类似的事，巨头们正在<a href="44_ai-agent-wars-personal-butler.html">竞相打造你的 24 小时 AI 管家</a>。Codex 上手机只是把一个早已发生的趋势，推到了所有人都能看见的舞台中央。</p>
+
+    <p>而当老板看见这件事的时候，他想到的不是"我的工程师可以休假了"。他想到的可能是：<a href="45_meta-ai-layoffs-roi-paradox.html">一个能 24 小时干活的人，是不是不需要那么多人了</a>。</p>
+
+    <p>这不是科幻。这只是 2026 年 5 月一个普通的周四。</p>
+
+  </div>
+
+  <footer class="article-footer">
+    参考来源：
+    <a href="https://openai.com/index/work-with-codex-from-anywhere/" target="_blank">OpenAI 官方公告</a> |
+    <a href="https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/" target="_blank">TechCrunch</a> |
+    <a href="https://9to5mac.com/2026/05/14/openai-brings-codex-control-to-chatgpt-for-iphone-and-android/" target="_blank">9to5Mac</a> |
+    <a href="https://thenewstack.io/openai-codex-chatgpt-mobile/" target="_blank">The New Stack</a> |
+    <a href="https://www.neowin.net/news/openais-codex-hits-4-million-weekly-active-users-adding-1-million-in-just-two-weeks/" target="_blank">Neowin (4M WAU)</a> |
+    <a href="https://coder.com/blog/building-for-2026-why-anthropic-engineers-are-running-claude-code-remotely-with-c" target="_blank">Coder (Stripe / Ramp 案例)</a>
+  </footer>
+
+</div>
+<script>
+(function () {
+  var headings = document.querySelectorAll('.article-body h2');
+  var tocList  = document.getElementById('tocList');
+  if (tocList && headings.length) {
+    headings.forEach(function (h, i) {
+      if (!h.id) h.id = 'sec-' + i;
+      var li = document.createElement('li');
+      li.className = 'toc-item';
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.className = 'toc-link';
+      a.textContent = h.textContent;
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById(h.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          tocList.querySelectorAll('.toc-link').forEach(function (l) { l.classList.remove('toc-active'); });
+          var active = tocList.querySelector('a[href="#' + id + '"]');
+          if (active) active.classList.add('toc-active');
+        }
+      });
+    }, { rootMargin: '-5% 0px -75% 0px' });
+    headings.forEach(function (h) { observer.observe(h); });
+  }
+  var btn = document.getElementById('themeToggle');
+  if (btn) {
+    btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('ai-article-theme', next);
+      btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }
+})();
+</script>
+</body>
+</html>
