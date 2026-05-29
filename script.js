@@ -673,10 +673,10 @@ const modelsData = [
 // ===== ARTICLE PREVIEW TABS =====
 const articleTabsData = {
   latest: [
+    { title: '字节跳动为什么要自己造芯片？从一笔 2000 亿的基建账单说起', url: 'articles/49_bytedance-ai-chip-full-stack.html', img: 'articles/images/49_img1_bytedance-chip-stack.jpg' },
     { title: 'Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事', url: 'articles/48_codex-mobile-control-explained.html', img: 'articles/images/48_img1_mobile-hero.jpg' },
     { title: 'OpenAI Daybreak 不只是找漏洞——它能自己写补丁、自己验证、自己部署', url: 'articles/47_openai-daybreak-architecture.html', img: 'articles/images/47_img1_daybreak-architecture.jpg' },
     { title: 'OpenClaw 凭什么三个月拿下25万星——一个周末项目的架构到底有多疯狂', url: 'articles/46_openclaw-architecture-deep-dive.html', img: 'articles/images/46_img1_openclaw-architecture.jpg' },
-    { title: '扎克伯格说一个AI顶几十个人，然后裁了8000人——但这笔账根本算不过来', url: 'articles/45_meta-ai-layoffs-roi-paradox.html', img: 'articles/images/45_img1_meta-ai-layoffs-roi.jpg' },
   ],
   knowledge: [
     { title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', url: 'articles/34_ai-agent-cost-breakdown.html', img: 'articles/images/34_img1_agent-cost-dashboard.jpg' },

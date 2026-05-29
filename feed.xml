@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AI前沿 — 人工智能资讯与文章</title>
@@ -7,7 +7,7 @@
     <language>zh-CN</language>
     <copyright>© 2026 AI前沿</copyright>
     <managingEditor>cc-newplayer@github.io (AI前沿)</managingEditor>
-    <lastBuildDate>Fri, 15 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cc-newplayer.github.io/seo-farm/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://cc-newplayer.github.io/seo-farm/favicon.ico</url>
@@ -16,6 +16,15 @@
     </image>
 
     <!-- 最新 20 篇文章，按发布时间降序 -->
+
+    <item>
+      <title>字节跳动为什么要自己造芯片？从一笔 2000 亿的基建账单说起</title>
+      <link>https://cc-newplayer.github.io/seo-farm/articles/49_bytedance-ai-chip-full-stack.html</link>
+      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/49_bytedance-ai-chip-full-stack.html</guid>
+      <pubDate>Thu, 29 May 2026 00:00:00 +0000</pubDate>
+      <description>深度拆解字节跳动全栈AI基础设施布局：Qualcomm ASIC芯片大单、自研CPU双轨架构、豆包Agent手机OS，一条从硅片到设备的垂直整合链路。</description>
+      <category>深度科普</category>
+    </item>
 
     <item>
       <title>Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事</title>
@@ -188,68 +197,10 @@
       <category>保姆级教程</category>
     </item>
 
-    <item>
-      <title>GPT-5.4 保姆级���门教程：手把手教你免费用上 OpenAI 最强模型</title>
-      <link>https://cc-newplayer.github.io/seo-farm/articles/29_gpt54-tutorial.html</link>
-      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/29_gpt54-tutorial.html</guid>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <description>GPT-5.4 是 OpenAI 2026年3月发布的最强模型，支持电脑操控、100万token上下文。本文手把手教你5步用上它，附免费额度攻略。</description>
-      <category>保姆级教程</category>
-    </item>
+    
 
-    <item>
-      <title>浏览器里跑 AI 大模型？Transformers.js v4 让这件事变成了现实</title>
-      <link>https://cc-newplayer.github.io/seo-farm/articles/28_transformers-js-v4-explained.html</link>
-      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/28_transformers-js-v4-explained.html</guid>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Transformers.js v4 让 AI 模型直接在浏览器里运行，不需要服务器、不花一分钱 API 费、数据完全不出你的电脑。</description>
-      <category>大众科普</category>
-    </item>
+    
 
-    <item>
-      <title>NemoClaw 保姆级入门教程：英伟达开源 AI Agent 平台，零代码部署你的第一个企业智能体</title>
-      <link>https://cc-newplayer.github.io/seo-farm/articles/27_nemoclaw-tutorial.html</link>
-      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/27_nemoclaw-tutorial.html</guid>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <description>英伟达 GTC 2026 发布的开源 AI Agent 平台，手把手教你 5 步部署第一个 AI 智能体，完全免费。</description>
-      <category>保姆级教程</category>
-    </item>
-
-    <item>
-      <title>Claude Mythos 泄露事件全拆解：比 Opus 4.6 强多少，为什么让政府紧张</title>
-      <link>https://cc-newplayer.github.io/seo-farm/articles/26_claude-mythos-leak-explained.html</link>
-      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/26_claude-mythos-leak-explained.html</guid>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Anthropic 意外泄露未发布模型 Claude Mythos，3000 份内部文件曝光，官方称其网络攻击能力"前所未有"。深度拆解泄露内容与安全争议。</description>
-      <category>深度科普</category>
-    </item>
-
-    <item>
-      <title>谷歌昨天悄悄扔了一颗炸弹：Gemma 4 用 1/20 的参数，干掉了大它 20 倍的对手</title>
-      <link>https://cc-newplayer.github.io/seo-farm/articles/25_gemma4-open-source-explained.html</link>
-      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/25_gemma4-open-source-explained.html</guid>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <description>谷歌 Gemma 4 刚发布，Apache 2.0 完全开源，31B 参数打到全球第 3，还能在手机上跑。一篇讲清楚它是什么、跟你有什么关系。</description>
-      <category>大众科普</category>
-    </item>
-
-    <item>
-      <title>DeerFlow 2.0 的架构到底有多复杂？字节这套多智能体系统全拆解</title>
-      <link>https://cc-newplayer.github.io/seo-farm/articles/24_deerflow2-architecture-deep-dive.html</link>
-      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/24_deerflow2-architecture-deep-dive.html</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <description>深度拆解 DeerFlow 2.0 多智能体架构：Planner/Researcher/Coder 分工机制、Human-in-the-Loop 设计、RAG 与工具链集成原理。</description>
-      <category>深度科普</category>
-    </item>
-
-    <item>
-      <title>零基础也能上手！可灵AI视频生成保姆级入门教程（2026最新版）</title>
-      <link>https://cc-newplayer.github.io/seo-farm/articles/23_kling-ai-video-tutorial.html</link>
-      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/23_kling-ai-video-tutorial.html</guid>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <description>手把手教你用可灵AI生成高质量视频，从注册到出片全程截图，零代码免费上手。</description>
-      <category>保姆级教程</category>
-    </item>
 
   </channel>
 </rss>
