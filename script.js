@@ -1182,18 +1182,21 @@ document.addEventListener('keydown', e => {
 });
 
 // Search on Enter / input
-document.getElementById('searchInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') doSearch();
-});
-document.getElementById('searchInput').addEventListener('input', () => {
-  const q = document.getElementById('searchInput').value.trim();
-  if (!q) {
-    const panel = document.getElementById('searchResults');
-    if (panel) panel.style.display = 'none';
-  } else {
-    doSearch();
-  }
-});
+const _searchInput = document.getElementById('searchInput');
+if (_searchInput) {
+  _searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') doSearch();
+  });
+  _searchInput.addEventListener('input', () => {
+    const q = _searchInput.value.trim();
+    if (!q) {
+      const panel = document.getElementById('searchResults');
+      if (panel) panel.style.display = 'none';
+    } else {
+      doSearch();
+    }
+  });
+}
 
 // ===== PARTICLES =====
 function createParticles() {
