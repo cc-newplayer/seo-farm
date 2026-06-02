@@ -416,6 +416,7 @@ const newsData = [
 
 // ===== ARTICLES DATA =====
 const articlesData = [
+  { id: 51, file: '51_minimax-m3-architecture-deep-dive.html', img: 'articles/images/51_img1_minimax-m3-sparse-attention.jpg', category: 'deep', title: 'MiniMax M3 的 MSA 架构到底做了什么？一篇拆清楚「稀疏注意力」为什么能干掉全注意力', desc: '深度拆解 MiniMax M3 的 MSA 稀疏注意力架构：如何用 1/20 的计算成本实现 100 万 token 上下文，SWE-Bench Pro 超越 GPT-5.5 的技术路径分析。', keywords: ['MiniMax M3', 'MSA架构', '稀疏注意力', '100万token', 'SWE-Bench Pro', '开源大模型', 'MoE', '稀宇科技', 'MiniMax'] },
   { id: 48, file: '48_codex-mobile-control-explained.html', img: 'articles/images/48_img1_mobile-hero.jpg', category: 'popular', title: 'Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事', desc: 'OpenAI 把 Codex 装进了 ChatGPT 手机 App。表面是手机能写代码了，真相是你的电脑能在你不在的时候持续替你上班——而手机就是那根遥控棒。', keywords: ['Codex 手机', 'OpenAI Codex 移动版', 'ChatGPT App 编程', 'AI 代码 Agent', 'Codex iOS Android', '远程编程', 'AI 自动化'] },
   { id: 47, file: '47_openai-daybreak-architecture.html', img: 'articles/images/47_img1_daybreak-architecture.jpg', category: 'deep', title: 'OpenAI Daybreak 不只是找漏洞——它能自己写补丁、自己验证、自己部署', desc: 'OpenAI今天发布Daybreak，对标Anthropic Mythos。三阶段架构：识别→验证→修复，GPT-5.5-Cyber专用模型+Aardvark自主安全Agent。', keywords: ['OpenAI Daybreak', 'GPT-5.5-Cyber', 'AI网络安全', 'Codex Security', '漏洞检测AI', 'Anthropic Mythos', 'Aardvark'] },
   { id: 46, file: '46_openclaw-architecture-deep-dive.html', img: 'articles/images/46_img1_openclaw-architecture.jpg', category: 'deep', title: 'OpenClaw 凭什么三个月拿下25万星——一个周末项目的架构到底有多疯狂', desc: '一个奥地利开发者的第44个side project，从WhatsApp转发器变成GitHub史上增长最快的项目。三层架构拆解：Gateway控制面、Agentic Loop、无沙箱执行环境。', keywords: ['OpenClaw', 'OpenClaw架构', 'AI Agent', 'Peter Steinberger', '开源AI助手', '自托管AI', 'Gateway架构', 'Agentic Loop'] },
@@ -673,10 +674,10 @@ const modelsData = [
 // ===== ARTICLE PREVIEW TABS =====
 const articleTabsData = {
   latest: [
+    { title: 'MiniMax M3 的 MSA 架构到底做了什么？稀疏注意力为什么能干掉全注意力', url: 'articles/51_minimax-m3-architecture-deep-dive.html', img: 'articles/images/51_img1_minimax-m3-sparse-attention.jpg' },
     { title: '字节跳动为什么要自己造芯片？从一笔 2000 亿的基建账单说起', url: 'articles/49_bytedance-ai-chip-full-stack.html', img: 'articles/images/49_img1_bytedance-chip-stack.jpg' },
     { title: 'Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事', url: 'articles/48_codex-mobile-control-explained.html', img: 'articles/images/48_img1_mobile-hero.jpg' },
     { title: 'OpenAI Daybreak 不只是找漏洞——它能自己写补丁、自己验证、自己部署', url: 'articles/47_openai-daybreak-architecture.html', img: 'articles/images/47_img1_daybreak-architecture.jpg' },
-    { title: 'OpenClaw 凭什么三个月拿下25万星——一个周末项目的架构到底有多疯狂', url: 'articles/46_openclaw-architecture-deep-dive.html', img: 'articles/images/46_img1_openclaw-architecture.jpg' },
   ],
   knowledge: [
     { title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', url: 'articles/34_ai-agent-cost-breakdown.html', img: 'articles/images/34_img1_agent-cost-dashboard.jpg' },

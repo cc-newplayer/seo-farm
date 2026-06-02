@@ -7,7 +7,7 @@
     <language>zh-CN</language>
     <copyright>© 2026 AI前沿</copyright>
     <managingEditor>cc-newplayer@github.io (AI前沿)</managingEditor>
-    <lastBuildDate>Thu, 29 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://cc-newplayer.github.io/seo-farm/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://cc-newplayer.github.io/seo-farm/favicon.ico</url>
@@ -16,6 +16,15 @@
     </image>
 
     <!-- 最新 20 篇文章，按发布时间降序 -->
+
+    <item>
+      <title>MiniMax M3 的 MSA 架构到底做了什么？一篇拆清楚「稀疏注意力」为什么能干掉全注意力</title>
+      <link>https://cc-newplayer.github.io/seo-farm/articles/51_minimax-m3-architecture-deep-dive.html</link>
+      <guid isPermaLink="true">https://cc-newplayer.github.io/seo-farm/articles/51_minimax-m3-architecture-deep-dive.html</guid>
+      <pubDate>Mon, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <description>深度拆解 MiniMax M3 的 MSA 稀疏注意力架构：如何用 1/20 的计算成本实现 100 万 token 上下文，SWE-Bench Pro 超越 GPT-5.5 的技术路径分析。</description>
+      <category>深度科普</category>
+    </item>
 
     <item>
       <title>字节跳动为什么要自己造芯片？从一笔 2000 亿的基建账单说起</title>
