@@ -675,9 +675,9 @@ const modelsData = [
 const articleTabsData = {
   latest: [
     { title: 'MiniMax M3 的 MSA 架构到底做了什么？稀疏注意力为什么能干掉全注意力', url: 'articles/51_minimax-m3-architecture-deep-dive.html', img: 'articles/images/51_img1_minimax-m3-sparse-attention.jpg' },
+    { title: 'ClickUp 裁了22%的人，部署了3000个AI Agent，给留下的人开百万年薪', url: 'articles/50_clickup-100x-org-ai-layoffs.html', img: '' },
     { title: '字节跳动为什么要自己造芯片？从一笔 2000 亿的基建账单说起', url: 'articles/49_bytedance-ai-chip-full-stack.html', img: 'articles/images/49_img1_bytedance-chip-stack.jpg' },
     { title: 'Codex 上手机了——但你想象的"地铁上写代码"根本不是它要做的事', url: 'articles/48_codex-mobile-control-explained.html', img: 'articles/images/48_img1_mobile-hero.jpg' },
-    { title: 'OpenAI Daybreak 不只是找漏洞——它能自己写补丁、自己验证、自己部署', url: 'articles/47_openai-daybreak-architecture.html', img: 'articles/images/47_img1_daybreak-architecture.jpg' },
   ],
   knowledge: [
     { title: '部署一个 AI Agent 到底要花多少钱？成本拆解与选型框架', url: 'articles/34_ai-agent-cost-breakdown.html', img: 'articles/images/34_img1_agent-cost-dashboard.jpg' },
