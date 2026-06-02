@@ -35,6 +35,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="article-common.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true, theme:'neutral'});</script>
 </head>
 <body>
 <nav class="site-nav">
@@ -93,6 +95,20 @@
 
     <p><strong>第三层：KV Outer Gather Q 优化。</strong>被选中的块以连续内存访问模式读取（"outer gather"），避免了稀疏访问中常见的 cache miss 问题。MiniMax 声称这个实现比 Flash-Sparse-Attention（业界常用的稀疏注意力参考实现）快 4 倍。</p>
 
+    <p>整个流程可以用一张图说清楚：</p>
+
+    <div class="mermaid">
+flowchart LR
+    A["新 Query Token"] --> B["扫描所有 KV Block\n的摘要向量"]
+    B --> C{"块级相关性\n评分排序"}
+    C -->|Top-K 块| D["连续内存加载\n(Outer Gather)"]
+    C -->|其余块| E["跳过 ❌"]
+    D --> F["精细注意力计算"]
+    F --> G["输出"]
+    </div>
+
+    <p style="text-align:center;color:var(--text-muted);font-size:0.85rem;margin-top:-8px;">▲ MSA 核心流程：不是"看少一点"，是先判断"该看谁"再精确计算</p>
+
     <div class="callout callout-info">
       <span class="callout-icon">💡</span>
       <div class="callout-body">
@@ -147,6 +163,33 @@
     <p>M3 的架构是 <strong>MoE（Mixture of Experts）+ MSA</strong> 的双重稀疏设计。基于前代 M2 的公开信息（总参数 2300 亿，每次推理只激活 100 亿），M3 大概率延续了这个范式。</p>
 
     <p>这两个"稀疏"解决的是不同层面的问题：</p>
+
+    <div class="mermaid">
+flowchart TB
+    subgraph M3["MiniMax M3 双重稀疏架构"]
+        direction TB
+        Input["输入 Token"] --> MoE_Layer
+        subgraph MoE_Layer["MoE 层：模型稀疏"]
+            direction LR
+            Router["路由器"] --> E1["专家 1 ✓"]
+            Router --> E2["专家 2 ✗"]
+            Router --> E3["专家 3 ✓"]
+            Router --> E4["... 专家 N ✗"]
+        end
+        MoE_Layer --> MSA_Layer
+        subgraph MSA_Layer["MSA 层：注意力稀疏"]
+            direction LR
+            Q["Query"] --> Selector["块级选择器"]
+            Selector --> B1["KV Block 1 ✓"]
+            Selector --> B2["KV Block 2 ✗"]
+            Selector --> B3["KV Block 3 ✓"]
+            Selector --> B4["... Block M ✗"]
+        end
+        MSA_Layer --> Output["输出"]
+    end
+    </div>
+
+    <p style="text-align:center;color:var(--text-muted);font-size:0.85rem;margin-top:-8px;">▲ M3 的双重稀疏：MoE 只激活部分专家（省参数），MSA 只关注部分上下文（省注意力）</p>
 
     <ul>
       <li><strong>MoE 的稀疏</strong>：解决"模型太大推理太慢"的问题。2300 亿参数的知识量，但每次只调动 100 亿参数的算力——就像一个公司有 2300 名员工，但每个项目只需要 100 人上场。</li>
